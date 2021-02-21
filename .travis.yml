@@ -1,0 +1,27 @@
+
+os : linux
+dist: xenial
+language : generic
+jdk:
+  - oraclejdk9
+
+install: java -jar binaries/ssj.jar --build
+
+# branch whitelist
+branches:
+  only:
+  - master
+  - gh-pages     # test the gh-pages branch
+  - /pages-(.*)/ # test every branch which starts with "pages-"
+  
+deploy:
+  provider: pages
+  strategy: git
+  repo: ashishdoneriya/csetutorials-ssj
+  target_branch: gh-pages
+  skip_cleanup: true
+  keep_history: false
+  token: $GITHUB_TOKEN
+  local_dir: dist/
+  on:
+    branch: master

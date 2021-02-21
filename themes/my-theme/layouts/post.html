@@ -1,0 +1,44 @@
+---
+layout: default.html
+---
+
+#set( $format = "MMM dd, yyyy" )
+	<div class="typology-section">
+		<div class="section-content">
+			<article class="typology-post typology-single-post">
+				<header class="entry-header clearfix">
+					<h1 class="entry-title entry-title-cover-empty h2">$page.title</h1>
+					<div class="entry-meta">
+						<div class="meta-item meta-author" style="vertical-align: middle"> By <span class="vcard author"><span
+									class="fn">
+									<a href="$page.author.url">$page.author.name</a>
+								</span></span>
+						</div>
+						<div class="meta-item meta-date" style="vertical-align: middle">
+							<span class="updated">Last Updated on $dateUtils.format($page.updated, $format) </span>
+						</div>
+					</div>
+					<div class="post-letter"> $page.title.substring(0, 1) </div>
+				</header>
+				<div class="entry-content clearfix">
+					$page.content
+					<div class="clearfix entry-actions">
+						<span>Published in: </span>
+						#foreach ($category in $page.categories)
+						<span>
+							#if( $velocityCount > 1 )<span> - </span>#end
+							<a style="
+										padding: 0 5px 5px;
+										text-decoration: none;
+										border-bottom: 4px solid yellow;
+									" href="$category.url">$category.name</a>
+						</span>
+						#end
+					</div>
+				</div>
+				<div class="clearfix entry-actions">
+					<span>Originally Published On </span><span> : </span><span>$dateUtils.format($page.created, $format)</span>
+				</div>
+			</article>
+		</div>
+	</div>
