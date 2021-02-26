@@ -38,46 +38,66 @@ div {
   padding: 20px;
 }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<div id="vapp">
-	<form id="contactForm" v-if="displayForm">
-		<label for="name">Name</label>
-		<input type="text" id="name" name="name" v-model="name" placeholder="Your name..">
-		<label for="email">Email</label>
-		<input type="email" id="email" name="email" placeholder="Your email.." v-model="email">
-		<label for="message">Message</label>
-		<textarea id="message" v-model="message"></textarea>
-		<button @click="sendMessage()">Send Message</button>
-	</form>
-	<p v-if="!displayForm">Your message has been sent successfully</p>
-</div>
+<form id="my-form"
+  action="https://formspree.io/f/xknploqg"
+  method="POST"
+>
+	<label>Name:</label>
+	<input type="text" name="name" />
+	<label>Email:</label>
+	<input type="email" name="email" />
+	<label>Message:</label>
+	<input type="text" name="message" />
+	<button id="my-form-button">Send Message</button>
+	<p id="my-form-status"></p>
+</form>
+
+<!-- Place this script at the end of the body tag -->
 
 <script>
-		new Vue({
-			el : "#vapp",
-			data : {
-				displayForm: true,
-				name: '',
-				email: '',
-				message: ''
-			},
-			methods: {
-				sendMessage() {
-					var form = document.getElementById("contactForm");
-					var xhr = new XMLHttpRequest();
-					xhr.open(method, 'https://formspree.io/f/xknploqg');
-					xhr.setRequestHeader("Accept", "application/json");
-					xhr.onreadystatechange = () =>{
-						if (xhr.readyState !== XMLHttpRequest.DONE)
-							return;
-						if (xhr.status === 200) {
-							this.displayForm = false;
-						} else {
-							alert(xhr.response);
-						}
-					};
-					xhr.send(data);
-				}
-			}
-		});
-	</script>
+  window.addEventListener("DOMContentLoaded", function() {
+
+    // get the form elements defined in your form HTML above
+    
+    var form = document.getElementById("my-form");
+    var button = document.getElementById("my-form-button");
+    var status = document.getElementById("my-form-status");
+
+    // Success and Error functions for after the form is submitted
+    
+    function success() {
+      form.reset();
+      button.style = "display: none ";
+      status.innerHTML = "Thanks!";
+    }
+
+    function error() {
+      status.innerHTML = "Oops! There was a problem.";
+    }
+
+    // handle the form submission event
+
+    form.addEventListener("submit", function(ev) {
+      ev.preventDefault();
+      var data = new FormData(form);
+      ajax(form.method, form.action, data, success, error);
+    });
+  });
+  
+  // helper function for sending an AJAX request
+
+  function ajax(method, url, data, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        success(xhr.response, xhr.responseType);
+      } else {
+        error(xhr.status, xhr.response, xhr.responseType);
+      }
+    };
+    xhr.send(data);
+  }
+</script>
