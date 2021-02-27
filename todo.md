@@ -9,7 +9,7 @@
 [*] Add Contact us page form
 [*] Fix authors page
 [*] Switch to github Actions
+[*] Fix other users meta information
+[*] Add google search
 * Generate meta tags for non post and pages
-* Add google search
-* Fix other users meta information
 * Add Github based commenting system
