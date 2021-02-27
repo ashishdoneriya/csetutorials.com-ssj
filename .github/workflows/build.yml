@@ -19,7 +19,7 @@ jobs:
             - name: Running Jar File
               run: java -jar binaries/ssj.jar --build
             - name: Deploy
-            uses: JamesIves/github-pages-deploy-action@4.0.0
-            with:
+            - uses: JamesIves/github-pages-deploy-action@4.0.0
+              with:
                   branch: gh-pages
                   folder: dist
