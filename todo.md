@@ -6,9 +6,9 @@
 [*] Remove spam pages url from google search result
 [*] Add Google Analytics
 [*] Add Google Adsense
+[*] Add Contact us page form
 * Fix authors page
 * Generate meta tags for non post and pages
-* Add Contact us page form
 * Add google search
 * Switch to github Actions
 * Fix other users meta information
