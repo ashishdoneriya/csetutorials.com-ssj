@@ -13,7 +13,7 @@ tags:
   - vuejs
 updated: 2018-02-19T09:48:59+05:30
 ---
-Hello Vue JS developers. In this post I'm going to provide a step by step guide to add linting to your vuejs project using elint in <a href="/visual-studio-code-setup.html" target="_blank">Visual Studio Code</a> which is one of the vue developer tools.
+Hello Vue JS developers. In this post I'm going to provide a step by step guide to add linting to your vuejs project using elint in [Visual Studio Code](/visual-studio-code-setup.html) which is one of the vue developer tools.
 
 Steps
 
