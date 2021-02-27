@@ -1,6 +1,7 @@
 {
 	"username": "avdheshbansal",
 	"name": "Avdhesh Bansal",
-	"facebook": "https://www.facebook.com/ashishdoneriya",
-	"twitter": "@ashishdoneriya"
+	"socialMediaLinks": {
+		"facebookUrl": "https://www.facebook.com/er.avdheshbansal"
+	}
 }
