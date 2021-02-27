@@ -23,8 +23,8 @@ layout: default.html
 						#if( $velocityCount > 1 )<span>,</span>#end
 						<a href="$category.url">$category.name</a>
 					</span>
-					<span> - $dateUtils.format($post.created, $format)</span>
 					#end
+					<span> - $dateUtils.format($post.created, $format)</span>
 				</span>
 			</li>
 			#end

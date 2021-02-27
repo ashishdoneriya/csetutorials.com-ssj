@@ -8,8 +8,8 @@
 [*] Add Google Adsense
 [*] Add Contact us page form
 [*] Fix authors page
+[*] Switch to github Actions
 * Generate meta tags for non post and pages
 * Add google search
-* Switch to github Actions
 * Fix other users meta information
 * Add Github based commenting system
