@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en-GB">
+ <head> 
+  <base href="$site.baseUrl"> 
+  <!-- Title --> 
+  <title>How to write C or C++ programs on Ubuntu Linux</title> 
+  <link rel="canonical" href="https://csetutorials.com/compile-c-programs-on-ubuntu-linux.html"> 
+  <meta name="description" content="A beginner's guide to write, compile and run c and c++ programs on ubuntu linux. compile c program linux"> 
+  <meta property="og:description" content="A beginner's guide to write, compile and run c and c++ programs on ubuntu linux. compile c program linux"> 
+  <meta name="twitter:description" content="A beginner's guide to write, compile and run c and c++ programs on ubuntu linux. compile c program linux"> 
+  <meta name="author" content="Ashish Doneriya"> 
+  <meta name="robots" content="index, follow"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="How to write C or C++ programs on Ubuntu Linux"> 
+  <meta property="og:url" content="https://csetutorials.com/compile-c-programs-on-ubuntu-linux.html"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:site_name" content="Cse Tutorials"> 
+  <meta property="og:updated_time" content="2018-10-01T09:06:49Z"> 
+  <meta property="article:author" content="https://www.facebook.com/ashishdoneriya"> 
+  <meta property="article:modified_time" content="2018-10-01T09:06:49Z"> 
+  <meta property="article:published_time" content="2018-10-01T09:06:49Z"> 
+  <meta property="article:publisher" content="https://www.facebook.com/ashishdoneriya"> 
+  <meta property="article:section" content="Ubuntu"> 
+  <meta property="article:section" content="Ide"> 
+  <meta property="article:tag" content="Programming"> 
+  <meta property="article:tag" content="Ubuntu"> 
+  <meta name="twitter:title" content="How to write C or C++ programs on Ubuntu Linux"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:creator" content="@ashishdoneriya"> 
+  <meta name="twitter:site" content="@ashishdoneriya"> 
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya","name":"Ashish Doneriya","sameAs":["https://www.facebook.com/ashishdoneriya","https://twitter.com/ashishdoneriya","https://www.linkedin.com/in/ashishdoneriya/"]},{"@type":"WebSite","@id":"https://csetutorials.com/#website","url":"https://csetutorials.com","name":"Cse Tutorials","description":"Tutorials about WebApps, Web Designing, Java \u0026 Ubuntu","publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://csetutorials.com/compile-c-programs-on-ubuntu-linux.html#webpage","url":"https://csetutorials.com/compile-c-programs-on-ubuntu-linux.html","isPartOf":{"@id":"https://csetutorials.com/#website"},"datePublished":"2018-10-01T09:06:49Z","dateModified":"2018-10-01T09:06:49Z","description":"A beginner\u0027s guide to write, compile and run c and c++ programs on ubuntu linux. compile c program linux","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://csetutorials.com/compile-c-programs-on-ubuntu-linux.html"]}]},{"@type":"Article","@id":"https://csetutorials.com/compile-c-programs-on-ubuntu-linux.html#article","isPartOf":{"@id":"https://csetutorials.com/compile-c-programs-on-ubuntu-linux.html#webpage"},"author":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"headline":"How to write C or C++ programs on Ubuntu Linux","datePublished":"2018-10-01T09:06:49Z","dateModified":"2018-10-01T09:06:49Z","mainEntityOfPage":{"@id":"https://csetutorials.com/compile-c-programs-on-ubuntu-linux.html#webpage"},"publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"keywords":"programming,Ubuntu","articleSection":"ubuntu,ide","inLanguage":"en-US"}]}</script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="msapplication-TileColor" content="#ffffff"> 
+  <meta name="msapplication-TileImage" content="{{ '/assets/favicon.png' | prepend: site.baseurl }}"> 
+  <meta name="theme-color" content="#143d52"> 
+  <meta name="msapplication-navbutton-color" content="#143d52"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="#143d52"> 
+  <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAdUlEQVR4Ae3MIRJAUBCH8e81R3AO53AmvIQmu5MzqE8iKoZAEdZYZhT7/cuGnR9/yeEJrDcW8DjEKlbFasQmFTQitj+cK2TqO8ggg2LceygiZ6YjeQel9Me10NI8ghR7DhlkkEFBxQTEShVUcVHGcAsZ8PylDecfc51kCzSlAAAAAElFTkSuQmCC" type="image/x-icon"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"> 
+  <link defer href="/assets/theme/css/style.original.css" rel="stylesheet" type="text/css"> 
+ </head> 
+ <body> 
+  <div> 
+   <header id="typology-header" class="typology-header" style="position: absolute"> 
+    <div class="container"> 
+     <div class="slot-l"> 
+      <div class="typology-site-branding"> 
+       <p class="site-title h4"> <a href="/">Cse Tutorials</a> </p> 
+      </div> 
+     </div> 
+     <div class="slot-r"> 
+      <ul class="typology-nav typology-main-navigation"> 
+       <li class="xcurrent-menu-item"> <a href="/">Home</a> </li> 
+       <li class="xcurrent-menu-item"> <a href="/my-ubuntu-notes">My Ubuntu Notes</a> </li> 
+       <li> <a href="/">Topics
+         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 320 512" style="vertical-align: middle; margin-left: 5px" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"> 
+          </path> 
+         </svg></a> 
+        <ul class="sub-menu"> 
+         <li> <a href="/topics/android" rel="noindex nofollow">Android</a> </li> 
+         <li> <a href="/topics/big-data" rel="noindex nofollow">Big Data</a> </li> 
+         <li> <a href="/topics/database" rel="noindex nofollow">Database</a> </li> 
+         <li> <a href="/topics/ide" rel="noindex nofollow">Ide</a> </li> 
+         <li> <a href="/topics/internet" rel="noindex nofollow">Internet</a> </li> 
+         <li> <a href="/topics/java" rel="noindex nofollow">Java</a> </li> 
+         <li> <a href="/topics/ubuntu" rel="noindex nofollow">Ubuntu</a> </li> 
+         <li> <a href="/topics/web-development" rel="noindex nofollow">Web Development</a> </li> 
+         <li> <a href="/topics/wordpress" rel="noindex nofollow">Wordpress</a> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="typology-nav typology-actions-list"> 
+       <li class="typology-actions-button typology-action-search"> <span class="icon">
+         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"> 
+          </path> 
+         </svg></span> 
+        <ul class="sub-menu typology-rev"> 
+         <li> 
+          <form class="typology-search-form" action="/search" method="get"> <label style="display: none" for="query_header">Search</label>
+           <input type="text" name="q" id="query_header" autocomplete="off" value="" placeholder="Type here to search.." class=""><button type="submit" class="typology-button typology-button-search typology-icon-button"> Search</button><textarea name="" style="display: none"></textarea> 
+          </form> </li> 
+        </ul> </li> 
+       <li class="typology-action-button typology-action-sidebar typology-mobile-visible"> <span class="icon">
+         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"> 
+          </path> 
+         </svg> </span> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </header> 
+   <div class="typology-cover typology-cover-empty"></div> 
+   <div class="typology-fake-bg"> 
+    <div class="typology-section"> 
+     <div class="section-content"> 
+      <article class="typology-post typology-single-post"> 
+       <header class="entry-header clearfix"> 
+        <h1 class="entry-title entry-title-cover-empty h2">How to write C or C++ programs on Ubuntu Linux</h1> 
+        <div class="entry-meta"> 
+         <div class="meta-item meta-author" style="vertical-align: middle">
+           By <span class="vcard author"><span class="fn"> <a href="/author/ashishdoneriya">Ashish Doneriya</a> </span></span> 
+         </div> 
+         <div class="meta-item meta-date" style="vertical-align: middle"> <span class="updated">Last Updated on Oct 01, 2018 </span> 
+         </div> 
+        </div> 
+        <div class="post-letter">
+          H 
+        </div> 
+       </header> 
+       <div class="entry-content clearfix"> 
+        <p>If you are a newbie in the linux world you are the facing the question - how to compile c program in linux or how to compile c++ program in linux. So in this post I'm going to explain the steps using which you can run your c c++ programs on linux.</p> 
+        <p>There are two ways to write and run C and C++ programs on Ubuntu.</p> 
+        <ol> 
+         <li>Using command line</li> 
+         <li>Using IDE (app)</li> 
+        </ol> 
+        <h2>Using command line</h2> 
+        <p>To run a C or C++ program on linux, there are three phases write code, compile code and run it. First you have to write your code using a text editor eg. gedit (it is just like Notepad++). Then after writing the code you have to manually compile the code using particular commands, the compiler creates an executable file ( just like .exe in windows) for our code and then we run that executable file</p> 
+        <p>For compile C programs you need <code>gcc</code> c compiler linux tool which is installed by default on Ubuntu. For running C++ programs you need <code>g++</code> tool which is not installed by default on Ubuntu. You have to install it by running command</p> 
+        <pre><code class="language-bash">sudo apt-get install g++
+
+</code></pre> 
+        <h3>Running a C program</h3> 
+        <p><strong>NOTE :</strong> <code>&lt;conio.h&gt;</code> will not work on Ubuntu.</p> 
+        <p>Create a text file named <code>test.c</code><br> <a href="/wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux.png"><img loading="lazy" src="/wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux.png" alt="Writing C program" width="1920" height="1080" class="aligncenter size-full wp-image-1098" srcset="/wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux.png 1920w, /wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux-500x281.png 500w, /wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux-1024x576.png 1024w, /wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux-982x552.png 982w, /wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux-400x225.png 400w" sizes="(max-width: 1920px) 100vw, 1920px"></a></p> 
+        <p>Now open a terminal and execute the below command</p> 
+        <pre><code class="language-bash">gcc test.c -o test
+
+</code></pre> 
+        <p>Here gcc is the tool using which you will compile your C program. <code>test.c</code> is the file name of your code (‘.c' is the extention of a C program). <code>-o</code> argument is passed to tell the compiler that while making the executable file of my program &lt;test.c, name it as <code>test</code>. You can also use another name other that <code>test</code> like <code>myExecutedFile</code> or something. Now run your code by executing the command below.</p> 
+        <pre><code class="language-bash">./test
+
+</code></pre> 
+        <p>In linux <code>./</code> is used to run an executable file. In our case executable file is <code>test</code></p> 
+        <p><a href="/wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux.png"><img loading="lazy" src="/wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux.png" alt="Running C program" width="1920" height="1080" class="aligncenter size-full wp-image-1101" srcset="/wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux.png 1920w, /wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux-500x281.png 500w, /wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux-1024x576.png 1024w, /wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux-982x552.png 982w, /wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux-400x225.png 400w" sizes="(max-width: 1920px) 100vw, 1920px"></a></p> 
+        <h3>Running a C++ program</h3> 
+        <p>Create a text file named <code>test.cc (you can also use test.cpp)</code><br> <a href="/wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux.png"><img loading="lazy" src="/wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux.png" alt="Writing C++ program" width="1920" height="1080" class="aligncenter size-full wp-image-1103" srcset="/wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux.png 1920w, /wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux-500x281.png 500w, /wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux-1024x576.png 1024w, /wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux-982x552.png 982w, /wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux-400x225.png 400w" sizes="(max-width: 1920px) 100vw, 1920px"></a></p> 
+        <p>Now open a terminal and execute the below command</p> 
+        <pre><code class="language-bash">g++ test.cc -o test
+</code></pre> 
+        <p>Here g++ is the tool using which you will compile your C++ program. <code>test.cc</code> is the file name of your code (‘.cc' and .cpp are the extentions of a C++ program). <code>-o</code> argument is passed to tell the compiler that while making the executable file of my program &lt;test.cc, name it as <code>test</code>. Now run your code by executing the command below.</p> 
+        <pre><code class="language-bash">./test
+</code></pre> 
+        <p><a href="/wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux.png"><img loading="lazy" src="/wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux.png" alt="Running C++ program" width="1920" height="1080" class="aligncenter size-full wp-image-1104" srcset="/wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux.png 1920w, /wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux-500x281.png 500w, /wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux-1024x576.png 1024w, /wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux-982x552.png 982w, /wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux-400x225.png 400w" sizes="(max-width: 1920px) 100vw, 1920px"></a></p> 
+        <h2>Using IDE</h2> 
+        <p>Using IDE, running a C or C++ program is very easy and productive. Here we are going to use Geany application. So first install geany by using the command below.</p> 
+        <pre><code class="language-bash">sudo apt-get install geany
+</code></pre> 
+        <p>Now create a new file test.c in geany.<br> Compile using <code>Build Menu &gt; Compile</code><br> Build using <code>Build Menu &gt; Build</code><br> Execute using <code>Build Menu &gt; Execute</code><br> <a href="/wp-content/uploads/2018/10/geany-menu-bar.png"><img loading="lazy" src="/wp-content/uploads/2018/10/geany-menu-bar.png" alt="Geany menu bar" width="1104" height="563" class="aligncenter size-full wp-image-1108" srcset="/wp-content/uploads/2018/10/geany-menu-bar.png 1104w, /wp-content/uploads/2018/10/geany-menu-bar-500x255.png 500w, /wp-content/uploads/2018/10/geany-menu-bar-1024x522.png 1024w, /wp-content/uploads/2018/10/geany-menu-bar-982x501.png 982w, /wp-content/uploads/2018/10/geany-menu-bar-400x204.png 400w" sizes="(max-width: 1104px) 100vw, 1104px"></a></p> 
+        <p>You can also compile, build and execute directly using buttons.<br> <a href="/wp-content/uploads/2018/10/geany-ide-c-programming.png"><img loading="lazy" src="/wp-content/uploads/2018/10/geany-ide-c-programming.png" alt="Geany IDE C programming" width="1170" height="457" class="aligncenter size-full wp-image-1109" srcset="/wp-content/uploads/2018/10/geany-ide-c-programming.png 1170w, /wp-content/uploads/2018/10/geany-ide-c-programming-500x195.png 500w, /wp-content/uploads/2018/10/geany-ide-c-programming-1024x400.png 1024w, /wp-content/uploads/2018/10/geany-ide-c-programming-982x384.png 982w, /wp-content/uploads/2018/10/geany-ide-c-programming-400x156.png 400w" sizes="(max-width: 1170px) 100vw, 1170px"></a></p> 
+        <p>You can do the same for C++ programs also.</p> 
+        <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
+										padding: 0 5px 5px;
+										text-decoration: none;
+										border-bottom: 4px solid yellow;
+									" href="/topics/ubuntu">Ubuntu</a> </span> <span> <span> - </span> <a style="
+										padding: 0 5px 5px;
+										text-decoration: none;
+										border-bottom: 4px solid yellow;
+									" href="/topics/ide">Ide</a> </span> 
+        </div> 
+       </div> 
+       <div class="clearfix entry-actions"> <span>Originally Published On </span><span> : </span><span>Oct 01, 2018</span> 
+       </div> 
+      </article> 
+     </div> 
+    </div> 
+    <footer class="typology-footer"> 
+     <div class="container"> 
+      <div class="col-lg-4"> 
+       <div class="widget clearfix widget_text"> 
+        <p class="widget-title h5">Overview</p> 
+        <div class="textwidget"> 
+         <div class="textwidget"> 
+          <p> Cse Tutorials contains Tutorials about WebApps, Web Designing, Java and Ubuntu </p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="col-lg-4"> 
+       <div class="widget clearfix widget_recent_entries"> 
+        <p class="widget-title h5">Resources</p> 
+        <ul> 
+         <li> <a href="/about">About us</a> </li> 
+         <li> <a href="/contact">Contact us</a> </li> 
+         <li> <a href="/privacy-policy">Privacy Policy</a> </li> 
+         <li> <a href="/tos">Terms and Conditions</a> </li> 
+         <li> <a href="/sitemap_index.xml">SiteMap</a> </li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="col-lg-4"> 
+       <div class="widget clearfix widget_text"> 
+        <p class="widget-title h5">Contact</p> 
+        <div class="textwidget"> 
+         <p> <span>Ashish Doneriya<br>email: <a style="color:#333" href="mailto:ashishdoneriya@gmail.com">ashishdoneriya@gmail.com</a></span> <span class="Social__Span-sc-12mxrss-1 iBOFdG"><a class="Social__Icon-sc-12mxrss-0 gUYDTw" target="_blank" rel="noopener noreferrer" href="https://twitter.com/ashishdoneriya" style="color: #00aced" title="Follow me on Twitter">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"> 
+             </path> 
+            </svg></a><a class="Social__Icon-sc-12mxrss-0 gUYDTw" target="_blank" rel="noopener noreferrer" href="https://github.com/ashishdoneriya" style="color: #666666" title="Open Source on Github">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"> 
+             </path> 
+            </svg> </a> </span> </p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </footer> 
+   </div> 
+  </div> 
+  <script>
+		(function (d) {
+			var x = d.createElement("link");
+			var y = d.getElementsByTagName("script")[0];
+			x.rel = "stylesheet";
+			x.href = "https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Ubuntu+Mono:ital@0;1&family=Ubuntu:wght@400;500;700&display=swap";
+			y.parentNode.insertBefore(x, y);
+		})(document);
+	</script> 
+  <link defer href="/assets/theme/prism/prism.css" rel="stylesheet" type="text/css"> 
+  <script src="/assets/theme/prism/prism.js"></script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60245752-3"></script> 
+  <script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-60245752-3');
+</script> 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3068137040930830" data-ad-slot="7956133725"></ins> 
+  <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>  
+ </body>
+</html>

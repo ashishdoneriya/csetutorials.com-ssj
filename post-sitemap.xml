@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="https://csetutorials.com/main-sitemap.xsl"?>
+<urlset
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://csetutorials.com/</loc>
+ 		<lastmod>2016-04-19T15:41:31Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/oppo-a53-honest-review.html</loc>
+		<lastmod>2021-01-03T18:49:00Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2021/01/oppo-a53-500x373.png</image:loc>
+			<image:caption><![CDATA[Oppo A53]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/setup-hadoop-2-hive-mysql-tez.html</loc>
+		<lastmod>2020-10-06T12:20:00Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/load-vue-files-directly-html-js.html</loc>
+		<lastmod>2020-03-03T20:15:00Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/jersey-sse-tutorial.html</loc>
+		<lastmod>2020-03-06T08:53:00Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/block-ads-trackers-anlytics-ghostery-chrome.html</loc>
+		<lastmod>2020-03-06T08:53:00Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/ghostry-icon-click.png</image:loc>
+			<image:caption><![CDATA[Ghostery Chrome icon]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/ghostry-select-basic.png</image:loc>
+			<image:caption><![CDATA[ghostry select basic]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/ghostry-top-right.png</image:loc>
+			<image:caption><![CDATA[ghostry top right]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/ghostry-top-right-icon-settings.png</image:loc>
+			<image:caption><![CDATA[Ghostery Settings]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/ghostry-block-all-button.png</image:loc>
+			<image:caption><![CDATA[ghostry block all button]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/ghostry-general-settings.png</image:loc>
+			<image:caption><![CDATA[ghostry general settings]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/general-settings-notification-tab.png</image:loc>
+			<image:caption><![CDATA[general settings notification tab]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/create-seedbox-aws.html</loc>
+		<lastmod>2020-03-13T18:34:00Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lighsail.png</image:loc>
+			<image:caption><![CDATA[AWS Lightsail]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lightsail-create-instance-button.png</image:loc>
+			<image:caption><![CDATA[Aws Lightsail Create Instance button]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lightsail-select-os.png</image:loc>
+			<image:caption><![CDATA[AWS Lightsail Select OS Only]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lightsail-select-os-ubuntu.png</image:loc>
+			<image:caption><![CDATA[AWS Lightsail select Ubuntu 18.04 OS]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lightsail-instance-type.png</image:loc>
+			<image:caption><![CDATA[Select instance type in Lightsail]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lightsail-create-instance-button-final.png</image:loc>
+			<image:caption><![CDATA[AWS Create Instance]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lightsail-terminal-icon.png</image:loc>
+			<image:caption><![CDATA[aws lightsail terminal icon]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lightsail-terminal.png</image:loc>
+			<image:caption><![CDATA[aws lightsail terminal]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lightbox-terminal-cloud-torrent-installation.png</image:loc>
+			<image:caption><![CDATA[aws lightbox terminal cloud torrent installation]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/lightsail-turn-on-seedbox.png</image:loc>
+			<image:caption><![CDATA[lightsail turn on seedbox]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lambda-1.png</image:loc>
+			<image:caption><![CDATA[aws lambda 1]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lightsail-public-ip.png</image:loc>
+			<image:caption><![CDATA[aws lightsail public ip]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lightsail-public-ip.png</image:loc>
+			<image:caption><![CDATA[aws lightsail public ip]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-seedbox-screenshot.png</image:loc>
+			<image:caption><![CDATA[aws seedbox screenshot]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2019/12/aws-lightsail-delete-machine.png</image:loc>
+			<image:caption><![CDATA[aws lightsail delete machine]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/threadsafe-code-in-php.html</loc>
+		<lastmod>2020-02-28T08:24:00Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/what-is-amazon-web-services.html</loc>
+		<lastmod>2018-11-13T06:51:21Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/how-to-resize-images-on-ubuntu-linux.html</loc>
+		<lastmod>2018-10-28T20:17:10Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/10/kolour-paint.png</image:loc>
+			<image:caption><![CDATA[kolour paint app]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/10/kolour-paint-resize-menu.png</image:loc>
+			<image:caption><![CDATA[kolour paint resize menu]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/10/kolour-paint-resize-dialog.png</image:loc>
+			<image:caption><![CDATA[kolour paint resize dialog]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/10/kolour-paint-file-save.png</image:loc>
+			<image:caption><![CDATA[kolour paint file save]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/install-influxdb-without-root-access-linux.html</loc>
+		<lastmod>2020-03-03T20:33:00Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/how-to-install-jekyll-on-ubuntu.html</loc>
+		<lastmod>2020-03-03T20:30:00Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/compile-c-programs-on-ubuntu-linux.html</loc>
+		<lastmod>2018-10-01T09:06:49Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux.png</image:loc>
+			<image:caption><![CDATA[Writing C program]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux.png</image:loc>
+			<image:caption><![CDATA[Running C program]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux.png</image:loc>
+			<image:caption><![CDATA[Writing C++ program]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux.png</image:loc>
+			<image:caption><![CDATA[Running C++ program]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/10/geany-menu-bar.png</image:loc>
+			<image:caption><![CDATA[Geany menu bar]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/10/geany-ide-c-programming.png</image:loc>
+			<image:caption><![CDATA[Geany IDE C programming]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/hadoop-high-availability.html</loc>
+		<lastmod>2020-03-16T08:53:00Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/06/HDFS-HA-Architecture.png</image:loc>
+			<image:caption><![CDATA[Hadoop HDFS High Availability HA Architecture]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/06/hadoop-hdfs-federation.gif</image:loc>
+			<image:caption><![CDATA[Hadoop HDFS Federation]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/06/hadoop-resource-manager-ha.png</image:loc>
+			<image:caption><![CDATA[Hadoop resource manager ha]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/convert-videos-ubuntu-using-vlc.html</loc>
+		<lastmod>2018-03-03T19:35:35Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/03/vlc-video-convert.png</image:loc>
+			<image:caption><![CDATA[vlc convert videos]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2018/03/vlc-video-convert-select-format.png</image:loc>
+			<image:caption><![CDATA[vlc video convert select format]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/add-linting-vuejs-project.html</loc>
+		<lastmod>2018-02-19T04:18:59Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/format-vue-files-visual-studio-code.html</loc>
+		<lastmod>2018-02-16T04:28:04Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/android-apps.html</loc>
+		<lastmod>2017-08-16T12:12:19Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/setup-kerberos-ubuntu.html</loc>
+		<lastmod>2017-07-05T14:28:34Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/07/kerberos-installation-1.png</image:loc>
+			<image:caption><![CDATA[Kerberos installation]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/07/kerberos-installation-2.png</image:loc>
+			<image:caption><![CDATA[kerberos installation]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/07/kerberos-installation-3.png</image:loc>
+			<image:caption><![CDATA[kerberos installation]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/07/kerberos-installation-4.png</image:loc>
+			<image:caption><![CDATA[kerberos installation]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/ubuntu-apps.html</loc>
+		<lastmod>2017-06-15T09:31:11Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/things-to-do-firefox.html</loc>
+		<lastmod>2020-03-03T20:35:00Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-home-page.png</image:loc>
+			<image:caption><![CDATA[firefox-home-page]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-bookmarks-manager.png</image:loc>
+			<image:caption><![CDATA[firefox bookmarks manager]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-bookmarks-manager-blotted.png</image:loc>
+			<image:caption><![CDATA[firefox bookmarks manager blotted]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-default-bookmarks.png</image:loc>
+			<image:caption><![CDATA[firefox default bookmarks]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-bookmarks-1.png</image:loc>
+			<image:caption><![CDATA[firefox bookmarks 1]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-bookmarks-2.png</image:loc>
+			<image:caption><![CDATA[firefox bookmarks 2]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-default-folder.png</image:loc>
+			<image:caption><![CDATA[firefox default bookmark folder]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-addons-add-bookmarks-2.png</image:loc>
+			<image:caption><![CDATA[firefox addons add bookmarks 2]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-bookmarks-3.png</image:loc>
+			<image:caption><![CDATA[firefox bookmarks 3]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-bookmarks-4.png</image:loc>
+			<image:caption><![CDATA[firefox bookmarks 4]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-bookmarks-5.png</image:loc>
+			<image:caption><![CDATA[firefox bookmarks 5]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-bookmarks-6.png</image:loc>
+			<image:caption><![CDATA[firefox bookmarks 6]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-bookmarks-7.png</image:loc>
+			<image:caption><![CDATA[firefox bookmarks 7]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-auto-update.png</image:loc>
+			<image:caption><![CDATA[firefox auto update]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-search-suggestion.png</image:loc>
+			<image:caption><![CDATA[firefox search suggestion]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-without-fastdial.png</image:loc>
+			<image:caption><![CDATA[firefox without fastdial]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-fastdial.png</image:loc>
+			<image:caption><![CDATA[firefox fastdial addon]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-fastdial-add.png</image:loc>
+			<image:caption><![CDATA[firefox fastdial add]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-fastdial-5.png</image:loc>
+			<image:caption><![CDATA[firefox fastdial 5]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/ghostry-1.png</image:loc>
+			<image:caption><![CDATA[ghostry]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/ghostry-2.png</image:loc>
+			<image:caption><![CDATA[ghostry]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/ghostry-3.png</image:loc>
+			<image:caption><![CDATA[ghostry]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/ghostry-4.png</image:loc>
+			<image:caption><![CDATA[ghostry]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/ghostry-5.png</image:loc>
+			<image:caption><![CDATA[Block analytics and advertising with ghostry]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/ghostry-general-tab.png</image:loc>
+			<image:caption><![CDATA[Ghostry General Tab]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/ghostry-general-tab-1.png</image:loc>
+			<image:caption><![CDATA[Ghostry General Tab]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-customize-window-1.png</image:loc>
+			<image:caption><![CDATA[firefox customization]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-downthemall-2.png</image:loc>
+			<image:caption><![CDATA[firefox downthemall]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/firefox-downthemall-3.png</image:loc>
+			<image:caption><![CDATA[firefox downthemall]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/downthemall-5.png</image:loc>
+			<image:caption><![CDATA[downthemall]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/flashgot-1.png</image:loc>
+			<image:caption><![CDATA[flashgot addon firefox]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/flashgot-2.png</image:loc>
+			<image:caption><![CDATA[flashgot addon firefox]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/flashgot-3.png</image:loc>
+			<image:caption><![CDATA[flashgot]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/flashgot-4.png</image:loc>
+			<image:caption><![CDATA[flashgot]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/05/flashgot-5.png</image:loc>
+			<image:caption><![CDATA[flashgot addon firefox setup]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/things-to-do-ubuntu.html</loc>
+		<lastmod>2017-05-02T20:06:19Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/passwordless-ssh-ubuntu-linux.html</loc>
+		<lastmod>2020-05-14T21:03:00Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/how-to-setup-jumbune.html</loc>
+		<lastmod>2020-03-16T08:54:00Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2017/03/jumbune-home.png</image:loc>
+			<image:caption><![CDATA[Jumbune Home Page]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/sudoku-solver-java-program.html</loc>
+		<lastmod>2016-10-18T20:50:57Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/redirect-non-www-using-urlrewritefilter-web-servers.html</loc>
+		<lastmod>2016-10-13T14:53:06Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/serialize-files-directories-java.html</loc>
+		<lastmod>2016-10-13T07:12:40Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/upload-multiple-files-server-using-ajax-spring-mvc.html</loc>
+		<lastmod>2016-10-06T07:15:13Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/difference-public-private-protected-default.html</loc>
+		<lastmod>2016-09-27T10:09:36Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/getting-list-directories-andregular-files-not-directory-hadoop.html</loc>
+		<lastmod>2020-03-23T17:47:00Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/obfuscate-jar-or-war-file-using-yguard.html</loc>
+		<lastmod>2016-09-20T06:42:38Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/auto-mount-ntfs-partitions-startup-ubuntu-linux.html</loc>
+		<lastmod>2020-12-17T19:51:00Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/08/opening-disks-app-ubuntu.png</image:loc>
+			<image:caption><![CDATA[Opening Disks App in Ubuntu]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/08/selecting-hard-disk-from-disks-app-ubuntu.png</image:loc>
+			<image:caption><![CDATA[Selecting hard disk from disks app in Ubuntu]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/08/selecting-c-drive-disks-app-ubuntu.png</image:loc>
+			<image:caption><![CDATA[Selecting C Drive in Disks App Ubuntu]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/08/selecting-d-drive-disks-app-ubuntu.png</image:loc>
+			<image:caption><![CDATA[Selecting D Drive Disks App on Ubuntu]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/08/ubuntu-auto-mount-ntfs-partitions.png</image:loc>
+			<image:caption><![CDATA[Ubuntu auto mount windows ntfs partitions]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/08/ubuntu-nautilus-bookmarks.png</image:loc>
+			<image:caption><![CDATA[Ubuntu Nautilus Bookmarks]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/deploy-angular-2-maven-webapp-on-tomcat.html</loc>
+		<lastmod>2020-03-23T18:13:00Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/syntax-highlight-using-prism-in-wordpress.html</loc>
+		<lastmod>2016-07-20T10:17:04Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/07/highlight-syntex-using-prism.png</image:loc>
+			<image:caption><![CDATA[highlight syntax using prism]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/07/prism-download.png</image:loc>
+			<image:caption><![CDATA[prism donwload]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/customize-improve-button-theme-wordpress.html</loc>
+		<lastmod>2016-07-12T13:27:31Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/07/button-theme.jpg</image:loc>
+			<image:caption><![CDATA[Button Theme]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/07/modified-button-theme.jpg</image:loc>
+			<image:caption><![CDATA[Modified Button Theme]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/07/customized-button-theme-footer.jpg</image:loc>
+			<image:caption><![CDATA[customized-button-theme-footer]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/visual-studio-code-setup.html</loc>
+		<lastmod>2016-07-12T12:16:30Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/influxdb-tutorial.html</loc>
+		<lastmod>2020-03-21T20:56:00Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/setup-node-js-ubuntu.html</loc>
+		<lastmod>2016-07-06T13:48:50Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/fetch-and-write-influxdb-data-using-java.html</loc>
+		<lastmod>2016-05-26T10:06:02Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/how-to-use-eslint.html</loc>
+		<lastmod>2016-05-20T13:26:55Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/top-chrome-extensions-for-advanced-users-and-developers.html</loc>
+		<lastmod>2020-04-28T18:49:00Z</lastmod>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/how-to-use-google-fonts.html</loc>
+		<lastmod>2016-05-05T11:25:56Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/05/google-fonts-homepage.png</image:loc>
+			<image:caption><![CDATA[Google Fonts Home Page]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/05/google-font-search.png</image:loc>
+			<image:caption><![CDATA[Google Font Search]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/05/google-fonts-quick-use.png</image:loc>
+			<image:caption><![CDATA[Google Fonts Quick Use]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/05/google-font-selection.png</image:loc>
+			<image:caption><![CDATA[Google Font Style Selection]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/05/google-fonts-select-another-font.png</image:loc>
+			<image:caption><![CDATA[Google Font select another font]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/05/google-font-use.png</image:loc>
+			<image:caption><![CDATA[Google Font Use]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/05/google-font-import.png</image:loc>
+			<image:caption><![CDATA[Google Font Import]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/optimise-sublime-setting.html</loc>
+		<lastmod>2016-04-28T09:07:07Z</lastmod>
+		<image:image>
+			<image:loc>https://csetutorials.com/wp-content/uploads/2016/04/sublime-text-editor.png</image:loc>
+			<image:caption><![CDATA[Sublime]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://csetutorials.com/create-tooltip-mouseover-d3.html</loc>
+		<lastmod>2016-04-19T15:41:31Z</lastmod>
+	</url>
+</urlset>

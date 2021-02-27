@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en-GB">
+ <head> 
+  <base href="$site.baseUrl"> 
+  <!-- Title --> 
+  <title>Deploy Angular Maven WebApp on Tomcat</title> 
+  <link rel="canonical" href="https://csetutorials.com/deploy-angular-2-maven-webapp-on-tomcat.html"> 
+  <meta name="description" content="Steps to configure maven project to auto compile and build angular app."> 
+  <meta property="og:description" content="Steps to configure maven project to auto compile and build angular app."> 
+  <meta name="twitter:description" content="Steps to configure maven project to auto compile and build angular app."> 
+  <meta name="author" content="Ashish Doneriya"> 
+  <meta name="robots" content="index, follow"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Deploy Angular Maven WebApp on Tomcat"> 
+  <meta property="og:url" content="https://csetutorials.com/deploy-angular-2-maven-webapp-on-tomcat.html"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:site_name" content="Cse Tutorials"> 
+  <meta property="og:updated_time" content="2020-03-23T18:13:00Z"> 
+  <meta property="article:author" content="https://www.facebook.com/ashishdoneriya"> 
+  <meta property="article:modified_time" content="2020-03-23T18:13:00Z"> 
+  <meta property="article:published_time" content="2016-08-08T14:50:33Z"> 
+  <meta property="article:publisher" content="https://www.facebook.com/ashishdoneriya"> 
+  <meta property="article:section" content="Web Development"> 
+  <meta property="article:tag" content="Angular"> 
+  <meta property="article:tag" content="Maven"> 
+  <meta name="twitter:title" content="Deploy Angular Maven WebApp on Tomcat"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:creator" content="@ashishdoneriya"> 
+  <meta name="twitter:site" content="@ashishdoneriya"> 
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya","name":"Ashish Doneriya","sameAs":["https://www.facebook.com/ashishdoneriya","https://twitter.com/ashishdoneriya","https://www.linkedin.com/in/ashishdoneriya/"]},{"@type":"WebSite","@id":"https://csetutorials.com/#website","url":"https://csetutorials.com","name":"Cse Tutorials","description":"Tutorials about WebApps, Web Designing, Java \u0026 Ubuntu","publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://csetutorials.com/deploy-angular-2-maven-webapp-on-tomcat.html#webpage","url":"https://csetutorials.com/deploy-angular-2-maven-webapp-on-tomcat.html","isPartOf":{"@id":"https://csetutorials.com/#website"},"datePublished":"2016-08-08T14:50:33Z","dateModified":"2020-03-23T18:13:00Z","description":"Steps to configure maven project to auto compile and build angular app.","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://csetutorials.com/deploy-angular-2-maven-webapp-on-tomcat.html"]}]},{"@type":"Article","@id":"https://csetutorials.com/deploy-angular-2-maven-webapp-on-tomcat.html#article","isPartOf":{"@id":"https://csetutorials.com/deploy-angular-2-maven-webapp-on-tomcat.html#webpage"},"author":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"headline":"Deploy Angular Maven WebApp on Tomcat","datePublished":"2016-08-08T14:50:33Z","dateModified":"2020-03-23T18:13:00Z","mainEntityOfPage":{"@id":"https://csetutorials.com/deploy-angular-2-maven-webapp-on-tomcat.html#webpage"},"publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"keywords":"angular,Maven","articleSection":"web-development","inLanguage":"en-US"}]}</script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="msapplication-TileColor" content="#ffffff"> 
+  <meta name="msapplication-TileImage" content="{{ '/assets/favicon.png' | prepend: site.baseurl }}"> 
+  <meta name="theme-color" content="#143d52"> 
+  <meta name="msapplication-navbutton-color" content="#143d52"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="#143d52"> 
+  <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAdUlEQVR4Ae3MIRJAUBCH8e81R3AO53AmvIQmu5MzqE8iKoZAEdZYZhT7/cuGnR9/yeEJrDcW8DjEKlbFasQmFTQitj+cK2TqO8ggg2LceygiZ6YjeQel9Me10NI8ghR7DhlkkEFBxQTEShVUcVHGcAsZ8PylDecfc51kCzSlAAAAAElFTkSuQmCC" type="image/x-icon"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"> 
+  <link defer href="/assets/theme/css/style.original.css" rel="stylesheet" type="text/css"> 
+ </head> 
+ <body> 
+  <div> 
+   <header id="typology-header" class="typology-header" style="position: absolute"> 
+    <div class="container"> 
+     <div class="slot-l"> 
+      <div class="typology-site-branding"> 
+       <p class="site-title h4"> <a href="/">Cse Tutorials</a> </p> 
+      </div> 
+     </div> 
+     <div class="slot-r"> 
+      <ul class="typology-nav typology-main-navigation"> 
+       <li class="xcurrent-menu-item"> <a href="/">Home</a> </li> 
+       <li class="xcurrent-menu-item"> <a href="/my-ubuntu-notes">My Ubuntu Notes</a> </li> 
+       <li> <a href="/">Topics
+         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 320 512" style="vertical-align: middle; margin-left: 5px" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"> 
+          </path> 
+         </svg></a> 
+        <ul class="sub-menu"> 
+         <li> <a href="/topics/android" rel="noindex nofollow">Android</a> </li> 
+         <li> <a href="/topics/big-data" rel="noindex nofollow">Big Data</a> </li> 
+         <li> <a href="/topics/database" rel="noindex nofollow">Database</a> </li> 
+         <li> <a href="/topics/ide" rel="noindex nofollow">Ide</a> </li> 
+         <li> <a href="/topics/internet" rel="noindex nofollow">Internet</a> </li> 
+         <li> <a href="/topics/java" rel="noindex nofollow">Java</a> </li> 
+         <li> <a href="/topics/ubuntu" rel="noindex nofollow">Ubuntu</a> </li> 
+         <li> <a href="/topics/web-development" rel="noindex nofollow">Web Development</a> </li> 
+         <li> <a href="/topics/wordpress" rel="noindex nofollow">Wordpress</a> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="typology-nav typology-actions-list"> 
+       <li class="typology-actions-button typology-action-search"> <span class="icon">
+         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"> 
+          </path> 
+         </svg></span> 
+        <ul class="sub-menu typology-rev"> 
+         <li> 
+          <form class="typology-search-form" action="/search" method="get"> <label style="display: none" for="query_header">Search</label>
+           <input type="text" name="q" id="query_header" autocomplete="off" value="" placeholder="Type here to search.." class=""><button type="submit" class="typology-button typology-button-search typology-icon-button"> Search</button><textarea name="" style="display: none"></textarea> 
+          </form> </li> 
+        </ul> </li> 
+       <li class="typology-action-button typology-action-sidebar typology-mobile-visible"> <span class="icon">
+         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"> 
+          </path> 
+         </svg> </span> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </header> 
+   <div class="typology-cover typology-cover-empty"></div> 
+   <div class="typology-fake-bg"> 
+    <div class="typology-section"> 
+     <div class="section-content"> 
+      <article class="typology-post typology-single-post"> 
+       <header class="entry-header clearfix"> 
+        <h1 class="entry-title entry-title-cover-empty h2">Deploy Angular Maven WebApp on Tomcat</h1> 
+        <div class="entry-meta"> 
+         <div class="meta-item meta-author" style="vertical-align: middle">
+           By <span class="vcard author"><span class="fn"> <a href="/author/ashishdoneriya">Ashish Doneriya</a> </span></span> 
+         </div> 
+         <div class="meta-item meta-date" style="vertical-align: middle"> <span class="updated">Last Updated on Mar 23, 2020 </span> 
+         </div> 
+        </div> 
+        <div class="post-letter">
+          D 
+        </div> 
+       </header> 
+       <div class="entry-content clearfix"> 
+        <p>In this post I'm going to show you how you could integrate Angular with Maven automatically. I request you to read this article carefully and not for just copy paste because it would be very helpful for you in various ways like debugging, tweaking or modifying steps etc.</p> 
+        <h2>First of all here is the summary of the steps for integration</h2> 
+        <ol> 
+         <li>Setup nodejs and npm</li> 
+         <li>Run command <code>npm install</code> in angular directory to install dependencies and compile typescript files.</li> 
+         <li>Run command <code>npm run build</code> in angular directory to build Angular project.</li> 
+         <li>Finally copied the contents from <code>your-angular-directory/dist/</code> in root of .war file (before finally making .war file).</li> 
+        </ol> 
+        <h2>Explaination</h2> 
+        <p>We are going to do all these steps automatically means we want maven to do all these steps above for us.</p> 
+        <p>If you donot understand the 4th step then let me explain. Once I analyzed the contents of a .war file and what I found is that the .html, javascript and css files are placed in the root of war file. From this I got an idea that to integrate angular with maven, I have to copy the contents of dist directory(build directory) from angular folder to the root of war with the help of maven.</p> 
+        <p>If you want full automation ie. you want maven to setup nodejs and run commands npm install and npm run build for you then build time increases a lot.</p> 
+        <p>But if you are ready to run commands npm install and npm run build manually then running command mvn clean install would be very fast. This is semi automatic way. I will show you both ways.</p> 
+        <p>So lets start. This is my project structure for maven project.</p> 
+        <pre><code>.
+├── angular
+│   ├── angular-cli-build.js
+│   ├── angular-cli.json
+│   ├── config
+│   ├── dist
+│   │   ├── app
+│   │   ├── bundle.js
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── main.js
+│   │   ├── system-config.js
+│   │   └── vendor
+│   ├── e2e
+│   ├── package.json
+│   ├── public
+│   ├── README.md
+│   ├── src
+│   ├── tmp
+│   ├── tslint.json
+│   ├── typings
+│   └── typings.json
+├── cat.txt
+├── pom.xml
+├── src
+│   └── main
+│       ├── java
+│       ├── resources
+│       └── webapp
+│           └── WEB-INF
+│               └── web.xml
+├── target
+└── temp
+</code></pre> 
+        <p>And Just for your knowledge this is the content of the .war file that I found when I was analyzing it.</p> 
+        <pre><code>.
+├── app
+├── cat.txt
+├── favicon.ico
+├── index.html
+├── main.js
+├── META-INF
+├── system-config.js
+├── vendor
+└── WEB-INF
+    ├── lib
+    └── web.xml
+</code></pre> 
+        <h2>Fully automatic way</h2> 
+        <p>I am writing the code first that you have to add in pom.xml. I will explain after that.</p> 
+        <pre><code class="language-xml">&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+    &lt;/plugin&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+      &lt;version&gt;2.6&lt;/version&gt;
+    &lt;/plugin&gt;
+
+    &lt;!-- Plugin to execute command  "npm install" and "npm run build" inside /angular directory --&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;com.github.eirslett&lt;/groupId&gt;
+      &lt;artifactId&gt;frontend-maven-plugin&lt;/artifactId&gt;
+      &lt;version&gt;1.0&lt;/version&gt;
+      &lt;configuration&gt;
+        &lt;workingDirectory&gt;angular&lt;/workingDirectory&gt;
+        &lt;installDirectory&gt;temp&lt;/installDirectory&gt;
+      &lt;/configuration&gt;
+      &lt;executions&gt;
+        &lt;!-- It will install nodejs and npm --&gt;
+        &lt;execution&gt;
+          &lt;id&gt;install node and npm&lt;/id&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;install-node-and-npm&lt;/goal&gt;
+          &lt;/goals&gt;
+          &lt;configuration&gt;
+            &lt;nodeVersion&gt;v6.3.1&lt;/nodeVersion&gt;
+            &lt;npmVersion&gt;3.9.5&lt;/npmVersion&gt;
+          &lt;/configuration&gt;
+        &lt;/execution&gt;
+
+        &lt;!-- It will execute command "npm install" inside "/angular" directory --&gt;
+        &lt;execution&gt;
+          &lt;id&gt;npm install&lt;/id&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;npm&lt;/goal&gt;
+          &lt;/goals&gt;
+          &lt;configuration&gt;
+            &lt;arguments&gt;install&lt;/arguments&gt;
+          &lt;/configuration&gt;
+        &lt;/execution&gt;
+
+        &lt;!-- It will execute command "npm build" inside "/angular" directory to clean and create "/dist" directory--&gt;
+        &lt;execution&gt;
+          &lt;id&gt;npm build&lt;/id&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;npm&lt;/goal&gt;
+          &lt;/goals&gt;
+          &lt;configuration&gt;
+            &lt;arguments&gt;run build&lt;/arguments&gt;
+          &lt;/configuration&gt;
+        &lt;/execution&gt;
+      &lt;/executions&gt;
+    &lt;/plugin&gt;
+
+    &lt;!-- Plugin to copy the content of /angular/dist/ directory to output directory (ie/ /target/transactionManager-1.0/) --&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+      &lt;version&gt;2.4.2&lt;/version&gt;
+      &lt;executions&gt;
+        &lt;execution&gt;
+          &lt;id&gt;default-copy-resources&lt;/id&gt;
+          &lt;phase&gt;process-resources&lt;/phase&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;copy-resources&lt;/goal&gt;
+          &lt;/goals&gt;
+          &lt;configuration&gt;
+            &lt;overwrite&gt;true&lt;/overwrite&gt;
+            &lt;outputDirectory&gt;${project.build.directory}/${project.artifactId}-${project.version}/&lt;/outputDirectory&gt;
+            &lt;resources&gt;
+              &lt;resource&gt;
+                &lt;directory&gt;${project.basedir}/angular/dist&lt;/directory&gt;
+              &lt;/resource&gt;
+            &lt;/resources&gt;
+          &lt;/configuration&gt;
+        &lt;/execution&gt;
+      &lt;/executions&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre> 
+        <p>In the above build code, we used these two new plugins frontend-maven-plugin and maven-resources-plugin.</p> 
+        <ol> 
+         <li><strong>frontend-maven-plugin</strong> – It will install nodejs and build the angular project.</li> 
+         <li><strong>maven-resources-plugin</strong> – It will copy the contents of ‘dist' directory to root of .war file.</li> 
+        </ol> 
+        <h3>How we used frontend-maven-plugin?</h3> 
+        <pre><code class="language-xml">&lt;configuration&gt;
+  &lt;workingDirectory&gt;angular&lt;/workingDirectory&gt;
+  &lt;installDirectory&gt;temp&lt;/installDirectory&gt;
+&lt;/configuration&gt;
+</code></pre> 
+        <p>In the above code we are telling frontend-maven-plugin that our angular code is in /angular directory and the directory in which we want it to install nodejs is /temp.</p> 
+        <pre><code class="language-xml">
+&lt;execution&gt;
+  &lt;id&gt;install node and npm&lt;/id&gt;
+  &lt;goals&gt;
+    &lt;goal&gt;install-node-and-npm&lt;/goal&gt;
+  &lt;/goals&gt;
+  &lt;configuration&gt;
+    &lt;nodeVersion&gt;v6.3.1&lt;/nodeVersion&gt;
+    &lt;npmVersion&gt;3.9.5&lt;/npmVersion&gt;
+  &lt;/configuration&gt;
+&lt;/execution&gt;
+</code></pre> 
+        <p>In the above code we are specifying node and npm version to install it on our system automatically.</p> 
+        <pre><code class="language-xml">
+&lt;execution&gt;
+  &lt;id&gt;npm install&lt;/id&gt;
+  &lt;goals&gt;
+    &lt;goal&gt;npm&lt;/goal&gt;
+  &lt;/goals&gt;
+  &lt;configuration&gt;
+    &lt;arguments&gt;install&lt;/arguments&gt;
+  &lt;/configuration&gt;
+&lt;/execution&gt;
+</code></pre> 
+        <p>It will execute command <code>npm install</code> inside the <code>workingDirectory</code> (ie. /angular/)</p> 
+        <pre><code class="language-xml">
+&lt;execution&gt;
+  &lt;id&gt;npm build&lt;/id&gt;
+  &lt;goals&gt;
+    &lt;goal&gt;npm&lt;/goal&gt;
+  &lt;/goals&gt;
+  &lt;configuration&gt;
+    &lt;arguments&gt;run build&lt;/arguments&gt;
+  &lt;/configuration&gt;
+&lt;/execution&gt;
+</code></pre> 
+        <p>It will execute command <code>npm run build</code> inside the <code>workingDirectory</code> (ie. /angular/)</p> 
+        <h3>How we used maven-resources-plugin?</h3> 
+        <pre><code class="language-xml">
+&lt;execution&gt;
+  &lt;id&gt;default-copy-resources&lt;/id&gt;
+  &lt;phase&gt;process-resources&lt;/phase&gt;
+  &lt;goals&gt;
+    &lt;goal&gt;copy-resources&lt;/goal&gt;
+  &lt;/goals&gt;
+  &lt;configuration&gt;
+    &lt;overwrite&gt;true&lt;/overwrite&gt;
+    &lt;outputDirectory&gt;${project.build.directory}/${project.artifactId}-${project.version}/&lt;/outputDirectory&gt;
+    &lt;resources&gt;
+      &lt;resource&gt;
+  &lt;directory&gt;${project.basedir}/angular/dist&lt;/directory&gt;
+      &lt;/resource&gt;
+    &lt;/resources&gt;
+  &lt;/configuration&gt;
+&lt;/execution&gt;
+</code></pre> 
+        <p>It will copy the content of /angular/dist/ directory to output directory (${project.basedir}/angular/dist).</p> 
+        <p>Now you can execute command <code>mvn clean install</code> and your .war will be ready in a few minutes. But I suggest you to read the full article first.</p> 
+        <p><strong>NOTE :</strong></p> 
+        <ol> 
+         <li>Add index.html in your welcome files list in web.xml.<br> ie. Paste the below code in web.xml</li> 
+        </ol> 
+        <pre><code class="language-xml">
+&lt;welcome-file-list&gt;
+  &lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
+&lt;/welcome-file-list&gt;
+</code></pre> 
+        <ol start="2"> 
+         <li>Add <strong>“build”: “ng build”</strong> script in your package.json</li> 
+        </ol> 
+        <pre><code>{
+  "name": "angular",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "ng serve",
+    	.
+    	.
+    	.
+
+    "build": "ng build --prod"
+  },
+  "dependencies": {
+   	.
+   	.
+   	.
+  },
+  "devDependencies": {
+   	.
+   	.
+  }
+}
+</code></pre> 
+        <p>You can check my projects (have not updated for a long time but concept remain same)<br> <a href="https://github.com/ashishdoneriya/BaceDevotees" target="_blank" rel="noopener noreferrer">BaceDevotees</a><br> <a href="https://github.com/ashishdoneriya/TransactionManager" target="_blank" rel="noopener noreferrer">TransactionManager</a></p> 
+        <h2>Semi Automatic way</h2> 
+        <p>This way would be very helpful if the above method won't work or you want to build your maven project separately from angular project.<br> If you are the only person in your team who changes angular project then you could also use this method. In my team one person commit angular code with angular/dist directory so that others could easily build their maven project.</p> 
+        <p>The code is similar to the above method except we remove the frontend-maven-plugin code.</p> 
+        <pre><code class="language-xml">
+&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+    &lt;/plugin&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+      &lt;version&gt;2.6&lt;/version&gt;
+    &lt;/plugin&gt;
+
+    &lt;!-- Plugin to copy the content of /angular/dist/ directory to output directory (ie/ /target/transactionManager-1.0/) --&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+      &lt;version&gt;2.4.2&lt;/version&gt;
+      &lt;executions&gt;
+        &lt;execution&gt;
+          &lt;id&gt;default-copy-resources&lt;/id&gt;
+          &lt;phase&gt;process-resources&lt;/phase&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;copy-resources&lt;/goal&gt;
+          &lt;/goals&gt;
+          &lt;configuration&gt;
+            &lt;overwrite&gt;true&lt;/overwrite&gt;
+            &lt;outputDirectory&gt;${project.build.directory}/${project.artifactId}-${project.version}/&lt;/outputDirectory&gt;
+            &lt;resources&gt;
+              &lt;resource&gt;
+                &lt;directory&gt;${project.basedir}/angular/dist&lt;/directory&gt;
+              &lt;/resource&gt;
+            &lt;/resources&gt;
+          &lt;/configuration&gt;
+        &lt;/execution&gt;
+      &lt;/executions&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre> 
+        <p>Thank you. Now first run <code>npm install</code> and <code>npm run build&lt;code&gt; commands in your angular directory and then &lt;code&gt;mvn clean install</code> in your root directory (maven project).</p> 
+        <p>If you have any queries feel free to ask.</p> 
+        <p><strong>Also don't forget to read this</strong><br> <a href="https://github.com/ashishdoneriya/LittleBlueBird/wiki" target="_blank" rel="noopener noreferrer">https://github.com/ashishdoneriya/LittleBlueBird/wiki</a><br> It will describe what's wrong with urls in Angular.</p> 
+        <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
+										padding: 0 5px 5px;
+										text-decoration: none;
+										border-bottom: 4px solid yellow;
+									" href="/topics/web-development">Web Development</a> </span> 
+        </div> 
+       </div> 
+       <div class="clearfix entry-actions"> <span>Originally Published On </span><span> : </span><span>Aug 08, 2016</span> 
+       </div> 
+      </article> 
+     </div> 
+    </div> 
+    <footer class="typology-footer"> 
+     <div class="container"> 
+      <div class="col-lg-4"> 
+       <div class="widget clearfix widget_text"> 
+        <p class="widget-title h5">Overview</p> 
+        <div class="textwidget"> 
+         <div class="textwidget"> 
+          <p> Cse Tutorials contains Tutorials about WebApps, Web Designing, Java and Ubuntu </p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="col-lg-4"> 
+       <div class="widget clearfix widget_recent_entries"> 
+        <p class="widget-title h5">Resources</p> 
+        <ul> 
+         <li> <a href="/about">About us</a> </li> 
+         <li> <a href="/contact">Contact us</a> </li> 
+         <li> <a href="/privacy-policy">Privacy Policy</a> </li> 
+         <li> <a href="/tos">Terms and Conditions</a> </li> 
+         <li> <a href="/sitemap_index.xml">SiteMap</a> </li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="col-lg-4"> 
+       <div class="widget clearfix widget_text"> 
+        <p class="widget-title h5">Contact</p> 
+        <div class="textwidget"> 
+         <p> <span>Ashish Doneriya<br>email: <a style="color:#333" href="mailto:ashishdoneriya@gmail.com">ashishdoneriya@gmail.com</a></span> <span class="Social__Span-sc-12mxrss-1 iBOFdG"><a class="Social__Icon-sc-12mxrss-0 gUYDTw" target="_blank" rel="noopener noreferrer" href="https://twitter.com/ashishdoneriya" style="color: #00aced" title="Follow me on Twitter">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"> 
+             </path> 
+            </svg></a><a class="Social__Icon-sc-12mxrss-0 gUYDTw" target="_blank" rel="noopener noreferrer" href="https://github.com/ashishdoneriya" style="color: #666666" title="Open Source on Github">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"> 
+             </path> 
+            </svg> </a> </span> </p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </footer> 
+   </div> 
+  </div> 
+  <script>
+		(function (d) {
+			var x = d.createElement("link");
+			var y = d.getElementsByTagName("script")[0];
+			x.rel = "stylesheet";
+			x.href = "https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Ubuntu+Mono:ital@0;1&family=Ubuntu:wght@400;500;700&display=swap";
+			y.parentNode.insertBefore(x, y);
+		})(document);
+	</script> 
+  <link defer href="/assets/theme/prism/prism.css" rel="stylesheet" type="text/css"> 
+  <script src="/assets/theme/prism/prism.js"></script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60245752-3"></script> 
+  <script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-60245752-3');
+</script> 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3068137040930830" data-ad-slot="7956133725"></ins> 
+  <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>  
+ </body>
+</html>

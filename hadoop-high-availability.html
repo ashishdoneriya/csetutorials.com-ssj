@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en-GB">
+ <head> 
+  <base href="$site.baseUrl"> 
+  <!-- Title --> 
+  <title>What is High Availability in Hadoop</title> 
+  <link rel="canonical" href="https://csetutorials.com/hadoop-high-availability.html"> 
+  <meta name="description" content="What is Namenode Node High Availability,  Resource Manager High Availability and how Hadoop achieved high availability in different versions"> 
+  <meta property="og:description" content="What is Namenode Node High Availability,  Resource Manager High Availability and how Hadoop achieved high availability in different versions"> 
+  <meta name="twitter:description" content="What is Namenode Node High Availability,  Resource Manager High Availability and how Hadoop achieved high availability in different versions"> 
+  <meta name="author" content="Ashish Doneriya"> 
+  <meta name="robots" content="index, follow"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="What is High Availability in Hadoop"> 
+  <meta property="og:url" content="https://csetutorials.com/hadoop-high-availability.html"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:site_name" content="Cse Tutorials"> 
+  <meta property="og:updated_time" content="2020-03-16T08:53:00Z"> 
+  <meta property="article:author" content="https://www.facebook.com/ashishdoneriya"> 
+  <meta property="article:modified_time" content="2020-03-16T08:53:00Z"> 
+  <meta property="article:published_time" content="2018-06-18T16:56:46Z"> 
+  <meta property="article:publisher" content="https://www.facebook.com/ashishdoneriya"> 
+  <meta property="article:section" content="Big Data"> 
+  <meta property="article:tag" content="Hadoop"> 
+  <meta name="twitter:title" content="What is High Availability in Hadoop"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:creator" content="@ashishdoneriya"> 
+  <meta name="twitter:site" content="@ashishdoneriya"> 
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya","name":"Ashish Doneriya","sameAs":["https://www.facebook.com/ashishdoneriya","https://twitter.com/ashishdoneriya","https://www.linkedin.com/in/ashishdoneriya/"]},{"@type":"WebSite","@id":"https://csetutorials.com/#website","url":"https://csetutorials.com","name":"Cse Tutorials","description":"Tutorials about WebApps, Web Designing, Java \u0026 Ubuntu","publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://csetutorials.com/hadoop-high-availability.html#webpage","url":"https://csetutorials.com/hadoop-high-availability.html","isPartOf":{"@id":"https://csetutorials.com/#website"},"datePublished":"2018-06-18T16:56:46Z","dateModified":"2020-03-16T08:53:00Z","description":"What is Namenode Node High Availability,  Resource Manager High Availability and how Hadoop achieved high availability in different versions","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://csetutorials.com/hadoop-high-availability.html"]}]},{"@type":"Article","@id":"https://csetutorials.com/hadoop-high-availability.html#article","isPartOf":{"@id":"https://csetutorials.com/hadoop-high-availability.html#webpage"},"author":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"headline":"What is High Availability in Hadoop","datePublished":"2018-06-18T16:56:46Z","dateModified":"2020-03-16T08:53:00Z","mainEntityOfPage":{"@id":"https://csetutorials.com/hadoop-high-availability.html#webpage"},"publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"keywords":"Hadoop","articleSection":"big-data","inLanguage":"en-US"}]}</script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="msapplication-TileColor" content="#ffffff"> 
+  <meta name="msapplication-TileImage" content="{{ '/assets/favicon.png' | prepend: site.baseurl }}"> 
+  <meta name="theme-color" content="#143d52"> 
+  <meta name="msapplication-navbutton-color" content="#143d52"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="#143d52"> 
+  <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAdUlEQVR4Ae3MIRJAUBCH8e81R3AO53AmvIQmu5MzqE8iKoZAEdZYZhT7/cuGnR9/yeEJrDcW8DjEKlbFasQmFTQitj+cK2TqO8ggg2LceygiZ6YjeQel9Me10NI8ghR7DhlkkEFBxQTEShVUcVHGcAsZ8PylDecfc51kCzSlAAAAAElFTkSuQmCC" type="image/x-icon"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"> 
+  <link defer href="/assets/theme/css/style.original.css" rel="stylesheet" type="text/css"> 
+ </head> 
+ <body> 
+  <div> 
+   <header id="typology-header" class="typology-header" style="position: absolute"> 
+    <div class="container"> 
+     <div class="slot-l"> 
+      <div class="typology-site-branding"> 
+       <p class="site-title h4"> <a href="/">Cse Tutorials</a> </p> 
+      </div> 
+     </div> 
+     <div class="slot-r"> 
+      <ul class="typology-nav typology-main-navigation"> 
+       <li class="xcurrent-menu-item"> <a href="/">Home</a> </li> 
+       <li class="xcurrent-menu-item"> <a href="/my-ubuntu-notes">My Ubuntu Notes</a> </li> 
+       <li> <a href="/">Topics
+         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 320 512" style="vertical-align: middle; margin-left: 5px" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"> 
+          </path> 
+         </svg></a> 
+        <ul class="sub-menu"> 
+         <li> <a href="/topics/android" rel="noindex nofollow">Android</a> </li> 
+         <li> <a href="/topics/big-data" rel="noindex nofollow">Big Data</a> </li> 
+         <li> <a href="/topics/database" rel="noindex nofollow">Database</a> </li> 
+         <li> <a href="/topics/ide" rel="noindex nofollow">Ide</a> </li> 
+         <li> <a href="/topics/internet" rel="noindex nofollow">Internet</a> </li> 
+         <li> <a href="/topics/java" rel="noindex nofollow">Java</a> </li> 
+         <li> <a href="/topics/ubuntu" rel="noindex nofollow">Ubuntu</a> </li> 
+         <li> <a href="/topics/web-development" rel="noindex nofollow">Web Development</a> </li> 
+         <li> <a href="/topics/wordpress" rel="noindex nofollow">Wordpress</a> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="typology-nav typology-actions-list"> 
+       <li class="typology-actions-button typology-action-search"> <span class="icon">
+         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"> 
+          </path> 
+         </svg></span> 
+        <ul class="sub-menu typology-rev"> 
+         <li> 
+          <form class="typology-search-form" action="/search" method="get"> <label style="display: none" for="query_header">Search</label>
+           <input type="text" name="q" id="query_header" autocomplete="off" value="" placeholder="Type here to search.." class=""><button type="submit" class="typology-button typology-button-search typology-icon-button"> Search</button><textarea name="" style="display: none"></textarea> 
+          </form> </li> 
+        </ul> </li> 
+       <li class="typology-action-button typology-action-sidebar typology-mobile-visible"> <span class="icon">
+         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"> 
+          </path> 
+         </svg> </span> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </header> 
+   <div class="typology-cover typology-cover-empty"></div> 
+   <div class="typology-fake-bg"> 
+    <div class="typology-section"> 
+     <div class="section-content"> 
+      <article class="typology-post typology-single-post"> 
+       <header class="entry-header clearfix"> 
+        <h1 class="entry-title entry-title-cover-empty h2">What is High Availability in Hadoop</h1> 
+        <div class="entry-meta"> 
+         <div class="meta-item meta-author" style="vertical-align: middle">
+           By <span class="vcard author"><span class="fn"> <a href="/author/ashishdoneriya">Ashish Doneriya</a> </span></span> 
+         </div> 
+         <div class="meta-item meta-date" style="vertical-align: middle"> <span class="updated">Last Updated on Mar 16, 2020 </span> 
+         </div> 
+        </div> 
+        <div class="post-letter">
+          W 
+        </div> 
+       </header> 
+       <div class="entry-content clearfix"> 
+        <p>Before we discuss about Hadoop High Availability, we have to know what is high availability. Well high availability refers to a system or component that is continuously operational for a desirably long length of time. Availability can be approx to 100% operational or never failing.</p> 
+        <p>So I will first tell you about HDFS High Availability and after that Yarn High Availability.</p> 
+        <h3>HDFS High Availability</h3> 
+        <p>To make the hdfs high available means it has to be available all the time. So we can achieve HDFS HA by making the namenode high available so that it could serve hdfs related requests and queries any time.</p> 
+        <p>In hadoop versions 1 and 2 there are different approaches to achieve namenode high availability. In <strong>hadoop version 1.x</strong>, to achieve namenode high availability there was a primary Namenode and a Secondary Namenode. The secondary was there to take the back up of the hdfs metadata and also to take place of the primary Namenode in case the primary namenode failed. But there is a catch. The secondary namenode doesn't automatically takes place of the primary namenode. We have to manually make the secondary namenode as an primary namenode. So that takes time and decreases productivity and during this period there is no namenode to take care of the hdfs related requests.</p> 
+        <p>In <strong>Hadoop version 2.x</strong> there is a better approach that the previous one to achieve namenode high availability. In hadoop version 2.x there are two namenodes one of which is in active state and the other is in passive or standby state at any point of time. The active namenode serves all the requests while passive namenode watches the active namenode constantly and sync hdfs edits log files with it. Suppose if the active namenode goes down then the standby or passive namenode immediately becomes as an active namenode, reads all edits log files that it synced from the previous active namenode to make the namespace up to date and after that it continues serving all the client operations.</p> 
+        <p>For fast failover it is necessary that the standby namenode have uptodate information regarding the location of blocks in the cluster. Therefore all the datanodes in the cluster are configured with the location of both namenodes. They send block location information and heartbeats to both namenodes at regular interval.</p> 
+        <p>Well to prevent the data loss and incorrect results it is necessary that there must be one and only one active namenode at any point of time. There are some fencing method to achieve that property. I will cover in the upcoming slides.</p> 
+        <p>Previously I told you that the passive namenode sync edits log files from the active namenode. So actually what happens is the active namenode writes edits log files to a place which is accessible to the passive namenode. That place is a shared directory or Journal nodes.</p> 
+        <p>In case of <strong>shared directory</strong> both the namenodes have read and write access. Most of the times the share directory is an NFS which is mounted on both namenodes. The active namenode writes edits log file to shared directory and passive namenode constantly watches the shared directory and applies to itself. Thus, the availability of the system is limited by the availability of this shared edits directory, and therefore in order to remove all single points of failure there needs to be redundancy for the shared edits directory. Specifically, multiple network paths to the storage, and redundancy in the storage itself (disk, network, and power). Beacuse of this, it is recommended that the shared storage server be a high-quality dedicated NAS appliance rather than a simple Linux server.</p> 
+        <p>In case <strong>Journal nodes</strong>, there are a group of multiple nodes in which active namenode writes edits log files, thus it removes the limitation of shared directory method. So in journal nodes, both namenodes communicate with a group of separate daemons called “JournalNodes” (JNs). When any namespace modification is performed by the Active node, it durably logs a record of the modification to a majority of these JNs. The Standby node is capable of reading the edits from the JNs, and is constantly watching them for changes to the edit log. As the Standby Node sees the edits, it applies them to its own namespace. In the event of a failover, the Standby will ensure that it has read all of the edits from the JounalNodes before promoting itself to the Active state. This ensures that the namespace state is fully synchronized before a failover occurs. The journal nodes allows only one namenode to write at a time to prevent data corruption.</p> 
+        <p>The JournalNode daemon is relatively lightweight and there must be at least 3 JournalNode daemons, since edit log modifications must be written to a majority of JNs. This will allow the system to tolerate the failure of a single machine. You may also run more than 3 JournalNodes, but in order to actually increase the number of failures the system can tolerate, you should run an odd number of JNs, (i.e. 3, 5, 7, etc.). Note that when running with N JournalNodes, the system can tolerate at most (N - 1) / 2 failures and continue to function normally.</p> 
+        <p><a href="/wp-content/uploads/2018/06/HDFS-HA-Architecture.png"><img loading="lazy" class="aligncenter size-full wp-image-1039" src="/wp-content/uploads/2018/06/HDFS-HA-Architecture.png" alt="Hadoop HDFS High Availability HA Architecture" width="768" height="473" srcset="/wp-content/uploads/2018/06/HDFS-HA-Architecture.png 768w, /wp-content/uploads/2018/06/HDFS-HA-Architecture-500x308.png 500w, /wp-content/uploads/2018/06/HDFS-HA-Architecture-400x246.png 400w" sizes="(max-width: 768px) 100vw, 768px"></a></p> 
+        <p>So here is the diagram of the architecture of HDFA HA Architecture. Before describing this diagram I want to give you a little information about zookeeper.</p> 
+        <p><strong>ZooKeeper</strong> is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services. In short there are some nodes in which zookeeper is installed. Every node has information about the other zookeeper nodes. If you write some information on one node then it will automatically copy or sync the information to the other nodes so that you could retrieve your information from any node later. In this way if one zookeeper node goes down then you can still access your information from the remaining nodes. There are some limitations of Zookeeper like it writing speed is slow because it is designed as a high read, high throughput system for small keys. It is not designed as a large data store to hold very large data values.</p> 
+        <p>Coming back to the diagram, so if you see this diagram from bottom to top, the datanodes are sending block reports and heartbeats both namenodes. Active namenode is writing edits log files to Journal Nodes and passive namenode is reading files from Journal node.</p> 
+        <p><strong>HDFA HA - Automatic Failover</strong><br> Failover is a procedure to automatically transfer control to passive namenode in case of failure.</p> 
+        <p>There are two types of failover - <strong>graceful failover</strong> and <strong>automatic failover</strong>. In graceful failover we have to manually initiate the failover for routine maintenance.</p> 
+        <p>In case of automatic failover it is achieved with the help of zookeeper. In both the namenode there is client running called as Zookeeper Failover control in short ZkFC. The ZkFC process maintains a persistent session in ZooKeeper and also monitors the health of its namenode. The active namenode zkfc process holds a special lock with the zookeeper. If the active node goes down the zkfc tells the zookeeper and after that zkfc processes from all the namenode machines participate in an election to get the status of as an active namenode means becoming an active namenode.</p> 
+        <h4>HDFS HA Fencing Methods</h4> 
+        <p>In the previous slide I told you about ZkFC that how it monitors or elect a namenode as an active namenode and also told you that there have to only one active namenode at any point of time to prevent data corruption and only only namenode is allowed to write to the journal node. So there is possibility that after electing an active namenode the previous namenode suddenly become active and could serve read requests which may be out of date. So in this case a fencing method is required for the Journal nodes.</p> 
+        <p>There are two types of <strong>fencing methods</strong> using which Journal nodes can prevent itself from serving multiple namenodes. One is SSH Fence method and another is Shell method.</p> 
+        <p>In <strong>ssh fence</strong> method it ssh to the previous active namenode and kill the process. The sshfence option SSHes to the target node and uses fuser to kill the process listening on the service’s TCP port. In order for this fencing option to work, it must be able to SSH to the target node without providing a passphrase. Thus, one must also configure the property called <code>dfs.ha.fencing.ssh.private-key-files</code>, that is a comma-separated list of SSH private key files.</p> 
+        <p>In the <strong>shell</strong> method we run an arbitrary shell command to fence the active namenode. You have to configure the property <code>dfs.ha.fencing.methods</code> and its value is the path of a shell script. If the shell command returns an exit code of 0, the fencing is determined to be successful. If it returns any other exit code, the fencing was not successful and the next fencing method in the list will be attempted.</p> 
+        <p><strong>HDFS HA Commands</strong><br> So there are some hdfs ha commands. like getServiceState, checkHealth, failover, transitionToActive, transitionToStandby etc.</p> 
+        <p>The getServiceState command determine whether the given NameNode is Active or Standby It connect to the provided NameNode to determine its current state, printing either “standby” or “active” to STDOUT appropriately. This subcommand might be used by cron jobs or monitoring scripts which need to behave differently based on whether the NameNode is currently Active or Standby.</p> 
+        <p>The checkHealth command check the health of the given NameNode and It connect to the provided NameNode to check its health. The NameNode actually is capable of performing some diagnostics on itself, including checking if internal services are running as expected. This command will return 0 if the NameNode is healthy, non-zero otherwise. One might use this command for monitoring purposes.</p> 
+        <p>The failover command initiate a failover between two NameNodes. This subcommand causes a failover from the first provided NameNode to the second. If the first NameNode is in the Standby state, this command simply transitions the second to the Active state without error. If the first NameNode is in the Active state, an attempt will be made to gracefully transition it to the Standby state. If this fails, the fencing methods (as configured by dfs.ha.fencing.methods) will be attempted in order until one succeeds. Only after this process will the second NameNode be transitioned to the Active state. If no fencing method succeeds, the second NameNode will not be transitioned to the Active state, and an error will be returned.</p> 
+        <p>The transitionToActive and transitionToStandby commands transition the state of the given NameNode to Active or Standby. These subcommands cause a given NameNode to transition to the Active or Standby state, respectively. These commands do not attempt to perform any fencing, and thus should rarely be used. Instead, one should almost always prefer to use the “hdfs haadmin -failover” subcommand.</p> 
+        <h3>HDFS Federation</h3> 
+        <p><strong>How the namenode Works ?</strong><br> As far as we know that hdfs architecture is a master-slave architecture. The NameNode is the leader and the DataNodes are the followers. Before data is put or moved into HDFS it must first pass through the NameNode to be indexed. The DataNodes in HDFS store the data blocks, but they don't know about the other DataNodes or data blocks. So if the NameNode goes down then their is not way to use data blocks without indexing.</p> 
+        <p>HDFS not only stores the data, but provides the file system for users/clients to access the data inside HDFS. For example in my Hadoop environment I have Sales and Marketing data I want to logically separate. So I would, setup to different directories and populate sub directories in each depending on the data. Just like you have setup on your own work space environment. Pictures and Documents are in different directories or file folders. The key is that structure is stored as meta data and the NameNode in HDFS retains all that data.</p> 
+        <p>But As data is accelerated into HDFS, the NameNode begins to grow out of it’s compute and storage. We can datanodes but we cannot scale namenode. So to solve this problem HDFS Federation was introduced.</p> 
+        <p>Before understanding hdfs federation let me explain the current hdfs architecture.</p> 
+        <p>In the current hdfs architecture there is one namespace and one blockstorage. The <strong>namespace</strong> manages directories, files and blocks. It supports file system operations such as creation, modification, deletion and listing of files and directories. <strong>Block storage</strong> has two parts block management and physical storage. <strong>Block Management</strong> maintains the membership of datanodes in the cluster. It supports block-related operations like creation, deletion, modification and getting location of the blocks and it also takes care of replica placement and replication. Physical Storage stores the blocks and provides read or write access to.</p> 
+        <p>In the current architecture the namespace and block management are tightly coupled with each other and therefore restricts others from using block storage or datanodes directly and.. It also limits the number of blocks, files, and directories supported on the file system to what can be accommodated in the memory of a single namenode. Now lets come to the hdfs federation</p> 
+        <p>In <strong>HDFS Federation</strong> architecture we can scale out the namenode horizontally by introducing multiple namenodes and all the namenodes are independent of each other. They has its own namespace and also don't require coordination with each other. All the namenodes use datanodes commonly for block storage. Each Datanode registers with all the Namenodes in the cluster. Datanodes send periodic heartbeats and block reports. They also handle commands from the Namenodes.</p> 
+        <p>So lets see the hdfs federation architecture.<br> <a href="/wp-content/uploads/2018/06/hadoop-hdfs-federation.gif"><img loading="lazy" class="aligncenter size-full wp-image-1064" src="/wp-content/uploads/2018/06/hadoop-hdfs-federation.gif" alt="Hadoop HDFS Federation" width="461" height="277"></a><br> There are multiple namespaces (NS1, NS2,…, NSn) and each of them is managed by its respective NameNode. Each namespace has its own block pool ( NS1 has Pool 1, NSk has Pool k and so on ). As you can see in the diagram the blocks from pool 1 (sky blue) are stored on DataNode 1, DataNode 2 and so on. Similarly, all the blocks from each block pool will reside on all the DataNodes. A Block Pool actually is a set of blocks that belong to a single namespace. Datanodes store blocks for all the block pools in the cluster. Each Block Pool is managed independently. So it allows a namespace to generate Block IDs for new blocks without the need for coordination with the other namespaces. A Namenode failure does not prevent the Datanode from serving other Namenodes in the cluster. If a NameNode or namespace is deleted then the corresponding block pool which is residing on the DataNodes will also be deleted.</p> 
+        <p>So this architecture has several benefits like Scalability, performance and isolation as I explained previously In federation File system throughput is not limited by a single Namenode. Adding more Namenodes to the cluster scales the file system read/write throughput. Taking about isolation well.. a single Namenode offers no isolation in a multi user environment. For example, an experimental application can overload the Namenode and slow down production critical applications. By using multiple Namenodes, different categories of applications and users can be isolated to different namespaces. Like there a separation namenode for devops and a separation namenode for production purpose. It also has design benefits like it is significantly simpler to design and implement. Namenodes and namespaces are independent of each other and require very little change to the existing namenodes. Federation also preserves backward compatibility of configuration.</p> 
+        <h3>Yarn HA</h3> 
+        <p>The purpose of yarn resource manager is scheduling applications and tracking of resources in the cluster. Before Hadoop 2.4 there was only single resource manager and it is the single point of failure. So in yarn ha feature removes this redundancy.<br> Yarn High availability is similar to HDFS High availability. Resource Manager HA is realized through an Active/Standby architecture - at any point of time, one of the RMs is Active, and one or more RMs are in Standby mode waiting to take over should anything happen to the Active. The trigger to transition-to-active comes from either the admin (through CLI) or through the integrated fail over-controller when automatic-fail over is enabled. When automatic failover is not enabled, admins have to manually transition one of the RMs to Active. To failover from one RM to the other, they are expected to first transition the Active-RM to Standby and transition a Standby-RM to Active. All this can be done using the “yarn rmadmin” CLI.</p> 
+        <p>The RMs have an option to embed the Zookeeper-based ActiveStandbyElector to decide which RM should be the Active. When the Active goes down or becomes unresponsive, another RM is automatically elected to be the Active which then takes over. Note that, there is no need to run a separate ZKFC daemon as is the case for HDFS because ActiveStandbyElector embedded in RMs acts as a failure detector and a leader elector instead of a separate ZKFC deamon.</p> 
+        <p>When there are multiple RMs, the configuration (yarn-site.xml) used by clients and nodes is expected to list all the RMs. Clients, ApplicationMasters (AMs) and NodeManagers (NMs) try connecting to the RMs in a round-robin fashion until they hit the Active RM. If the Active goes down, they resume the round-robin polling until they hit the “new” Active. This default retry logic is implemented as org.apache.hadoop.yarn.client.ConfiguredRMFailoverProxyProvider. You can override the logic by implementing org.apache.hadoop.yarn.client.RMFailoverProxyProvider and setting the value of yarn.client.failover-proxy-provider to the class name.</p> 
+        <p><a href="/wp-content/uploads/2018/06/hadoop-resource-manager-ha.png"><img loading="lazy" class="aligncenter size-full wp-image-1068" src="/wp-content/uploads/2018/06/hadoop-resource-manager-ha.png" alt="Hadoop resource manager ha" width="441" height="265" srcset="/wp-content/uploads/2018/06/hadoop-resource-manager-ha.png 441w, /wp-content/uploads/2018/06/hadoop-resource-manager-ha-400x240.png 400w" sizes="(max-width: 441px) 100vw, 441px"></a></p> 
+        <p>As you can see in the diagram there are two resource manager, one active and another is in standby mode. The active resource manager writing its current state to the zookeeper and in case of failure of active resource manager then standby resource manager will become active RM.</p> 
+        <p>There are some commands for managin RM HA.</p> 
+        <p>-getServiceState Returns the state of the service.</p> 
+        <p>-checkHealth Requests that the service perform a health check. The RMAdmin tool will exit with a non-zero exit code if the check fails.</p> 
+        <p>-failover [–forceactive] Initiate a failover from serviceId1 to serviceId2. Try to failover to the target service even if it is not ready if the –forceactive option is used. This command can not be used if automatic failover is enabled.</p> 
+        <p>-transitionToActive [–forceactive] [–forcemanual] Transitions the service into Active state. Try to make the target active without checking that there is no active node if the –forceactive option is used. This command can not be used if automatic failover is enabled. Though you can override this by –forcemanual option, you need caution.</p> 
+        <p>-transitionToStandby [–forcemanual] Transitions the service into Standby state. This command can not be used if automatic failover is enabled. Though you can override this by –forcemanual option, you need caution.</p> 
+        <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
+										padding: 0 5px 5px;
+										text-decoration: none;
+										border-bottom: 4px solid yellow;
+									" href="/topics/big-data">Big Data</a> </span> 
+        </div> 
+       </div> 
+       <div class="clearfix entry-actions"> <span>Originally Published On </span><span> : </span><span>Jun 18, 2018</span> 
+       </div> 
+      </article> 
+     </div> 
+    </div> 
+    <footer class="typology-footer"> 
+     <div class="container"> 
+      <div class="col-lg-4"> 
+       <div class="widget clearfix widget_text"> 
+        <p class="widget-title h5">Overview</p> 
+        <div class="textwidget"> 
+         <div class="textwidget"> 
+          <p> Cse Tutorials contains Tutorials about WebApps, Web Designing, Java and Ubuntu </p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="col-lg-4"> 
+       <div class="widget clearfix widget_recent_entries"> 
+        <p class="widget-title h5">Resources</p> 
+        <ul> 
+         <li> <a href="/about">About us</a> </li> 
+         <li> <a href="/contact">Contact us</a> </li> 
+         <li> <a href="/privacy-policy">Privacy Policy</a> </li> 
+         <li> <a href="/tos">Terms and Conditions</a> </li> 
+         <li> <a href="/sitemap_index.xml">SiteMap</a> </li> 
+        </ul> 
+       </div> 
+      </div> 
+      <div class="col-lg-4"> 
+       <div class="widget clearfix widget_text"> 
+        <p class="widget-title h5">Contact</p> 
+        <div class="textwidget"> 
+         <p> <span>Ashish Doneriya<br>email: <a style="color:#333" href="mailto:ashishdoneriya@gmail.com">ashishdoneriya@gmail.com</a></span> <span class="Social__Span-sc-12mxrss-1 iBOFdG"><a class="Social__Icon-sc-12mxrss-0 gUYDTw" target="_blank" rel="noopener noreferrer" href="https://twitter.com/ashishdoneriya" style="color: #00aced" title="Follow me on Twitter">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"> 
+             </path> 
+            </svg></a><a class="Social__Icon-sc-12mxrss-0 gUYDTw" target="_blank" rel="noopener noreferrer" href="https://github.com/ashishdoneriya" style="color: #666666" title="Open Source on Github">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"> 
+             </path> 
+            </svg> </a> </span> </p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </footer> 
+   </div> 
+  </div> 
+  <script>
+		(function (d) {
+			var x = d.createElement("link");
+			var y = d.getElementsByTagName("script")[0];
+			x.rel = "stylesheet";
+			x.href = "https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Ubuntu+Mono:ital@0;1&family=Ubuntu:wght@400;500;700&display=swap";
+			y.parentNode.insertBefore(x, y);
+		})(document);
+	</script> 
+  <link defer href="/assets/theme/prism/prism.css" rel="stylesheet" type="text/css"> 
+  <script src="/assets/theme/prism/prism.js"></script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60245752-3"></script> 
+  <script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-60245752-3');
+</script> 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3068137040930830" data-ad-slot="7956133725"></ins> 
+  <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>  
+ </body>
+</html>
