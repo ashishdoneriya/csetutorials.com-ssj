@@ -20,7 +20,9 @@ layout: default.html
 					<span>In </span>
 					#foreach ($category in $post.categories)
 					<span>
-						#if( $velocityCount > 1 )<span>,</span>#end
+						#if( $velocityCount > 1 )
+						<span>,</span>
+						#end
 						<a href="$category.url">$category.name</a>
 					</span>
 					#end
