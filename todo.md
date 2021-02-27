@@ -7,7 +7,7 @@
 [*] Add Google Analytics
 [*] Add Google Adsense
 [*] Add Contact us page form
-* Fix authors page
+[*] Fix authors page
 * Generate meta tags for non post and pages
 * Add google search
 * Switch to github Actions
