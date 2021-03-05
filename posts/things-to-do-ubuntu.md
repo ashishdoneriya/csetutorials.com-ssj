@@ -53,5 +53,5 @@ sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 Now you can open Startup Applications and remove unnecessary applications that starts as ubuntu starts.
 
 ### [Enable passwordless ssh](/passwordless-ssh-ubuntu-linux.html)
-### <a href="http://www.pontikis.net/blog/tweak-ssd-ubuntu-16.04" rel="nofollow" target="_blank">Add noatime to fstab</a>
+### [Add noatime to fstab](http://www.pontikis.net/blog/tweak-ssd-ubuntu-16.04)
 disable last accessed time.

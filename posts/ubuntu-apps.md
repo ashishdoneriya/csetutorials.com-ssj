@@ -67,7 +67,7 @@ sudo apt-get install qbittorrent
 ```
 
 
-### <a href="https://github.com/gerardpuig/ubuntu-cleaner" target="_blank" rel="nofollow">Ubuntu Cleaner</a>
+### [Ubuntu Cleaner](https://github.com/gerardpuig/ubuntu-cleaner)
 Ubuntu Cleaner is a tool that makes it easy to clean your ubuntu system. Ubuntu Cleaner lets you remove App caches (including most major browsers), Apt cache, Thumbnail cache, Old kernels etc. To install it you have to add ubuntu-cleaner ppa using the command below
 
 ```bash
@@ -82,7 +82,7 @@ sudo apt update && sudo apt install ubuntu-cleaner
 ```
 
 
-### <a href="http://unetbootin.github.io/" target="_blank" rel="nofollow">UNetbootin</a>
+### [UNetbootin](http://unetbootin.github.io/)
 UNetbootin allows you to create bootable Live USB drives for Ubuntu and other Linux distributions without burning a CD.
 
 ```bash
@@ -90,10 +90,10 @@ sudo apt-get install unetbootin
 ```
 
 
-### <a href="https://github.com/resin-io/etcher" target="_blank" rel="nofollow">Etcher</a>
+### [Etcher](https://github.com/resin-io/etcher)
 Burn images (linux iso) to SD cards & USB drives, safely and easily.
 
-### <a href="https://github.com/slacka/WoeUSB" target="_blank" rel="nofollow">WoeUSB</a>
+### [WoeUSB](https://github.com/slacka/WoeUSB)
 WoeUSB lets you create bootable USB of most modern Windows releases, including: Windows Vista, Windows 7, Window 8, Windows 10.  
 For Ubuntu 16.04
 
@@ -103,27 +103,27 @@ sudo dpkg -i woeusb_2.1.2-1~webupd8~xenial_amd64.deb
 ```
 
 
-### <a href="http://xdman.sourceforge.net/" target="_blank" rel="nofollow">Xtreme Download Manager</a>
+### [Xtreme Download Manager](http://xdman.sourceforge.net/)
 Xtream download manager is one of the best and powerful download managers. It can download videos, resume broken/dead downloads and can also integrates with web browsers like chrome and firefox to save streaming videos from net.
 
-### <a href="https://www.tixati.com/" target="_blank" rel="nofollow">Tixati</a>
+### [Tixati](https://www.tixati.com/)
 Tixati is a New and Powerful P2P System and it's a faster torrent downloader than the rest acc. to its website.
 
-### <a href="https://code.visualstudio.com" target="_blank" rel="nofollow">Visual Studio Code</a>
-Visual Studio Code is a source code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring.</li> 
+### [Visual Studio Code](https://code.visualstudio.com)
+Visual Studio Code is a source code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring.
 
-### <a href="http://www.eclipse.org/downloads/eclipse-packages/" target="_blank" rel="nofollow">Eclipse</a>
-Eclipse is an integrated development environment (IDE) used in computer programming, and is the most widely used Java IDE.</li> 
+### [Eclipse](http://www.eclipse.org/downloads/eclipse-packages/)
+Eclipse is an integrated development environment (IDE) used in computer programming, and is the most widely used Java IDE.
 
-### <a href="https://www.sublimetext.com/docs/3/linux_repositories.html#apt" target="_blank" rel="nofollow">Sublime</a>
-A sophisticated text editor for code, markup and prose. It is lightweight and very fast. You need a license to use it.</li> 
+### [Sublime](https://www.sublimetext.com/docs/3/linux_repositories.html#apt)
+A sophisticated text editor for code, markup and prose. It is lightweight and very fast. You need a license to use it.
 
-### <a href="https://insomnia.rest" target="_blank" rel="nofollow">Insomnia</a>
-Insomnia is a beautiful cross-platform application for organizing, running, and debugging HTTP requests. It not completely free.</li> </ul> 
+### [Insomnia](https://insomnia.rest)
+Insomnia is a beautiful cross-platform application for organizing, running, and debugging HTTP requests. It not completely free.
 
 ### Honourable Mentions
 
-### <a href="https://github.com/astrada/google-drive-ocamlfuse" target="_blank" rel="nofollow">google-drive-ocamlfuse</a>
+### [google-drive-ocamlfuse](https://github.com/astrada/google-drive-ocamlfuse)
 It lets you mount your Google Drive on Linux.
 
 ```bash
@@ -132,10 +132,10 @@ sudo apt-get update
 sudo apt-get install google-drive-ocamlfuse
 ```
 
-### <a href="https://github.com/kahing/goofys" target="_blank" rel="nofollow">Goofys</a>
+### [Goofys](https://github.com/kahing/goofys)
 Goofys allows you to mount an S3 bucket as a file system.
 
-### <a href="https://github.com/badarsh2/Sudocabulary" target="_blank" rel="nofollow">Sudocabulary</a>
+### [Sudocabulary](https://github.com/badarsh2/Sudocabulary)
 It's a script that when executed makes every terminal window that you launch thereafter greet you with a new English word along with its meaning.
 
 ```bash

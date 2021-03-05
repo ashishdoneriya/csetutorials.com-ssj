@@ -10,9 +10,9 @@ categories:
   - java
 ---
 
-On apache servers usually we redirect by modifying .htaccess file. But it doesn't work on web apps that are hosted on servers like tomcat, jboss etc. So in this case we'll use a Java Web Filter called <a rel="nofollow" href="http://tuckey.org/urlrewrite/" target="_blank">UrlRewriteFilter</a>. It allows us to change url before they hit the apis. It is compatible with all web servers (Apache Tomcat, JBoss, Jetty etc.). Its licence is BSD-3-Clause
+On apache servers usually we redirect by modifying .htaccess file. But it doesn't work on web apps that are hosted on servers like tomcat, jboss etc. So in this case we'll use a Java Web Filter called [UrlRewriteFilter](http://tuckey.org/urlrewrite/). It allows us to change url before they hit the apis. It is compatible with all web servers (Apache Tomcat, JBoss, Jetty etc.). Its licence is BSD-3-Clause
 
-If you want the latest jar then you can take the latest pull from its <a rel="nofollow" href="https://github.com/paultuckey/urlrewritefilter" target="_blank">github repository</a> and compile it using command `mvn clean install`. 
+If you want the latest jar then you can take the latest pull from its [github repository](https://github.com/paultuckey/urlrewritefilter) and compile it using command `mvn clean install`. 
 
 So lets start ::
 

@@ -371,5 +371,5 @@ Thank you. Now first run `npm install` and `npm run build<code> commands in your
 If you have any queries feel free to ask.
 
 **Also don't forget to read this**  
-<a href="https://github.com/ashishdoneriya/LittleBlueBird/wiki" target="_blank" rel="noopener noreferrer">https://github.com/ashishdoneriya/LittleBlueBird/wiki</a>  
+[https://github.com/ashishdoneriya/LittleBlueBird/wiki](https://github.com/ashishdoneriya/LittleBlueBird/wiki)
 It will describe what's wrong with urls in Angular.

@@ -27,7 +27,7 @@ In influxdb the combination of timestamp and tags is composite keys. So lets sta
 
 ## Install Influxdb
 
-First of all install influxdb from its <a href="https://portal.influxdata.com/downloads/" target="_blank" rel="nofollow noreferred noopener noreferrer">official download page</a>. If you donot have admin rights then you can follow my article on how to install influxdb without root access.
+First of all install influxdb from its [official download page](https://portal.influxdata.com/downloads/). If you donot have admin rights then you can follow my article on how to install influxdb without root access.
 [/install-influxdb-without-root-access-linux.html](/install-influxdb-without-root-access-linux.html)
 
 Now open another terminal and start the CLI using command `influx`
@@ -115,7 +115,7 @@ measurementName field1=value1,field2=value2,field3=value3 timestamp
 
 **Note :** Once you write a particular field in a particular datatype, you cannot change it back.
 
-For more details refer official <a href="https://docs.influxdata.com/influxdb/v0.13/write_protocols/write_syntax/" target="_blank" rel="noopener noreferrer">documentation</a>
+For more details refer official [documentation](https://docs.influxdata.com/influxdb/v0.13/write_protocols/write_syntax/)
 
 ## Querying Data
 

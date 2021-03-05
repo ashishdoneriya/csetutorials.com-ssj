@@ -62,7 +62,7 @@ There is an excellent <a href="http://codeaweso.me/2009/02/obfuscating-a-webapp-
 
 In short, place all the jars and code together in one place, obfuscate it and then put back all in their respective places.
 
-**NOTE :** There can be some third party jars ( like <a href="https://mvnrepository.com/artifact/com.google.code.gson/gson" target="_blank" rel="noopener noreferrer">gson</a>) which can't be obfuscated (due to some class name problem). So you have to exclude those jars from being obfuscated. ie. Its better not to obfuscate third party jars.
+**NOTE :** There can be some third party jars ( like gson) which can't be obfuscated (due to some class name problem). So you have to exclude those jars from being obfuscated. ie. Its better not to obfuscate third party jars.
 
 ### Obfuscate a single jar file
 

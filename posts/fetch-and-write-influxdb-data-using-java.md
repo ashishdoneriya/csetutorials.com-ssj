@@ -13,9 +13,9 @@ tags:
 updated: 2016-05-26T15:36:02+05:30
 ---
 
-<a href="/influxdb-tutorial.html" target="_blank" rel="noopener noreferrer">Influx</a> time series database is a platform for storing, collecting, visualizing and managing time-series data.
+[Influx](/influxdb-tutorial.html) time series database is a platform for storing, collecting, visualizing and managing time-series data.
 
-There is already official java api in maven and github. But I have created an api for influxdb in <a href="https://github.com/ashishdoneriya/influxdb-java" target="_blank" rel="noopener noreferrer">Github</a>. From that we could fetch and write to database very easily. To use that api <a href="https://github.com/ashishdoneriya/influxdb-java/releases/download/3.0.1/influxdb-3.0.1.jar" target="_blank" rel="noopener noreferrer">download jar</a>. You can also add dependency in your project using <a href="https://jitpack.io/#ashishdoneriya/influxdb-java/3.0.1" target="_blank" rel="noopener noreferrer">JitPack</a>.
+There is already official java api in maven and github. But I have created an api for influxdb in [Github](https://github.com/ashishdoneriya/influxdb-java). From that we could fetch and write to database very easily. To use that api [download jar](https://github.com/ashishdoneriya/influxdb-java/releases/download/3.0.1/influxdb-3.0.1.jar). You can also add dependency in your project using [JitPack](https://jitpack.io/#ashishdoneriya/influxdb-java/3.0.1).
 
 In Influxdb we call tables as measurements and columns as fields. So let's start.
 

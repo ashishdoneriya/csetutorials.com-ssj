@@ -45,7 +45,7 @@ Change the settings according to your requirements
 import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
 ```
 
-4. After installing package manager install package <a href="https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify" target="_blank" rel="nofollow">HTML-CSS-JS Prettify</a>. To install goto `Preferences > Package Control`. A box will be opened. Select Install Package, search preetify and install that. Preetify is used to beautify your code.
+4. After installing package manager install package [HTML-CSS-JS Prettify](https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify). To install goto `Preferences > Package Control`. A box will be opened. Select Install Package, search preetify and install that. Preetify is used to beautify your code.
 
 5. Now open `Preferences > Package Settings > HTML/CSS/JS preetify > Set preetify Preferences`. Replace the content with the following
 ```json
@@ -116,7 +116,7 @@ import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc5
 I have changed `indent_char` and `indent_size`. 
   
 5. Now to beautify you code press `Ctrl`+`alt`+`H` or go to `Preferences > Package Settings > HTML/CSS/JS preetify > Preetify Code`. Your code will be beautified. Make sure you have replaced all spaces with tabs before ( `Viez > Indentation > Convert Spaces to Tabs`)
-6. Install Package <a href="https://packagecontrol.io/packages/Alignment" target="_blank">Alignment</a>. Goto <code>Preferences > Package Settings > Alignment > Settings - User</code> and paste the following content.
+6. Install Package [Alignment](https://packagecontrol.io/packages/Alignment). Goto `Preferences > Package Settings > Alignment > Settings - User` and paste the following content.
 ```json
 {
 	// The mid-line characters to align in a multi-line selection, changing
@@ -127,18 +127,18 @@ I have changed `indent_char` and `indent_size`.
 }
 ```
 
-For more information about alignment plugin, read from <a href="http://www.granneman.com/webdev/editors/sublime-text/packages/how-to-install-and-use-sublime-alignment/" target="_blank">this website</a></li> 
+For more information about alignment plugin, read from [this website](http://www.granneman.com/webdev/editors/sublime-text/packages/how-to-install-and-use-sublime-alignment/) 
   
 7. You can also use [Eslint](/how-to-use-eslint.html) if you want.
   
-You can find more plugins in <a href="https://developers.google.com/web/shows/ttt/series-1/sublime-text-plugins" target="_blank">Google Developer Site</a>.  
+You can find more plugins in [Google Developer Site](https://developers.google.com/web/shows/ttt/series-1/sublime-text-plugins).  
 
 Some other packages are :
  
-* <a href="https://packagecontrol.io/packages/SublimeCodeIntel" target="_blank">SublimeCodeIntel</a>
-* <a href="https://packagecontrol.io/packages/jQuery" target="_blank">jQuery</a>
-* <a href="https://packagecontrol.io/packages/DocBlockr" target="_blank">DocBlockr</a>
-* <a href="https://packagecontrol.io/packages/Color%20Highlighter" target="_blank">ColorHighlighter</a>
-* <a href="https://packagecontrol.io/packages/BracketHighlighter" target="_blank">BracketHighlighter</a>
-* <a href="https://github.com/JasonMortonNZ/bs3-sublime-plugin" target="_blank">Bootstrap 3 &#8211; Sublime Plugin</a>
-* <a href="https://github.com/csscomb/sublime-csscomb" target="_blank">CSScomb for Sublime Text</a>
+* [SublimeCodeIntel](https://packagecontrol.io/packages/SublimeCodeIntel)
+* [jQuery](https://packagecontrol.io/packages/jQuery)
+* [DocBlockr](https://packagecontrol.io/packages/DocBlockr)
+* [ColorHighlighter](https://packagecontrol.io/packages/Color%20Highlighter)
+* [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter)
+* [Bootstrap 3 Sublime Plugin](https://github.com/JasonMortonNZ/bs3-sublime-plugin)
+* [CSScomb for Sublime Text](https://github.com/csscomb/sublime-csscomb)

@@ -11,7 +11,7 @@ categories:
   - web-development
 ---
 
-1. Open <a  target="_blank" href="https://www.google.com/fonts">Google fonts</a>  
+1. Open [Google fonts](https://www.google.com/fonts)  
 <a target="_blank" href="/wp-content/uploads/2016/05/google-fonts-homepage.png"><img loading="lazy" src="/wp-content/uploads/2016/05/google-fonts-homepage.png" alt="Google Fonts Home Page" width="1850" height="965" class="aligncenter size-full wp-image-70" srcset="/wp-content/uploads/2016/05/google-fonts-homepage.png 1850w, /wp-content/uploads/2016/05/google-fonts-homepage-500x261.png 500w, /wp-content/uploads/2016/05/google-fonts-homepage-1024x534.png 1024w, /wp-content/uploads/2016/05/google-fonts-homepage-982x512.png 982w, /wp-content/uploads/2016/05/google-fonts-homepage-400x209.png 400w" sizes="(max-width: 1850px) 100vw, 1850px" /></a> 
 
 2. Lets suppose I want Roboto, Ubuntu Mono and Oswald fonts for my site. Roboto for paragraphs, Ubuntu Mono for code and Oswald for headings. So Search for the font Roboto  

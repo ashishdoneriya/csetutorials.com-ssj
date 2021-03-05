@@ -323,4 +323,4 @@ data: Hello world 9!
 ```
 
 
-Source : <a href="https://eclipse-ee4j.github.io/jersey.github.io/documentation/latest/sse.html" target="_blank" rel="noopener noreferrer">Jersey Documentation</a>
+Source : [Jersey Documentation](https://eclipse-ee4j.github.io/jersey.github.io/documentation/latest/sse.html)

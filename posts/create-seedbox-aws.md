@@ -14,7 +14,7 @@ tags:
 
 In this article I'm going to tell you how to create a seedbox using [AWS (Amazon Web Service)](/what-is-amazon-web-services.html). Using seedbox we can download torrent files like Ubuntu disk image etc.
 
-To create a seedbox first I will create a aws lambda instance (virtual machine) and then activate seedbox using <a href="https://github.com/jpillora/cloud-torrent" target="_blank" rel="noopener nofollow noreferrer">cloud-torrent</a>. So here are the steps.
+To create a seedbox first I will create a aws lambda instance (virtual machine) and then activate seedbox using [cloud-torrent](https://github.com/jpillora/cloud-torrent). So here are the steps.
 
 **1.** Login to you aws account. If you don't have an aws account then create it and then login. You have to have a credit or debit card for creating an account in aws.
 

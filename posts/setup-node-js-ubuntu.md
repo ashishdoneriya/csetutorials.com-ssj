@@ -15,7 +15,7 @@ updated: 2016-07-06T19:18:50+05:30
 
 Steps to install NodeJs ubuntu
 
-1. Download nodejs from <a href="https://nodejs.org/en/" target="_blank">Nodejs</a> website. 
+1. Download nodejs from [Nodejs](https://nodejs.org/en/) website. 
  ```bash
 wget https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-x64.tar.xz
 ```
@@ -38,4 +38,4 @@ export PATH=$PATH:/home/username/nodejs/bin' >> /home/username/.bashrc
 
 Now to run nodejs just type `nodejs` in your terminal.
 
-You can also install package <a href="https://www.npmjs.com/package/yarn" target="_blank">yarn</a>. It is just like mvn (java). If you have to add any package type yarn add
+You can also install package [yarn](https://www.npmjs.com/package/yarn). It is just like mvn (java). If you have to add any package type yarn add

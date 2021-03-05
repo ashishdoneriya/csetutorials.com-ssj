@@ -12,7 +12,7 @@ tags:
   - linux
 ---
 
-Influxdb time series database is one of the fastest timeseries database. It is current the best aws time series database. Its purely written in go language. It is opensource and is used for recording metrics, events and performing analytics. The steps to install influxdb on various linux distributions (aws influxdb or azure) are available on its <a href="https://portal.influxdata.com/downloads" target="_blank" rel="nofollow noopener noreferrer">download page</a>. But there is one problem in install instructions and that is all requires root access. And also there are no instructions to setup influxdb on linux distributions other than Redhat, Debian, Ubuntu and CentOS.
+Influxdb time series database is one of the fastest timeseries database. It is current the best aws time series database. Its purely written in go language. It is opensource and is used for recording metrics, events and performing analytics. The steps to install influxdb on various linux distributions (aws influxdb or azure) are available on its [download page](https://portal.influxdata.com/downloads). But there is one problem in install instructions and that is all requires root access. And also there are no instructions to setup influxdb on linux distributions other than Redhat, Debian, Ubuntu and CentOS.
 
 In this post I am going to tell you how to setup influxdb on linux. As of now (Oct 2018) the latest version of influxdb is 1.6.3.
 

@@ -42,7 +42,7 @@ Goto `File > Preferences > User Settigs` and paste the following Settings in Use
 ```
 
 
-**Note :** The setting &#8220;files.exclude&#8221; is especially for Angular 2. If you need git you set the value of &#8220;git.enabled&#8221; to true.
+**Note :** The setting `files.exclude` is especially for Angular 2. If you need git you set the value of `git.enabled` to true.
 
 Another minimal settings for vscode. It will not auto format code. :
 
@@ -80,7 +80,7 @@ Extensions
 9. Open in Browser  
 10. Prettier &#8211; Code Formatter  
 11. Whitespacer  
-12. <a href="https://marketplace.visualstudio.com/items?itemName=vip32bit.theme-monokai-black" target="_blank" rel="noopener">Monaki Black theme</a>
+12. [Monaki Black theme](https://marketplace.visualstudio.com/items?itemName=vip32bit.theme-monokai-black)
 
 For Nodejs code to work
 

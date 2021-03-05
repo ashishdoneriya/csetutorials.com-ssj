@@ -13,7 +13,7 @@ categories:
 ---
 Steps to clustomize button theme in wordpress.
 
-1. <a href="https://wordpress.com/themes/button/" target="_blank">Install</a> and active button theme.
+1. [Install](https://wordpress.com/themes/button/) and active button theme.
 2. Now goto `Appearance > Editor`
 3. Replace all contents of Stylesheet (style.css) with the follwing css and save it. 
 ```css

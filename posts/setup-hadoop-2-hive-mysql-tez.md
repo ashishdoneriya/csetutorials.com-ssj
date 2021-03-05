@@ -27,8 +27,8 @@ Mysql
 ## Setup Hadoop
 
 1. Create a directory called packages in your home directory  
-2. Download <a href="https://archive.apache.org/dist/hadoop/core/hadoop-2.7.2/hadoop-2.7.2.tar.gz" rel="noopener noreferrer" target="_blank">Hadoop binary</a> and extract to packages/hadoop  
-3. In packages/hadoop/etc/hadoop directory replace core-site.xml, hdfs-site.xml, mapred-site.xml and yarn-site.xml with the following content. Don't forget to change your hostname and username
+2. Download [Hadoop binary](https://archive.apache.org/dist/hadoop/core/hadoop-2.7.2/hadoop-2.7.2.tar.gz) and extract to packages/hadoop  
+3. In packages/hadoop/etc/hadoop directory replace `core-site.xml`, `hdfs-site.xml`, `mapred-site.xml` and `yarn-site.xml` with the following content. Don't forget to change your hostname and username
 
 **core-site.xml**
 
@@ -190,7 +190,7 @@ hdfs dfs -ls /
 
 ## Setup Hive
 
-1. Download <a href="https://archive.apache.org/dist/hive/hive-2.1.1/apache-hive-2.1.1-bin.tar.gz" rel="noopener noreferrer" target="_blank">Hive binary</a> and extract to packages/hive  
+1. Download [Hive binary](https://archive.apache.org/dist/hive/hive-2.1.1/apache-hive-2.1.1-bin.tar.gz) and extract to packages/hive  
 3. In packages/hive/conf directory create file hive-site.xml and put the below content
 
 **hive-site.xml**
@@ -273,7 +273,7 @@ Now you can open your hive cli by using command `hive`
 
 ## Setup tez
 
-1. Download <a href="https://downloads.apache.org/tez/0.9.2/apache-tez-0.9.2-bin.tar.gz" rel="noopener noreferrer" target="_blank">Tez binary</a> and extract to packages/tez  
+1. Download [Tez binary](https://downloads.apache.org/tez/0.9.2/apache-tez-0.9.2-bin.tar.gz) and extract to packages/tez  
 3. In packages/tez/conf directory create file tez-site.xml and put the below content
 
 **tez-site.xml**

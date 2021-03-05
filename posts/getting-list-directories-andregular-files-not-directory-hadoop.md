@@ -47,5 +47,5 @@ hadoop fs -ls -R &lt;source_directory&gt; | sed 's/  */ /g' | cut -d\  -f 1,8 --
 ```
 
 
-Efficiently using the cut command : <a href="http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html" target="_blank" rel="no-follow noopener noreferrer">http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html</a>  
-& sed command : <a href="https://www.tutorialspoint.com/unix/unix-regular-expressions.htm" target="_blank" rel="no-follow noopener noreferrer">https://www.tutorialspoint.com/unix/unix-regular-expressions.htm</a>
+Efficiently using the cut command : [http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html](http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html)  
+& sed command : [https://www.tutorialspoint.com/unix/unix-regular-expressions.htm](https://www.tutorialspoint.com/unix/unix-regular-expressions.htm)

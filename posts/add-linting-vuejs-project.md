@@ -130,4 +130,4 @@ You can also [configure](/format-vue-files-visual-studio-code.html) your vuejs p
 ```
 
 
-That's it. Now when you open a .vue file in vscode. It will display the number of errors/ warnings in the left sidebar of vscode. I have created a <a href="https://github.com/ashishdoneriya/vue-class-component-template" target="_blank">template</a> on github by integrating formatter and linting.
+That's it. Now when you open a .vue file in vscode. It will display the number of errors/ warnings in the left sidebar of vscode. I have created a [template](https://github.com/ashishdoneriya/vue-class-component-template) on github by integrating formatter and linting.

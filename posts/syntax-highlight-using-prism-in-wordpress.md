@@ -11,7 +11,7 @@ categories:
 updated: 2016-07-20T15:47:04+05:30
 ---
 
-<a href="http://prismjs.com/index.html" target="_blank">Prism</a> is a lightweight, extensible, fast and simple highlighter. It is also used by some famous and popular websites like Mozilla, SitePoint and Drupal. Our website is also using Prism js for syntax highlighting.
+[Prism](http://prismjs.com/index.html) is a lightweight, extensible, fast and simple highlighter. It is also used by some famous and popular websites like Mozilla, SitePoint and Drupal. Our website is also using Prism js for syntax highlighting.
 
 Without a syntax highlighter our code look like
 
@@ -46,11 +46,11 @@ return result.split("\n");
 ```
 
 
-There are 7 themes available in Prism (<a href="http://prismjs.com/index.html?theme=prism" target="_blank">Default</a>, <a href="http://prismjs.com/index.html?theme=prism-dark" target="_blank">Dark</a>, <a href="http://prismjs.com/index.html?theme=prism-funky" target="_blank">Funky</a>, <a href="http://prismjs.com/index.html?theme=prism-okaidia" target="_blank">Okaidia</a>, <a href="http://prismjs.com/index.html?theme=prism-twilight" target="_blank">Twilight</a>, <a href="http://prismjs.com/index.html?theme=prism-coy" target="_blank">Coy</a> and <a href="http://prismjs.com/index.html?theme=prism-solarizedlight" target="_blank">Solarized Light</a>). It supports a wide variety of languages (mostly all of languages you ever heard of). It also provides a lot of extensions also like line highlight, line numbers, autolinker, show language etc.
+There are 7 themes available in Prism ([Default](http://prismjs.com/index.html?theme=prism), [Dark](http://prismjs.com/index.html?theme=prism-dark), [Funky](http://prismjs.com/index.html?theme=prism-funky), [Okaidia](http://prismjs.com/index.html?theme=prism-okaidia, [Twilight](http://prismjs.com/index.html?theme=prism-twilight), [Coy](http://prismjs.com/index.html?theme=prism-coy) and [Solarized Light](http://prismjs.com/index.html?theme=prism-solarizedlight)). It supports a wide variety of languages (mostly all of languages you ever heard of). It also provides a lot of extensions also like line highlight, line numbers, autolinker, show language etc.
 
 So lets start
 
-1. Go the <a href="http://prismjs.com/download.html" target="_blank">download page</a> of Prism.
+1. Go the [download page](http://prismjs.com/download.html) of Prism.
 
 2. Select your theme. I wiil prefer 'Coy' theme.
 [<img loading="lazy" src="/wp-content/uploads/2016/07/highlight-syntex-using-prism.png" alt="highlight syntax using prism" width="1830" height="955" class="aligncenter size-full wp-image-311" srcset="/wp-content/uploads/2016/07/highlight-syntex-using-prism.png 1830w, /wp-content/uploads/2016/07/highlight-syntex-using-prism-500x261.png 500w, /wp-content/uploads/2016/07/highlight-syntex-using-prism-1024x534.png 1024w, /wp-content/uploads/2016/07/highlight-syntex-using-prism-982x512.png 982w, /wp-content/uploads/2016/07/highlight-syntex-using-prism-400x209.png 400w" sizes="(max-width: 1830px) 100vw, 1830px" />](/wp-content/uploads/2016/07/highlight-syntex-using-prism.png)
@@ -61,7 +61,7 @@ So lets start
 4. Select plugins. Plugins add some extra things to your code like adding displaying line numbers, showing highlighted language in top right corner of that code, preview color when hover on css color code and so on. My favourite plugin is 'Line Numbers' plugin.
 5. Goto the bottom of the page and download JS and CSS files.  
   [<img loading="lazy" src="/wp-content/uploads/2016/07/prism-download.png" alt="prism donwload" width="941" height="444" class="aligncenter size-full wp-image-315" srcset="/wp-content/uploads/2016/07/prism-download.png 941w, /wp-content/uploads/2016/07/prism-download-500x236.png 500w, /wp-content/uploads/2016/07/prism-download-400x189.png 400w" sizes="(max-width: 941px) 100vw, 941px" />](/wp-content/uploads/2016/07/prism-download.png)
-6. Install plugin <a href="https://wordpress.org/plugins/prism/" target="_blank">Prism Syntax Highlighter for WordPress</a>
+6. Install plugin [Prism Syntax Highlighter for WordPress](https://wordpress.org/plugins/prism/).
 7. Goto `Plugins > Editor`. Select 'Prism Syntax Highlighter for WordPress' plugin to edit.
 8. In the right side, under 'Plugin Files', open file `prism/prism.css` and replace its content with the contents of the css file that you downloaded from prism.
 9. Repeat the same process form `prism/prism.js` file, ie. replace its content with the js file that you downloaded from prism.

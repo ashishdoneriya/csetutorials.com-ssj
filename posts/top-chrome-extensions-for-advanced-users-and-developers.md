@@ -13,56 +13,56 @@ tags:
 
 Below is the list of extensions that every developer should install in their Chrome browser. These plugins make the life of developers easy.
 
-### <a href="https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb" target="_blank" rel="noopener noreferrer">Adblock Plus</a>
+### [Adblock Plus](https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb)
 Improves readability of site by blocking all ADDS
 
-### <a href="https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij?hl=en" target="_blank" rel="noopener noreferrer">Ghostery</a>
+### [Ghostery](https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij?hl=en)
 Improves browsing experience and speed by blocking all trackers like Analytics, Advertising, Beacons, Privacy and Widgets.
 
-### <a href="https://chrome.google.com/webstore/detail/cookie-autodelete/fhcgjolkccmbidfldomjliifgaodjagh?hl=en" target="_blank" rel="noopener noreferrer">Cookie Auto Delete</a>
+### [Cookie Auto Delete](https://chrome.google.com/webstore/detail/cookie-autodelete/fhcgjolkccmbidfldomjliifgaodjagh?hl=en)
 Control your cookies! Automatically delete unwanted cookies from your closed tabs while keeping the ones you want.
 
-### <a href="https://chrome.google.com/webstore/detail/builtwith-technology-prof/dapjbgnjinbpoindlpdmhochffioedbn?hl=en" target="_blank" rel="noopener noreferrer">BuiltWith Technology Profiler</a>
+### [BuiltWith Technology Profiler](https://chrome.google.com/webstore/detail/builtwith-technology-prof/dapjbgnjinbpoindlpdmhochffioedbn?hl=en)
 Find out what the website you are visiting is built with using this extension.
 
-### <a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en" target="_blank" rel="noopener noreferrer">Postman</a>
+### [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 Build, test, and document your APIs faster.
 
-### <a href="https://chrome.google.com/webstore/detail/restyle/bldnjpcciemkbmbbfpehdmdhiaemidce" target="_blank" rel="noopener noreferrer">ReStyle</a>
+### [ReStyle](https://chrome.google.com/webstore/detail/restyle/bldnjpcciemkbmbbfpehdmdhiaemidce)
 Its a fork of Stylish extension. Stylish lets you easily install themes and skins for many popular sites. Stylish extension has analytics code and blotted ui. Restyle has analytics code removed and has ui which is very fast compared to new ui of Stylish.
 
-### <a href="https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm?hl=en" target="_blank" rel="noopener noreferrer">WhatFont</a>
+###  [WhatFont](https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm?hl=en)
 The easiest way to identify fonts on web pages.
 
-### <a href="https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall?hl=en" target="_blank" rel="noopener noreferrer">OneTab</a>
+### [OneTab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall?hl=en)
 Convert too many open tabs into a list and later restore them all or individually. It saves upto 95% of memory.
 
-### <a href="https://chrome.google.com/webstore/detail/new-tab-redirect-to-apps/nkglplbcmeamjpiegkcjhfogcjfggjjp?hl=en" target="_blank" rel="noopener noreferrer">New Tab Redirect to Apps &#8211; Axlg</a>
+### [New Tab Redirect to Apps - Axlg](https://chrome.google.com/webstore/detail/new-tab-redirect-to-apps/nkglplbcmeamjpiegkcjhfogcjfggjjp?hl=en)
 Simple extension that will bring you back the classic Apps-Based New tab page.
 
-### <a href="https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca" target="_blank" rel="noopener noreferrer">Momentum</a>
+### [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca)
 Replace new tab page with a personal dashboard featuring todo, weather, and inspiration.
 
-### <a href="https://chrome.google.com/webstore/detail/google-keep-chrome-extens/lpcaedmchfhocbbapmcbpinfpgnhiddi?hl=en" target="_blank" rel="noopener noreferrer">Google Keep Chrome Extension</a>
+### [Google Keep Chrome Extension](https://chrome.google.com/webstore/detail/google-keep-chrome-extens/lpcaedmchfhocbbapmcbpinfpgnhiddi?hl=en)
 Save webpage, image, or quote to Google Keep in a single click.
 
-### <a href="https://chrome.google.com/webstore/detail/print-friendly-pdf/ohlencieiipommannpdfcmfdpjjmeolj?hl=en" target="_blank" rel="noopener noreferrer">Print Friendly & PDF</a>
+### [Print Friendly & PDF](https://chrome.google.com/webstore/detail/print-friendly-pdf/ohlencieiipommannpdfcmfdpjjmeolj?hl=en)
 Print Friendly removes ads, navigation and junk before your print. Pages are optimized for the ultimate print reading experience.
 
-### <a href="https://chrome.google.com/webstore/detail/google-input-tools/mclkkofklkfljcocdinagocijmpgbhab?hl=en" target="_blank" rel="noopener noreferrer">Google Input Tools</a>
+### [Google Input Tools](https://chrome.google.com/webstore/detail/google-input-tools/mclkkofklkfljcocdinagocijmpgbhab?hl=en)
 Input Tools lets you type in the language of your choice.
 
-### <a href="https://chrome.google.com/webstore/detail/save-to-google-drive/gmbmikajjgmnabiglmofipeabaddhgne?hl=en" target="_blank" rel="noopener noreferrer">Save to Google Drive</a>
+### [Save to Google Drive](https://chrome.google.com/webstore/detail/save-to-google-drive/gmbmikajjgmnabiglmofipeabaddhgne?hl=en)
 The Save to Google Drive Chrome extension helps you save web content or browser screenshots to your Google Drive.
 
-### <a href="https://chrome.google.com/webstore/detail/download-fb-album-mod/cgjnhhjpfcdhbhlcmmjppicjmgfkppok?hl=en" target="_blank" rel="noopener noreferrer">Download FB Album mod</a>
+### [Download FB Album mod](https://chrome.google.com/webstore/detail/download-fb-album-mod/cgjnhhjpfcdhbhlcmmjppicjmgfkppok?hl=en)
 Download Facebook, Instagram, Pinterest, Twitter, Ask.fm, Weibo Album.
 
-### <a href="https://chrome.google.com/webstore/detail/dont-add-custom-search-en/dnodlcololidkjgbpeoleabmkocdhacc?hl=en" target="_blank" rel="noopener noreferrer">Don't add custom search engines</a>
+### [Don't add custom search engines](https://chrome.google.com/webstore/detail/dont-add-custom-search-en/dnodlcololidkjgbpeoleabmkocdhacc?hl=en)
 Prevent Google Chrome from auto-adding custom search engines (also known as "OpenSearch").
 
-### <a href="https://chrome.google.com/webstore/detail/adblock-for-youtube/cmedhionkhpnakcndndgjdbohmhepckk?hl=en" target="_blank" rel="noopener noreferrer">Adblock for Youtube&#x2122;</a>
+### [Adblock for Youtube](https://chrome.google.com/webstore/detail/adblock-for-youtube/cmedhionkhpnakcndndgjdbohmhepckk?hl=en)
 Removes the video ads from Youtube.
 
-### <a href="https://chrome.google.com/webstore/detail/popup-blocker-pro/kiodaajmphnkcajieajajinghpejdjai?hl=en" target="_blank" rel="noopener noreferrer">Popup Blocker Pro</a>
+### [Popup Blocker Pro](https://chrome.google.com/webstore/detail/popup-blocker-pro/kiodaajmphnkcajieajajinghpejdjai?hl=en)
 Blocks unwanted popups and popunders on sites you visit.

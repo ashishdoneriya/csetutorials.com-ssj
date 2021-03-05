@@ -48,7 +48,7 @@ But we all know if you have some components then you have to create a full fledg
 
 What if you could write individual vue components in a .vue file and directly include it in index.html or whatever and without building see the changes.
 
-To achieve this functionality we are going to use <a href="https://github.com/FranckFreiburger/http-vue-loader" rel="noopener noreferrer" target="_blank">http-vue-loader</a> plugin. The plugin loads .vue files into your code directly.
+To achieve this functionality we are going to use [http-vue-loader](https://github.com/FranckFreiburger/http-vue-loader) plugin. The plugin loads .vue files into your code directly.
 
 The example is like.
 
@@ -100,12 +100,12 @@ module.exports = {
 </style>
 ```
 
-You could find more information in its official <a href="https://github.com/FranckFreiburger/http-vue-loader" rel="noopener noreferrer" target="_blank">Github repository</a>.
+You could find more information in its official [Github repository](https://github.com/FranckFreiburger/http-vue-loader)
 
 There is one problem though. When you'll edit .vue files the text editors like Notepad++, Gedit, Geany etc. won't be able to highlight html, css and js syntax because they won't know that they have to treat it just like .html files.
 
-In http-vue-loader plugin you could specify .vue file paths but if your component files ends with .html extention, it won't detect. Therefore to solve this problem, I customized it so that we could write our component code in files end with .html extention. You can find the customized js in <a href="https://raw.githubusercontent.com/ashishdoneriya/vuedisk/master/js/httpVueLoader.js" rel="noopener noreferrer" target="_blank">Github</a>.
+In http-vue-loader plugin you could specify .vue file paths but if your component files ends with .html extention, it won't detect. Therefore to solve this problem, I customized it so that we could write our component code in files end with .html extention. You can find the customized js in [Github](https://raw.githubusercontent.com/ashishdoneriya/vuedisk/master/js/httpVueLoader.js).
 
 You could see the projects that I've created using this technique –  
-<a href="https://github.com/ashishdoneriya/vuedisk" rel="noopener noreferrer" target="_blank">https://github.com/ashishdoneriya/vuedisk</a>  
-<a href="https://github.com/ashishdoneriya/datakeeper" rel="noopener noreferrer" target="_blank">https://github.com/ashishdoneriya/datakeeper</a>
+* [VueDisk](https://github.com/ashishdoneriya/vuedisk)
+* [Data Keeper](https://github.com/ashishdoneriya/datakeeper)

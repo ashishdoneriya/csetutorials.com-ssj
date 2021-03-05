@@ -12,7 +12,7 @@ tags:
   - jumbune
 ---
 
-First download the jar from <a href="http://www.jumbune.com/" target="_blank" rel="noopener noreferrer">Jumbune website</a> and get the licence.
+First download the jar from [Jumbune website](http://www.jumbune.com/) and get the licence.
 
 In your system you have to set some environment variable.
 

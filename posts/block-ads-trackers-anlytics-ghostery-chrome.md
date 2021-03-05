@@ -16,7 +16,7 @@ It is available both browsers Firefox and Chrome. I will explain the steps for G
 
 Steps for Google Chrome :
 
-1. <a href="https://chrome.google.com/webstore/detail/ghostery-%E2%80%93-privacy-ad-blo/mlomiejdfkolichcflejclcbmpeaniij?hl=en" target="_blank" rel="noopener noreferrer">Install Ghostery</a>
+1. [Install Ghostery](https://chrome.google.com/webstore/detail/ghostery-%E2%80%93-privacy-ad-blo/mlomiejdfkolichcflejclcbmpeaniij?hl=en)
 
 2. After installation it will open a new tab automatically. Close that tab.
 

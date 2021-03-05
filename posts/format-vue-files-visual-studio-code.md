@@ -18,9 +18,9 @@ A Guide to format vue files in visual studio code editor.
 
 First Install the below extensions :
 
-1. <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" rel="noopener" target="_blank">Prettier</a>  
-2. <a href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig" rel="noopener" target="_blank">EditorConfig</a>  
-3. <a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur" rel="noopener" target="_blank">Vetur</a>
+1. [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)  
+2. [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)  
+3. [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
 
 Now in your project base directory, create a file `.editorconfig` and paste the below content
 

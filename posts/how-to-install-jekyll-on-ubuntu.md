@@ -55,4 +55,4 @@ So after some research I found gem binary file is in `/usr/bin` directory. There
 ```
 
 
-4. That's it. Now you can resume your <a href="https://jekyllrb.com/docs/step-by-step/01-setup/#create-a-site" target="_blank" rel="nofollow noopener noreferrer">journey to the Jekyll</a>.
+4. That's it. Now you can resume your [journey to the Jekyll](https://jekyllrb.com/docs/step-by-step/01-setup/#create-a-site).
