@@ -107,7 +107,7 @@
           I 
         </div> 
        </header> 
-       <div class="entry-content clearfix"> 
+       <div class="entry-content clearfix">    
         <p>Influxdata is a platform for storing, collecting, visualizing and managing time-series data. Currently Influxdb is the most famous time series database. This article is for version 1.x only.</p> 
         <p>The following topics that I am going to cover in this article.</p> 
         <ol> 
@@ -122,7 +122,7 @@
         </ol> 
         <p>In influxdb the combination of timestamp and tags is composite keys. So lets start.</p> 
         <h2>Install Influxdb</h2> 
-        <p>First of all install influxdb from its <a href="https://portal.influxdata.com/downloads/" target="_blank" rel="nofollow noreferred noopener noreferrer">official download page</a>. If you donot have admin rights then you can follow my article on how to install influxdb without root access. <a href="/install-influxdb-without-root-access-linux.html">/install-influxdb-without-root-access-linux.html</a></p> 
+        <p>First of all install influxdb from its <a href="https://portal.influxdata.com/downloads/" target="_blank" rel="noopener nofollow">official download page</a>. If you donot have admin rights then you can follow my article on how to install influxdb without root access. <a href="/install-influxdb-without-root-access-linux.html">/install-influxdb-without-root-access-linux.html</a></p> 
         <p>Now open another terminal and start the CLI using command <code>influx</code></p> 
         <pre><code class="language-bash">
 $ influx
@@ -177,7 +177,7 @@ mydb
          <li>We can use <code>\</code> character for escaping comma, space, equal and other special character in field (field) value</li> 
         </ul> 
         <p><strong>Note :</strong> Once you write a particular field in a particular datatype, you cannot change it back.</p> 
-        <p>For more details refer official <a href="https://docs.influxdata.com/influxdb/v0.13/write_protocols/write_syntax/" target="_blank" rel="noopener noreferrer">documentation</a></p> 
+        <p>For more details refer official <a href="https://docs.influxdata.com/influxdb/v0.13/write_protocols/write_syntax/" target="_blank" rel="noopener nofollow">documentation</a></p> 
         <h2>Querying Data</h2> 
         <p>To select all fields from measurement</p> 
         <pre><code class="language-bash">select * from measurementName
@@ -232,7 +232,7 @@ time			age	height	name
         <pre><code class="language-bash">select mean("temperature") from stats where time &gt; now() - 24h group by time(1h)
 </code></pre> 
         <p>You can change the aggregate function mean. There are various aggregate functions like mean, max, min, median, count, mode, distinct, sum, stddev, first, last, difference.</p> 
-        <p>You can read about queries in details from <a href="https://docs.influxdata.com/influxdb/v0.13/query_language/" target="_blank" rel="noopener noreferrer">its website</a></p> 
+        <p>You can read about queries in details from <a href="https://docs.influxdata.com/influxdb/v0.13/query_language/" target="_blank" rel="noopener nofollow">its website</a></p> 
         <h2>Deleting measurement or data from measurement</h2> 
         <p><strong>To delete a whole measurement</strong> Syntax :</p> 
         <pre><code class="language-bash">drop measurement measurementName
@@ -253,7 +253,7 @@ time			age	height	name
         <pre><code class="language-bash">format csv
 </code></pre> 
         <pre><code class="language-bash">format json
-</code></pre> 
+</code></pre>   
         <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
 										padding: 0 5px 5px;
 										text-decoration: none;

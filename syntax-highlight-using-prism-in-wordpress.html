@@ -107,8 +107,8 @@
           S 
         </div> 
        </header> 
-       <div class="entry-content clearfix"> 
-        <p><a href="http://prismjs.com/index.html" target="_blank">Prism</a> is a lightweight, extensible, fast and simple highlighter. It is also used by some famous and popular websites like Mozilla, SitePoint and Drupal. Our website is also using Prism js for syntax highlighting.</p> 
+       <div class="entry-content clearfix">    
+        <p><a href="http://prismjs.com/index.html" target="_blank" rel="noopener nofollow">Prism</a> is a lightweight, extensible, fast and simple highlighter. It is also used by some famous and popular websites like Mozilla, SitePoint and Drupal. Our website is also using Prism js for syntax highlighting.</p> 
         <p>Without a syntax highlighter our code look like</p> 
         <pre><code>File file = new File("/home/ashish/error.txt");
 FileReader is = new FileReader(file);
@@ -135,15 +135,15 @@ while ( (line = br.readLine()) != null) {
 br.close();
 return result.split("\n");
 </code></pre> 
-        <p>There are 7 themes available in Prism (<a href="http://prismjs.com/index.html?theme=prism" target="_blank">Default</a>, <a href="http://prismjs.com/index.html?theme=prism-dark" target="_blank">Dark</a>, <a href="http://prismjs.com/index.html?theme=prism-funky" target="_blank">Funky</a>, <a href="http://prismjs.com/index.html?theme=prism-okaidia" target="_blank">Okaidia</a>, <a href="http://prismjs.com/index.html?theme=prism-twilight" target="_blank">Twilight</a>, <a href="http://prismjs.com/index.html?theme=prism-coy" target="_blank">Coy</a> and <a href="http://prismjs.com/index.html?theme=prism-solarizedlight" target="_blank">Solarized Light</a>). It supports a wide variety of languages (mostly all of languages you ever heard of). It also provides a lot of extensions also like line highlight, line numbers, autolinker, show language etc.</p> 
+        <p>There are 7 themes available in Prism (<a href="http://prismjs.com/index.html?theme=prism" target="_blank" rel="noopener nofollow">Default</a>, <a href="http://prismjs.com/index.html?theme=prism-dark" target="_blank" rel="noopener nofollow">Dark</a>, <a href="http://prismjs.com/index.html?theme=prism-funky" target="_blank" rel="noopener nofollow">Funky</a>, [Okaidia](http://prismjs.com/index.html?theme=prism-okaidia, <a href="http://prismjs.com/index.html?theme=prism-twilight" target="_blank" rel="noopener nofollow">Twilight</a>, <a href="http://prismjs.com/index.html?theme=prism-coy" target="_blank" rel="noopener nofollow">Coy</a> and <a href="http://prismjs.com/index.html?theme=prism-solarizedlight" target="_blank" rel="noopener nofollow">Solarized Light</a>). It supports a wide variety of languages (mostly all of languages you ever heard of). It also provides a lot of extensions also like line highlight, line numbers, autolinker, show language etc.</p> 
         <p>So lets start</p> 
         <ol> 
-         <li> <p>Go the <a href="http://prismjs.com/download.html" target="_blank">download page</a> of Prism.</p> </li> 
+         <li> <p>Go the <a href="http://prismjs.com/download.html" target="_blank" rel="noopener nofollow">download page</a> of Prism.</p> </li> 
          <li> <p>Select your theme. I wiil prefer 'Coy' theme. <a href="/wp-content/uploads/2016/07/highlight-syntex-using-prism.png"><img loading="lazy" src="/wp-content/uploads/2016/07/highlight-syntex-using-prism.png" alt="highlight syntax using prism" width="1830" height="955" class="aligncenter size-full wp-image-311" srcset="/wp-content/uploads/2016/07/highlight-syntex-using-prism.png 1830w, /wp-content/uploads/2016/07/highlight-syntex-using-prism-500x261.png 500w, /wp-content/uploads/2016/07/highlight-syntex-using-prism-1024x534.png 1024w, /wp-content/uploads/2016/07/highlight-syntex-using-prism-982x512.png 982w, /wp-content/uploads/2016/07/highlight-syntex-using-prism-400x209.png 400w" sizes="(max-width: 1830px) 100vw, 1830px"></a></p> </li> 
          <li> <p>Select the languages that you want to highlight in your website. <strong>Note :</strong> Do not select all languages as the size of javascript file (that prism will generate for you to download) will be increased.</p> </li> 
          <li> <p>Select plugins. Plugins add some extra things to your code like adding displaying line numbers, showing highlighted language in top right corner of that code, preview color when hover on css color code and so on. My favourite plugin is 'Line Numbers' plugin.</p> </li> 
          <li> <p>Goto the bottom of the page and download JS and CSS files.<br> <a href="/wp-content/uploads/2016/07/prism-download.png"><img loading="lazy" src="/wp-content/uploads/2016/07/prism-download.png" alt="prism donwload" width="941" height="444" class="aligncenter size-full wp-image-315" srcset="/wp-content/uploads/2016/07/prism-download.png 941w, /wp-content/uploads/2016/07/prism-download-500x236.png 500w, /wp-content/uploads/2016/07/prism-download-400x189.png 400w" sizes="(max-width: 941px) 100vw, 941px"></a></p> </li> 
-         <li> <p>Install plugin <a href="https://wordpress.org/plugins/prism/" target="_blank">Prism Syntax Highlighter for WordPress</a></p> </li> 
+         <li> <p>Install plugin <a href="https://wordpress.org/plugins/prism/" target="_blank" rel="noopener nofollow">Prism Syntax Highlighter for WordPress</a>.</p> </li> 
          <li> <p>Goto <code>Plugins &gt; Editor</code>. Select 'Prism Syntax Highlighter for WordPress' plugin to edit.</p> </li> 
          <li> <p>In the right side, under 'Plugin Files', open file <code>prism/prism.css</code> and replace its content with the contents of the css file that you downloaded from prism.</p> </li> 
          <li> <p>Repeat the same process form <code>prism/prism.js</code> file, ie. replace its content with the js file that you downloaded from prism.</p> </li> 
@@ -156,7 +156,7 @@ echo 'export PATH=$PATH:/home/username/nodejs/bin' &gt;&gt; /home/username/.bash
         <p>Output will be</p> 
         <pre><code class="language-bash">ls
 echo 'export PATH=$PATH:/home/username/nodejs/bin' &gt;&gt; /home/username/.bashrc
-</code></pre> 
+</code></pre>   
         <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
 										padding: 0 5px 5px;
 										text-decoration: none;

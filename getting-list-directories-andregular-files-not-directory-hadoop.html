@@ -107,7 +107,7 @@
           H 
         </div> 
        </header> 
-       <div class="entry-content clearfix"> 
+       <div class="entry-content clearfix">    
         <p>Guide to get the list of only files and not directories from hdfs data storage<br> Logic : hdfs output | linux (ubuntu/centos) commands to get the desired results</p> 
         <p>Differentiator:<br> 1- Hadoop returns the output of the ls command in a 8 column form<br> 2- Directories versus regular files can be identified using the first column of the o/p<br> 3- In the o/p the directories starts with d and then the permissions of the directory<br> 4- In the o/p the regular files starts with a -</p> 
         <p>Following command is to list only regular files in hdfs :</p> 
@@ -122,7 +122,7 @@
         <p>Example :</p> 
         <pre><code class="language-bash">hadoop fs -ls -R &amp;lt;source_directory&amp;gt; | sed 's/  */ /g' | cut -d\  -f 1,8 --output-delimiter=',' | grep ^d | cut -d, -f2
 </code></pre> 
-        <p>Efficiently using the cut command : <a href="http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html" target="_blank" rel="no-follow noopener noreferrer">http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html</a><br> &amp; sed command : <a href="https://www.tutorialspoint.com/unix/unix-regular-expressions.htm" target="_blank" rel="no-follow noopener noreferrer">https://www.tutorialspoint.com/unix/unix-regular-expressions.htm</a></p> 
+        <p>Efficiently using the cut command : <a href="http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html" target="_blank" rel="noopener nofollow">http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html</a><br> &amp; sed command : <a href="https://www.tutorialspoint.com/unix/unix-regular-expressions.htm" target="_blank" rel="noopener nofollow">https://www.tutorialspoint.com/unix/unix-regular-expressions.htm</a></p>   
         <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
 										padding: 0 5px 5px;
 										text-decoration: none;

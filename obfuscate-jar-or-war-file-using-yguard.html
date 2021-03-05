@@ -107,7 +107,7 @@
           H 
         </div> 
        </header> 
-       <div class="entry-content clearfix"> 
+       <div class="entry-content clearfix">    
         <p>YGuard is a free Java bytecode obfuscator and shrinker. It is one of the best code obfuscation tools. It improves your software deployment by prohibiting undesirable access to your source code. It is free and protect code from reverse engineering. It can obfuscate Names and shrinks Code.</p> 
         <p>YGuard is an Ant Task. It means it can be run through ant. If you are using maven then you would need a plugin called <code>maven-antrun-plugin</code>. You can call ant script from pom.xml using this plugin. Here the code for calling ant script using maven.</p> 
         <pre><code class="language-xml">&lt;profile&gt;
@@ -136,10 +136,10 @@
 &lt;/profile&gt;
 </code></pre> 
         <p>Now lets start.</p> 
-        <p>First <a target="_blank" href="https://www.yworks.com/downloads#yGuard" rel="noopener noreferrer">download</a> the yguard jar file from its website and put it in your project directory. If its a maven project then I suggest you to put it with pom.xml file.</p> 
+        <p>First <a target="_blank" href="https://www.yworks.com/downloads#yGuard" rel="noopener nofollow">download</a> the yguard jar file from its website and put it in your project directory. If its a maven project then I suggest you to put it with pom.xml file.</p> 
         <p>Create a file “build.xml” in your project directory. In maven project, put it with pom.xml.</p> 
         <h3>Obfuscate a war file</h3> 
-        <p>There is an excellent <a href="http://codeaweso.me/2009/02/obfuscating-a-webapp-war-file-with-yguard-and-ant/" target="_blank" rel="noopener noreferrer">ant script</a> written by Mike Christianson. What he did in that script is</p> 
+        <p>There is an excellent <a href="http://codeaweso.me/2009/02/obfuscating-a-webapp-war-file-with-yguard-and-ant/" target="_blank" rel="noopener nofollow">ant script</a> written by Mike Christianson. What he did in that script is</p> 
         <ol> 
          <li>Created two directories unwar.dir and obfuscation.dir</li> 
          <li>Extract the war file in unwar.dir</li> 
@@ -152,7 +152,7 @@
          <li>That's it.</li> 
         </ol> 
         <p>In short, place all the jars and code together in one place, obfuscate it and then put back all in their respective places.</p> 
-        <p><strong>NOTE :</strong> There can be some third party jars ( like <a href="https://mvnrepository.com/artifact/com.google.code.gson/gson" target="_blank" rel="noopener noreferrer">gson</a>) which can't be obfuscated (due to some class name problem). So you have to exclude those jars from being obfuscated. ie. Its better not to obfuscate third party jars.</p> 
+        <p><strong>NOTE :</strong> There can be some third party jars ( like gson) which can't be obfuscated (due to some class name problem). So you have to exclude those jars from being obfuscated. ie. Its better not to obfuscate third party jars.</p> 
         <h3>Obfuscate a single jar file</h3> 
         <p>For obfuscating a single jar file, copy the below ant script and paste it in build.xml file.</p> 
         <pre><code class="language-xml">&lt;project xmlns='antlib:org.apache.tools.ant'&gt;
@@ -201,7 +201,7 @@
   &lt;delete dir="tempDir" /&gt;
 &lt;/project&gt;
 </code></pre> 
-        <p>I think the script is self explanatory. You can do changes according to your requirements.</p> 
+        <p>I think the script is self explanatory. You can do changes according to your requirements.</p>   
         <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
 										padding: 0 5px 5px;
 										text-decoration: none;
