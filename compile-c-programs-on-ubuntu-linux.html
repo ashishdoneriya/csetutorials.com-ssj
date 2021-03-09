@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
-  <base href="$site.baseUrl"> 
   <!-- Title --> 
   <title>How to write C or C++ programs on Ubuntu Linux</title> 
   <link rel="canonical" href="https://csetutorials.com/compile-c-programs-on-ubuntu-linux.html"> 
@@ -116,13 +115,13 @@
          <li>Using command line</li> 
          <li>Using IDE (app)</li> 
         </ol> 
-        <h2>Using command line</h2> 
+        <h2 id="using-command-line">Using command line</h2> 
         <p>To run a C or C++ program on linux, there are three phases write code, compile code and run it. First you have to write your code using a text editor eg. gedit (it is just like Notepad++). Then after writing the code you have to manually compile the code using particular commands, the compiler creates an executable file ( just like .exe in windows) for our code and then we run that executable file</p> 
         <p>For compile C programs you need <code>gcc</code> c compiler linux tool which is installed by default on Ubuntu. For running C++ programs you need <code>g++</code> tool which is not installed by default on Ubuntu. You have to install it by running command</p> 
         <pre><code class="language-bash">sudo apt-get install g++
 
 </code></pre> 
-        <h3>Running a C program</h3> 
+        <h3 id="running-a-c-program">Running a C program</h3> 
         <p><strong>NOTE :</strong> <code>&lt;conio.h&gt;</code> will not work on Ubuntu.</p> 
         <p>Create a text file named <code>test.c</code><br> <a href="/wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux.png"><img loading="lazy" src="/wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux.png" alt="Writing C program" width="1920" height="1080" class="aligncenter size-full wp-image-1098" srcset="/wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux.png 1920w, /wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux-500x281.png 500w, /wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux-1024x576.png 1024w, /wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux-982x552.png 982w, /wp-content/uploads/2018/10/writing-c-program-on-ubuntu-linux-400x225.png 400w" sizes="(max-width: 1920px) 100vw, 1920px"></a></p> 
         <p>Now open a terminal and execute the below command</p> 
@@ -135,7 +134,7 @@
 </code></pre> 
         <p>In linux <code>./</code> is used to run an executable file. In our case executable file is <code>test</code></p> 
         <p><a href="/wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux.png"><img loading="lazy" src="/wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux.png" alt="Running C program" width="1920" height="1080" class="aligncenter size-full wp-image-1101" srcset="/wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux.png 1920w, /wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux-500x281.png 500w, /wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux-1024x576.png 1024w, /wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux-982x552.png 982w, /wp-content/uploads/2018/10/running-c-program-on-ubuntu-linux-400x225.png 400w" sizes="(max-width: 1920px) 100vw, 1920px"></a></p> 
-        <h3>Running a C++ program</h3> 
+        <h3 id="running-a-c-program-1">Running a C++ program</h3> 
         <p>Create a text file named <code>test.cc (you can also use test.cpp)</code><br> <a href="/wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux.png"><img loading="lazy" src="/wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux.png" alt="Writing C++ program" width="1920" height="1080" class="aligncenter size-full wp-image-1103" srcset="/wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux.png 1920w, /wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux-500x281.png 500w, /wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux-1024x576.png 1024w, /wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux-982x552.png 982w, /wp-content/uploads/2018/10/writing-c-plus-plus-program-on-ubuntu-linux-400x225.png 400w" sizes="(max-width: 1920px) 100vw, 1920px"></a></p> 
         <p>Now open a terminal and execute the below command</p> 
         <pre><code class="language-bash">g++ test.cc -o test
@@ -144,7 +143,7 @@
         <pre><code class="language-bash">./test
 </code></pre> 
         <p><a href="/wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux.png"><img loading="lazy" src="/wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux.png" alt="Running C++ program" width="1920" height="1080" class="aligncenter size-full wp-image-1104" srcset="/wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux.png 1920w, /wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux-500x281.png 500w, /wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux-1024x576.png 1024w, /wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux-982x552.png 982w, /wp-content/uploads/2018/10/running-c-plus-plus-program-on-ubuntu-linux-400x225.png 400w" sizes="(max-width: 1920px) 100vw, 1920px"></a></p> 
-        <h2>Using IDE</h2> 
+        <h2 id="using-ide">Using IDE</h2> 
         <p>Using IDE, running a C or C++ program is very easy and productive. Here we are going to use Geany application. So first install geany by using the command below.</p> 
         <pre><code class="language-bash">sudo apt-get install geany
 </code></pre> 

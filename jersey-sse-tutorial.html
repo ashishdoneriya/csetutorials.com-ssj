@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
-  <base href="$site.baseUrl"> 
   <!-- Title --> 
   <title>Jersey Server Side Events Tutorial</title> 
   <link rel="canonical" href="https://csetutorials.com/jersey-sse-tutorial.html"> 
@@ -111,12 +110,12 @@
        </header> 
        <div class="entry-content clearfix">    
         <p>In this article I'm going to explain what is SSE (Server Side Events) and after that will show you an example.</p> 
-        <h3>What is SSE?</h3> 
+        <h3 id="what-is-sse">What is SSE?</h3> 
         <p>In general scenario when we want to send something to the client, then client creates a requests to the server. After that the server fetches necessary information / data and sends to the client and then connection is closed. Suppose what if the time to fetch the data is very long.</p> 
         <p>Lets say there are 100 people information and client wants server to verify each. So the client sends the information of 100 people to server. Lets say the time taken by server to verify each person's information is 10 seconds. So it would take around 16 minutes for server to verify and send the response to the client. In this case, while waiting, the client could become frustrated as he sees no progress. He could think that there might be some error or he hadn't press the button correctly.</p> 
         <p>There is a solution to this problem and that is sending the information of person from server to client as soon as that person's information is verified. It means if the server has finished verifying person 1 then notify the client that it has verifed person 1, if the server has finished verifying person 2 then notify the client that it has verifed person 2 and so on. You might not be aware of such facility in which you could send response to client one by one.</p> 
         <p>SSE (Server Side Events) is such facility using which we could send response one by one. In the below exmple I'm going to explain how you can create an sse rest api using Jersey. Jersey is a web services framework to create rest apis.</p> 
-        <h3>Example Project</h3> 
+        <h3 id="example-project">Example Project</h3> 
         <ol> 
          <li>Create a maven project using this command</li> 
         </ol> 

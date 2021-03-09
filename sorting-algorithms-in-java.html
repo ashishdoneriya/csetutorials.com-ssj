@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
-  <base href="$site.baseUrl"> 
   <!-- Title --> 
   <title>Sorting Algorithms implementation in Java</title> 
   <link rel="canonical" href="https://csetutorials.com/sorting-algorithms-in-java.html"> 
@@ -109,7 +108,12 @@
         </div> 
        </header> 
        <div class="entry-content clearfix">    
-        <h3>Quick Sort</h3> 
+        <h2 id="algorithms--">Algorithms -</h2> 
+        <ol> 
+         <li><a href="#quick-sort">Quick Sort</a></li> 
+         <li><a href="#selection-sort">Selection Sort</a></li> 
+        </ol> 
+        <h3 id="quick-sort">Quick Sort</h3> 
         <p>In quick sort we choose first or last element in array as pivot element and categorize the elements based on whether they are smaller or greater than the pivot element.</p> 
         <pre><code class="language-java">public class QuickSort {
 
@@ -166,11 +170,13 @@
 	}
 }
 </code></pre> 
-        <h3>Selection Sort</h3> 
+        <h3 id="selection-sort">Selection Sort</h3> 
+        <p>In selection sort we find the minimum number in the array and put it at the starting of array.</p> 
         <pre><code class="language-java">public class SelectionSort {
 
 	public static void main(String[] args) {
-		int[] arr = new int[] { 4, 1, 4, 6, 21, 3, 7, 2, 5, 67, 52, 3, 23, 6, 2, 2 };
+		int[] arr = new int[] 
+			{ 4, 1, 4, 6, 21, 3, 7, 2, 5, 67, 52, 3, 23, 6, 2, 2 };
 		sort(arr);
 		print(arr);
 	}

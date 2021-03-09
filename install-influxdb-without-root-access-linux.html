@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
-  <base href="$site.baseUrl"> 
   <!-- Title --> 
   <title>How to install influxdb without root access on Linux</title> 
   <link rel="canonical" href="https://csetutorials.com/install-influxdb-without-root-access-linux.html"> 
@@ -111,30 +110,30 @@
        <div class="entry-content clearfix">    
         <p>Influxdb time series database is one of the fastest timeseries database. It is current the best aws time series database. Its purely written in go language. It is opensource and is used for recording metrics, events and performing analytics. The steps to install influxdb on various linux distributions (aws influxdb or azure) are available on its <a href="https://portal.influxdata.com/downloads" target="_blank" rel="noopener nofollow">download page</a>. But there is one problem in install instructions and that is all requires root access. And also there are no instructions to setup influxdb on linux distributions other than Redhat, Debian, Ubuntu and CentOS.</p> 
         <p>In this post I am going to tell you how to setup influxdb on linux. As of now (Oct 2018) the latest version of influxdb is 1.6.3.</p> 
-        <h2>Steps to setup influxdb</h2> 
-        <h3>Download tar.gz file</h3> 
+        <h2 id="steps-to-setup-influxdb">Steps to setup influxdb</h2> 
+        <h3 id="download-targz-file">Download tar.gz file</h3> 
         <pre><code class="language-bash">wget https://dl.influxdata.com/influxdb/releases/influxdb-1.6.3-static_linux_amd64.tar.gz
 </code></pre> 
-        <h3>Extract the tar.gz file</h3> 
+        <h3 id="extract-the-targz-file">Extract the tar.gz file</h3> 
         <pre><code class="language-bash">tar xvfz influxdb-1.6.3-static_linux_amd64.tar.gz
 </code></pre> 
-        <h3>Go to the extracted folder</h3> 
+        <h3 id="go-to-the-extracted-folder">Go to the extracted folder</h3> 
         <pre><code class="language-bash">cd influxdb-1.6.3-1/
 </code></pre> 
-        <h3>Remove Unnecessary files</h3> 
+        <h3 id="remove-unnecessary-files">Remove Unnecessary files</h3> 
         <pre><code class="language-bash">rm -r usr/
 rm influxdb.conf
 rm influx_stress
 rm influx_tsm
 </code></pre> 
         <p>If you are going to use <code>influx_inspect</code>, <code>influx_stress</code> or <code>influx_tsm</code> then do not delete these. But if you don't know what are these or don't want to use these then you can delete. In the above commands you can see we have removed influxb.conf file also. This is because we are going to create a new influxdb.conf file in the next step.</p> 
-        <h3>Generate influxdb.conf</h3> 
+        <h3 id="generate-influxdbconf">Generate influxdb.conf</h3> 
         <p>Generate a new influxdb.conf file using below commands</p> 
         <pre><code class="language-bash">chmod +x influxd
 ./influxd config &gt; influxdb.conf
 </code></pre> 
         <p>An influxdb.conf file will be generated in the current directory. This file contains current configuration (like bind ports, data and metadata storage path, enable logs or not etc.) that influxdb is going to use when we start it.</p> 
-        <h3>Change influxdb.conf</h3> 
+        <h3 id="change-influxdbconf">Change influxdb.conf</h3> 
         <p>Now Open influxdb.conf file with your favourite text editor because we are going to change it.</p> 
         <p><strong>a) Disable anonymous reporting</strong> : Influxdb sends your os stats to its server once in every 24 hours. To disable it set reporting-disabled to false in the first line.</p> 
         <pre><code class="language-conf">reporting-disabled = false

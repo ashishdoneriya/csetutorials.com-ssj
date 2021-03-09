@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
-  <base href="$site.baseUrl"> 
   <!-- Title --> 
   <title>How to upload multiple files to server using Ajax and Spring mvc</title> 
   <link rel="canonical" href="https://csetutorials.com/upload-multiple-files-server-using-ajax-spring-mvc.html"> 
@@ -109,7 +108,7 @@
        </header> 
        <div class="entry-content clearfix">    
         <p>In one of my projects, I had to upload the files to server using javascript file upload. So after a lot of hit and trials here is the code snippet that I used to upload multiple files to server while remain on the same page in client using ajax and spring mvc.&nbsp;In this example we are submitting the form through javascript instead of directly from html.</p> 
-        <h4>HTML Code</h4> 
+        <h4 id="html-code">HTML Code</h4> 
         <pre><code class="language-html">&lt;form class="form-horizontal" id="myForm" method="POST" enctype="multipart/form-data"&gt;
   &lt;fieldset&gt;
     &lt;!-- File Button --&gt;
@@ -131,7 +130,7 @@
   &lt;/fieldset&gt;
 &lt;/form&gt;
 </code></pre> 
-        <h4>Javascript Code</h4> 
+        <h4 id="javascript-code">Javascript Code</h4> 
         <pre><code class="language-javascript">function submitForm() {
 
   var paperElement = document.getElementById("modalPapers");
@@ -152,7 +151,7 @@
   xhr.send(formData);
 }
 </code></pre> 
-        <h4>Java Code</h4> 
+        <h4 id="java-code">Java Code</h4> 
         <p>(server side)</p> 
         <pre><code class="language-java">import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

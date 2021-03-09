@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
-  <base href="$site.baseUrl"> 
   <!-- Title --> 
   <title>Things to do for every version of Ubuntu</title> 
   <link rel="canonical" href="https://csetutorials.com/things-to-do-ubuntu.html"> 
@@ -109,17 +108,17 @@
         </div> 
        </header> 
        <div class="entry-content clearfix">    
-        <h3>Update system</h3> 
+        <h3 id="update-system">Update system</h3> 
         <pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get upgrade
 </code></pre> 
-        <h3>Remove unnecessary apps</h3> 
+        <h3 id="remove-unnecessary-apps">Remove unnecessary apps</h3> 
         <pre><code class="language-bash">sudo apt-get remove --purge aisleriot gnome-mahjongg deja-dup deja-dup-backend-gvfs totem totem-common totem-mozilla totem-plugins activity-log-manager activity-log-manager-control-center brasero brasero-cdrkit brasero-common  landscape-client-ui-install unity-control-center unity-control-center-signon empathy empathy-common thunderbird thunderbird-gnome-support onboard onboard-data gnome-orca unity-webapps-common shotwell rhythmbox evolution-data-server evolution-data-server-online-accounts gnome-calendar gucharmap cheese vino gnome-mines gnome-sudoku xdiagnose usb-creator-gtk remmina* remmina-common* remmina-plugin-rdp* remmina-plugin-vnc*
 </code></pre> 
         <pre><code class="language-bash">sudo apt-get remove $(dpkg --get-selections | cut -f1 | grep -P "^unity-(lens|scope)-" | grep -vP "unity-(lens|scope)-(home|applications|files)" | tr "\n" " ")
 </code></pre> 
         <pre><code class="language-bash">sudo apt-get autoremove
 </code></pre> 
-        <h3>Execute sudo without Password</h3> 
+        <h3 id="execute-sudo-without-password">Execute sudo without Password</h3> 
         <p>Open terminal and execute command</p> 
         <pre><code class="language-bash">sudo visudo
 </code></pre> 
@@ -127,12 +126,12 @@
         <pre><code class="language-bash">username ALL=(ALL) NOPASSWD: ALL
 </code></pre> 
         <p>Replace username with the username of your system. Now press <code>Ctrl + X</code> then <code>Ctrl + Y</code> and then press Enter.</p> 
-        <h3>Display full list of startup applications and processes</h3> 
+        <h3 id="display-full-list-of-startup-applications-and-processes">Display full list of startup applications and processes</h3> 
         <pre><code class="language-bash">sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 </code></pre> 
         <p>Now you can open Startup Applications and remove unnecessary applications that starts as ubuntu starts.</p> 
-        <h3><a href="/passwordless-ssh-ubuntu-linux.html">Enable passwordless ssh</a></h3> 
-        <h3><a href="http://www.pontikis.net/blog/tweak-ssd-ubuntu-16.04" target="_blank" rel="noopener nofollow">Add noatime to fstab</a></h3> 
+        <h3 id="enable-passwordless-ssh"><a href="/passwordless-ssh-ubuntu-linux.html">Enable passwordless ssh</a></h3> 
+        <h3 id="add-noatime-to-fstab"><a href="http://www.pontikis.net/blog/tweak-ssd-ubuntu-16.04" target="_blank" rel="noopener nofollow">Add noatime to fstab</a></h3> 
         <p>disable last accessed time.</p>   
         <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
 										padding: 0 5px 5px;

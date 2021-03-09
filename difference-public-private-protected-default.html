@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
-  <base href="$site.baseUrl"> 
   <!-- Title --> 
   <title>What is the difference between public, private, protected and default?</title> 
   <link rel="canonical" href="https://csetutorials.com/difference-public-private-protected-default.html"> 
@@ -113,7 +112,7 @@
         <p>In java if we don't specify any access modifier in methods or fields, it assumes as 'default' but in C++ it assumes as 'private'.</p> 
         <p>First of all let me specify all the four in short and then explain in detail.</p> 
         <p><strong>Public ::</strong> All other classes and methods can access.<br> <strong>Private ::</strong> No other classes and methods could access.<br> <strong>Protected ::</strong> Only those classes who inherited that class or is in the same package of that class could access.<br> <strong>Default ::</strong> Classes which are in the same package as that class could access.</p> 
-        <h2>Public</h2> 
+        <h2 id="public">Public</h2> 
         <p>Lets say I have class called as <code>Bar</code> in package <code>com.csetutorials</code></p> 
         <pre><code class="language-java">package com.csetutorials;
 public class Bar {
@@ -132,7 +131,7 @@ public class Foo {
 }
 </code></pre> 
         <p>If we run the class <code>Foo</code> it will display the output '10' stats that we can change its value</p> 
-        <h2>Private</h2> 
+        <h2 id="private">Private</h2> 
         <p>In the above examples in class <code>Bar</code>, change the access modifier of field <code>counter</code> from public to private</p> 
         <pre><code class="language-java">package com.csetutorials;
 public class Bar {
@@ -170,7 +169,7 @@ public class Foo {
 	}
 }
 </code></pre> 
-        <h2>Protected</h2> 
+        <h2 id="protected">Protected</h2> 
         <p>Protected falls somewhere between Private and Public. Any method or field who are protected can be accessed or modified by only those classes who extends their class and not any other. If it doesn't inherit that class then both the classes should be in same package to access that class member.</p> 
         <p>Example :</p> 
         <pre><code class="language-java">package com.csetutorials;
@@ -227,7 +226,7 @@ public class Test {
 }
 </code></pre> 
         <p>When we run Test class, output will be 10</p> 
-        <h2>Default</h2> 
+        <h2 id="default">Default</h2> 
         <p>If a class member is default then it can only be accessible by those class that are in the same package.</p> 
         <p>If we don't specify an access modifier then java automatically assumes that member as default, but C++ assumes as private.</p> 
         <p>Example :</p> 

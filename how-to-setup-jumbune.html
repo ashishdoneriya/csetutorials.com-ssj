@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
-  <base href="$site.baseUrl"> 
   <!-- Title --> 
   <title>How to setup Jumbune</title> 
   <link rel="canonical" href="https://csetutorials.com/how-to-setup-jumbune.html"> 
@@ -150,14 +149,14 @@ Syncing Jars from Hadoop to Jumbune.......[SUCCESS]
 (i) Install &amp; Configure InfluxDB | (c) Just Configure InfluxDB | (l) Install Later
 </code></pre> 
         <p>If you want jumbune to automatic install and configure influxdb then enter 'i'. If you have influxdb already installed in your machine then enter 'c'. If you want to install influxdb later then enter 'l'. Follow the instructions after that. You could also install and configure influxdb after installation of jumbune by execution script (<code>$JUMBUNE_HOME/bin/install-influxdb.sh</code>).</p> 
-        <h2>To run jumbune</h2> 
+        <h2 id="to-run-jumbune">To run jumbune</h2> 
         <p>To run jumbune, you have to run two things.</p> 
         <ol> 
          <li>Jumbune container</li> 
          <li>Jumbune Agent (.jar file)</li> 
         </ol> 
         <p>You have to run jumbune agent on namenode machine, and jumbune container from the machine in which you have just installed jumbune.</p> 
-        <h3>To run Jumbune Agent</h3> 
+        <h3 id="to-run-jumbune-agent">To run Jumbune Agent</h3> 
         <p>Create a directory called <code>jumbune-agent</code> in your namenode machine.<br> Copy the directory agent-distribution (which is install Jumbune home) to your namenode machine (in <code>jumbune-agent</code>)( eg. /home/ashish/jumbune-agent/agent-distribution).</p> 
         <p>In namenode machine open the script file <code>jumbune-agent/agent-distribution/bin/startAgent</code> and change the parameters according to your need.<br> eg. If you have high availability enabled then uncomment the <code>HA</code> option and provide the values.<br> If you have zookeeper installed then uncomment and fill <code>ZK_OPTION</code>.<br> By default jumbune will start its agent at port 2161. If you want to change port then modify <code>AGENT_PORT</code> variable.</p> 
         <p>Save the <code>startAgent</code> script and execute it from terminal. You need to first make the script executable.</p> 
@@ -176,7 +175,7 @@ Jumbune Agent started successfully on port [2161]
 
 </code></pre> 
         <p>The agent is up and running now.</p> 
-        <h3>To run Jumbune Container</h3> 
+        <h3 id="to-run-jumbune-container">To run Jumbune Container</h3> 
         <p>Goto to the machine in which you have just installed jumbune and start the script startWeb ($JUMBUNE_HOME/bin/startWeb).</p> 
         <pre><code class="language-bash">ashish@pc:~$ JUMBUNE_HOME/bin/startWeb	
 

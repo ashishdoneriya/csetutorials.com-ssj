@@ -5003,3 +5003,7 @@ html {
 	 color: #c0341d !important;
 	 background: #fbe5e1 !important;
  }
+
+ pre {
+	 margin-bottom: 35px !important;
+ }

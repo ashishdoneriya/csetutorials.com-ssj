@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
-  <base href="$site.baseUrl"> 
   <!-- Title --> 
   <title>Influxdb Tutorial</title> 
   <link rel="canonical" href="https://csetutorials.com/influxdb-tutorial.html"> 
@@ -121,7 +120,7 @@
          <li>Retention Policies</li> 
         </ol> 
         <p>In influxdb the combination of timestamp and tags is composite keys. So lets start.</p> 
-        <h2>Install Influxdb</h2> 
+        <h2 id="install-influxdb">Install Influxdb</h2> 
         <p>First of all install influxdb from its <a href="https://portal.influxdata.com/downloads/" target="_blank" rel="noopener nofollow">official download page</a>. If you donot have admin rights then you can follow my article on how to install influxdb without root access. <a href="/install-influxdb-without-root-access-linux.html">/install-influxdb-without-root-access-linux.html</a></p> 
         <p>Now open another terminal and start the CLI using command <code>influx</code></p> 
         <pre><code class="language-bash">
@@ -130,7 +129,7 @@ Connected to http://localhost:8086 version 0.13.x
 InfluxDB shell 0.13.x
 &gt;
 </code></pre> 
-        <h2>Databases</h2> 
+        <h2 id="databases">Databases</h2> 
         <p><strong>To create a database</strong></p> 
         <pre><code class="language-bash">create database mydb
 </code></pre> 
@@ -150,7 +149,7 @@ mydb
         <p><strong>To delete a particular database</strong></p> 
         <pre><code class="language-bash">drop database mydb
 </code></pre> 
-        <h2>Inserting Data</h2> 
+        <h2 id="inserting-data">Inserting Data</h2> 
         <p>In influxdb we call tables as measurements and columns as fields.</p> 
         <p>We don't need to define measurements(tables) and fields(columns). It will create measurements and add columns automatically when we insert data. It is also like a NoSQL database</p> 
         <p>Format for writing data is</p> 
@@ -178,7 +177,7 @@ mydb
         </ul> 
         <p><strong>Note :</strong> Once you write a particular field in a particular datatype, you cannot change it back.</p> 
         <p>For more details refer official <a href="https://docs.influxdata.com/influxdb/v0.13/write_protocols/write_syntax/" target="_blank" rel="noopener nofollow">documentation</a></p> 
-        <h2>Querying Data</h2> 
+        <h2 id="querying-data">Querying Data</h2> 
         <p>To select all fields from measurement</p> 
         <pre><code class="language-bash">select * from measurementName
 </code></pre> 
@@ -189,7 +188,7 @@ mydb
         <pre><code class="language-bash">select "field1.name", "field2.name" from "measurement.name"
 </code></pre> 
         <p>I suggest you to always use double quotes because some times influxdb doesn't show you values if you donot use double quotes.</p> 
-        <h4>Where clause</h4> 
+        <h4 id="where-clause">Where clause</h4> 
         <p>A typical usage of where clause</p> 
         <pre><code class="language-bash">select * from measurement where field1 &gt; 12 and field2 = 'sparta' and time &gt; now() - 1d
 </code></pre> 
@@ -204,7 +203,7 @@ mydb
          <li><code>=~</code> matches against</li> 
          <li><code>!~</code> doesn’t match against</li> 
         </ul> 
-        <h2>Tags in influxdb</h2> 
+        <h2 id="tags-in-influxdb">Tags in influxdb</h2> 
         <p>In the starting of the article I told you that in influxdb time is the primary key. This is wrong. The truth is In influxdb the combination of timestamp + tags is the primary key (better say composition key).</p> 
         <p><strong>What is a tag?</strong> According to influxdb official documentation tags are used to store metadata. Let me explain in my words.</p> 
         <p>Once I had to run a group by query based on a particular field. Then I came to know that you cannot just run group by query on any field. To use group by on a particular field, there are special type of fields known as tags. Its better not to call them fields. Its just for your understanding.</p> 
@@ -225,7 +224,7 @@ time			age	height	name
 ----			---	------	----
 1584820680760917555	23	11.2	Ashish
 </code></pre> 
-        <h2>Group by time Query</h2> 
+        <h2 id="group-by-time-query">Group by time Query</h2> 
         <p>Suppose you are inserting room temperature value in influxdb for the last 24 hours at regular interval of 1 minute. Now you want to check the behaviour of room temperature that either it is increasing or decreasing.</p> 
         <p>One way is directly hitting the query <code>select temperature from stats where time &gt; now() - 24h</code> and check all the 1440 rows ( 24 * 60).</p> 
         <p>Another way is getting the average teperature of every hour for all 24 hours. In this way we have to analyze only 24 points. So for getting the type of result we use group by time()</p> 
@@ -233,7 +232,7 @@ time			age	height	name
 </code></pre> 
         <p>You can change the aggregate function mean. There are various aggregate functions like mean, max, min, median, count, mode, distinct, sum, stddev, first, last, difference.</p> 
         <p>You can read about queries in details from <a href="https://docs.influxdata.com/influxdb/v0.13/query_language/" target="_blank" rel="noopener nofollow">its website</a></p> 
-        <h2>Deleting measurement or data from measurement</h2> 
+        <h2 id="deleting-measurement-or-data-from-measurement">Deleting measurement or data from measurement</h2> 
         <p><strong>To delete a whole measurement</strong> Syntax :</p> 
         <pre><code class="language-bash">drop measurement measurementName
 </code></pre> 
@@ -246,9 +245,9 @@ time			age	height	name
         <pre><code class="language-bash">delete from students where "grade"='B'
 </code></pre> 
         <p>Here double quotes and single quote matters.</p> 
-        <h2>Retention Policies</h2> 
+        <h2 id="retention-policies">Retention Policies</h2> 
         <p>Lets say if you want to remove data older than 1 month automatically by influxdb then retention policies are used.</p> 
-        <h2>Tips</h2> 
+        <h2 id="tips">Tips</h2> 
         <p>If you want Influx cli to show result in column or json format use these commands</p> 
         <pre><code class="language-bash">format csv
 </code></pre> 

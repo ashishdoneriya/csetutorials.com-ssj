@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
-  <base href="$site.baseUrl"> 
   <!-- Title --> 
   <title>How to setup Single Node Hive on Tez Hadoop Cluster</title> 
   <link rel="canonical" href="https://csetutorials.com/setup-hadoop-2-hive-mysql-tez.html"> 
@@ -114,7 +113,7 @@
         <p>In this tutorial I'm going to show you how setup single node Hadoop cluster with hive and tez. We are going to use the following versions -</p> 
         <p>Hadoop - 2.7.2<br> Hive - 2.1.1<br> Tez - 0.9.2</p> 
         <p>Preriquisites :<br> java and JAVA_HOME<br> Mysql</p> 
-        <h2>Setup Hadoop</h2> 
+        <h2 id="setup-hadoop">Setup Hadoop</h2> 
         <ol> 
          <li>Create a directory called packages in your home directory</li> 
          <li>Download <a href="https://archive.apache.org/dist/hadoop/core/hadoop-2.7.2/hadoop-2.7.2.tar.gz" target="_blank" rel="noopener nofollow">Hadoop binary</a> and extract to packages/hadoop</li> 
@@ -247,7 +246,7 @@ yarn-daemon.sh start historyserver
         <pre><code class="language-bash">hdfs dfs -mkdir /testdir
 hdfs dfs -ls /
 </code></pre> 
-        <h2>Setup Hive</h2> 
+        <h2 id="setup-hive">Setup Hive</h2> 
         <ol> 
          <li>Download <a href="https://archive.apache.org/dist/hive/hive-2.1.1/apache-hive-2.1.1-bin.tar.gz" target="_blank" rel="noopener nofollow">Hive binary</a> and extract to packages/hive</li> 
          <li>In packages/hive/conf directory create file hive-site.xml and put the below content</li> 
@@ -307,7 +306,7 @@ ln -s /usr/share/java/mysql-connector-java.jar $HIVE_HOME/lib/mysql-connector-ja
         <pre><code class="language-bash">hive --service hiveserver2 --hiveconf hive.server2.thrift.port=10000 --hiveconf hive.server2.thrift.http.port=10001 --hiveconf hive.root.logger=INFO,console
 </code></pre> 
         <p>Now you can open your hive cli by using command <code>hive</code></p> 
-        <h2>Setup tez</h2> 
+        <h2 id="setup-tez">Setup tez</h2> 
         <ol> 
          <li>Download <a href="https://downloads.apache.org/tez/0.9.2/apache-tez-0.9.2-bin.tar.gz" target="_blank" rel="noopener nofollow">Tez binary</a> and extract to packages/tez</li> 
          <li>In packages/tez/conf directory create file tez-site.xml and put the below content</li> 
@@ -366,7 +365,7 @@ fi
 
 export HADOOP_CLASSPATH=${TEZ_CONF_DIR}:${TEZ_JARS}/*:${TEZ_JARS}/lib/*
 </code></pre> 
-        <h3>To setup Tez UI</h3> 
+        <h3 id="to-setup-tez-ui">To setup Tez UI</h3> 
         <ol> 
          <li>Download jetty runner jar in tez home</li> 
         </ol> 

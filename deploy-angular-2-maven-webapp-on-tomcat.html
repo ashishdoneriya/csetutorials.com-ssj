@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
-  <base href="$site.baseUrl"> 
   <!-- Title --> 
   <title>Deploy Angular Maven WebApp on Tomcat</title> 
   <link rel="canonical" href="https://csetutorials.com/deploy-angular-2-maven-webapp-on-tomcat.html"> 
@@ -110,14 +109,14 @@
        </header> 
        <div class="entry-content clearfix">    
         <p>In this post I'm going to show you how you could integrate Angular with Maven automatically. I request you to read this article carefully and not for just copy paste because it would be very helpful for you in various ways like debugging, tweaking or modifying steps etc.</p> 
-        <h2>First of all here is the summary of the steps for integration</h2> 
+        <h2 id="first-of-all-here-is-the-summary-of-the-steps-for-integration">First of all here is the summary of the steps for integration</h2> 
         <ol> 
          <li>Setup nodejs and npm</li> 
          <li>Run command <code>npm install</code> in angular directory to install dependencies and compile typescript files.</li> 
          <li>Run command <code>npm run build</code> in angular directory to build Angular project.</li> 
          <li>Finally copied the contents from <code>your-angular-directory/dist/</code> in root of .war file (before finally making .war file).</li> 
         </ol> 
-        <h2>Explaination</h2> 
+        <h2 id="explaination">Explaination</h2> 
         <p>We are going to do all these steps automatically means we want maven to do all these steps above for us.</p> 
         <p>If you donot understand the 4th step then let me explain. Once I analyzed the contents of a .war file and what I found is that the .html, javascript and css files are placed in the root of war file. From this I got an idea that to integrate angular with maven, I have to copy the contents of dist directory(build directory) from angular folder to the root of war with the help of maven.</p> 
         <p>If you want full automation ie. you want maven to setup nodejs and run commands npm install and npm run build for you then build time increases a lot.</p> 
@@ -171,7 +170,7 @@
     ├── lib
     └── web.xml
 </code></pre> 
-        <h2>Fully automatic way</h2> 
+        <h2 id="fully-automatic-way">Fully automatic way</h2> 
         <p>I am writing the code first that you have to add in pom.xml. I will explain after that.</p> 
         <pre><code class="language-xml">&lt;build&gt;
   &lt;plugins&gt;
@@ -263,7 +262,7 @@
          <li><strong>frontend-maven-plugin</strong> - It will install nodejs and build the angular project.</li> 
          <li><strong>maven-resources-plugin</strong> - It will copy the contents of ‘dist' directory to root of .war file.</li> 
         </ol> 
-        <h3>How we used frontend-maven-plugin?</h3> 
+        <h3 id="how-we-used-frontend-maven-plugin">How we used frontend-maven-plugin?</h3> 
         <pre><code class="language-xml">&lt;configuration&gt;
   &lt;workingDirectory&gt;angular&lt;/workingDirectory&gt;
   &lt;installDirectory&gt;temp&lt;/installDirectory&gt;
@@ -304,7 +303,7 @@
 &lt;/execution&gt;
 </code></pre> 
         <p>It will execute command <code>npm run build</code> inside the <code>workingDirectory</code> (ie. <code>/angular/</code>)</p> 
-        <h3>How we used maven-resources-plugin?</h3> 
+        <h3 id="how-we-used-maven-resources-plugin">How we used maven-resources-plugin?</h3> 
         <pre><code class="language-xml">&lt;execution&gt;
   &lt;id&gt;default-copy-resources&lt;/id&gt;
   &lt;phase&gt;process-resources&lt;/phase&gt;
@@ -359,7 +358,7 @@
 }
 </code></pre> 
         <p>You can check my projects (have not updated for a long time but concept remain same)<br> <a href="https://github.com/ashishdoneriya/BaceDevotees" target="_blank" rel="noopener nofollow">BaceDevotees</a><br> <a href="https://github.com/ashishdoneriya/TransactionManager" target="_blank" rel="noopener nofollow">TransactionManager</a></p> 
-        <h2>Semi Automatic way</h2> 
+        <h2 id="semi-automatic-way">Semi Automatic way</h2> 
         <p>This way would be very helpful if the above method won't work or you want to build your maven project separately from angular project.<br> If you are the only person in your team who changes angular project then you could also use this method. In my team one person commit angular code with angular/dist directory so that others could easily build their maven project.</p> 
         <p>The code is similar to the above method except we remove the frontend-maven-plugin code.</p> 
         <pre><code class="language-xml">
@@ -404,7 +403,7 @@
 </code></pre> 
         <p>Thank you. Now first run <code>npm install</code> and <code>npm run build&lt;code&gt; commands in your angular directory and then &lt;code&gt;mvn clean install</code> in your root directory (maven project).</p> 
         <p>If you have any queries feel free to ask.</p> 
-        <p><strong>Also don't forget to read this</strong><br> <a href="https://github.com/ashishdoneriya/LittleBlueBird/wiki" target="_blank" rel="noopener nofollow">https://github.com/ashishdoneriya/LittleBlueBird/wiki</a> It will describe what's wrong with urls in Angular.</p>   
+        <p><strong>Also don't forget to read this</strong><br> <a href="https://github.com/ashishdoneriya/LittleBlueBird/wiki" target="_blank" rel="noopener nofollow">https://github.com/ashishdoneriya/LittleBlueBird/wiki</a><br> It will describe what's wrong with urls in Angular.</p>   
         <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
 										padding: 0 5px 5px;
 										text-decoration: none;
