@@ -25,9 +25,11 @@ tags:
 9. If we have to read data then first we would check memtable for that record. If record is not available then we would search into sstable.
 10. If we have to delete data then we mark the record as deleted using a flag or something like that in memtable. This is because lets say if you completely delete the record from memtable and if a search query comes up for that record then in this case it would check both memtable and sstable. But if we mark that record as deleted in memtable then the user won't have to search sstable also.
 11. Periodically we flush the memtable to disk.
+12. There is drawback in this approach. In case of unexpected system crash or shutdown the data in memtable will be lost. Therefore for recovery purpose we write every data write or delete request in a log file.
 
 
 **Why we maintain sorting order in SSTable ?**
+
 As I told in the above points that we keep the index of sstable in ram. What if there are billions of record. In this case RAM won't be able to hold all the keys.
 
 To counter this problem what we would do is that we would not store all the keys in index. Lets say there are 10 keys from 1 to 10. In RAM index we will save 1, 5. So if the user requests to fetch value for key 8, then in index we check a key which is just less than 8 that is 5. Now from key 5 to the next key that is 10, we search our key (8).
@@ -36,3 +38,7 @@ To counter this problem what we would do is that we would not store all the keys
 **Sources :** 
 * [https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/](https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/)
 * [https://dev.to/codingblocks/designing-data-intensive-applications-sstables-and-lsm-trees](https://dev.to/codingblocks/designing-data-intensive-applications-sstables-and-lsm-trees)
+
+**Read More :**
+* [https://blog.yugabyte.com/a-busy-developers-guide-to-database-storage-engines-the-basics/]
+* Compaction strategies for SSTable.
