@@ -40,5 +40,5 @@ To counter this problem what we would do is that we would not store all the keys
 * [https://dev.to/codingblocks/designing-data-intensive-applications-sstables-and-lsm-trees](https://dev.to/codingblocks/designing-data-intensive-applications-sstables-and-lsm-trees)
 
 **Read More :**
-* [https://blog.yugabyte.com/a-busy-developers-guide-to-database-storage-engines-the-basics/]
+* [https://blog.yugabyte.com/a-busy-developers-guide-to-database-storage-engines-the-basics/](https://blog.yugabyte.com/a-busy-developers-guide-to-database-storage-engines-the-basics/)
 * Compaction strategies for SSTable.
