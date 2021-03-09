@@ -100,29 +100,34 @@
          <li> <p>During Installation, always create swap space and a separate partition for the Home directory. Always select that partition for other Linux distributions also but <strong>do not format it</strong>. And create separate users for different-different distributions like /home/ubuntu for Ubuntu, /home/arch for arch Linux and so on.</p> </li> 
          <li> <p>If your system has SSD then donot create swap space from SSD.</p> </li> 
          <li> <p>Use <a href="https://repogen.simplylinux.ch/" target="_blank" rel="noopener nofollow">Ubuntu Source List generator</a>.</p> </li> 
-         <li> <p><strong>Run sudo command without password</strong><br> If you don’t want to type sudo password again and again then run command <code>sudo visudo</code> and append the below line at the end.</p> </li> 
+         <li> <p><strong>Run sudo command without password</strong><br> If you don't want to type sudo password again and again then run command <code>sudo visudo</code> and append the below line at the end.</p> </li> 
         </ol> 
-        <pre class="language-bash"><code>your_username ALL=(ALL) NOPASSWD: ALL</code></pre> 
+        <pre><code class="language-bash">your_username ALL=(ALL) NOPASSWD: ALL
+</code></pre> 
         <p>Save using <code>Ctrl + X</code> and <code>Shift + y</code> and press Enter. That’s it.</p> 
         <ol start="5"> 
          <li><strong>Create user from Command line</strong></li> 
         </ol> 
-        <pre>useradd --create-home --system --shell /bin/bash --user-group your_username</pre> 
+        <pre><code class="language-bash">useradd --create-home --system --shell /bin/bash --user-group your_username
+</code></pre> 
         <ol start="6"> 
          <li> <p>XUbuntu is the best Linux distribution (in terms of performance). It has the power to give a new fresh life to slow and dying old pcs.</p> </li> 
          <li> <p>To Generate subtitles of audio and video<br> Install</p> </li> 
         </ol> 
-        <pre>sudo apt-get install ffmpeg &amp;&amp; sudo pip install autosub</pre> 
+        <pre><code class="language-bash">sudo apt-get install ffmpeg &amp;&amp; sudo pip install autosub
+</code></pre> 
         <p>To generate subtitle :</p> 
-        <pre>autosub -o subtitlefile.srt "/path/to/file.mp4 or .mp3"</pre> 
+        <pre><code class="language-bash">autosub -o subtitlefile.srt "/path/to/file.mp4 or .mp3"
+</code></pre> 
         <p>If you are using Vlc to play the .mp3 file, then you have to select a visualization (Menu &gt; Audio &gt; Visualization &gt; Select any) because Vlc cannot display subtitles without it.</p> 
         <ol start="8"> 
          <li>Detach a Linux Processes From Controlling Terminal</li> 
         </ol> 
-        <pre>command &lt;/dev/null &amp;&gt;/dev/null &amp;</pre> 
+        <pre><code class="language-bash">command &lt;/dev/null &amp;&gt;/dev/null &amp;
+</code></pre> 
         <ol start="9"> 
-         <li> <p>For setting the paths, the file is /etc/environment</p> </li> 
-         <li> <p><a href="https://devanswers.co/how-to-reset-mysql-root-password-ubuntu/" rel="noopener nofollow" target="_blank">Reset Mysql Password</a></p> </li> 
+         <li> <p>For setting the paths, the file is <code>/etc/environment</code></p> </li> 
+         <li> <p><a href="https://devanswers.co/how-to-reset-mysql-root-password-ubuntu/" target="_blank" rel="noopener nofollow">Reset Mysql Password</a></p> </li> 
         </ol>   
        </div> 
       </article> 
