@@ -3,7 +3,7 @@
  <head> 
   <base href="$site.baseUrl"> 
   <!-- Title --> 
-  <title>Sorting Algorithms in Java</title> 
+  <title>Sorting Algorithms implementation in Java</title> 
   <link rel="canonical" href="https://csetutorials.com/sorting-algorithms-in-java.html"> 
   <meta name="description" content="Various sorting algorithms that I have implemented in Java"> 
   <meta property="og:description" content="Various sorting algorithms that I have implemented in Java"> 
@@ -11,7 +11,7 @@
   <meta name="author" content="Ashish Doneriya"> 
   <meta name="robots" content="index, follow"> 
   <meta property="og:type" content="article"> 
-  <meta property="og:title" content="Sorting Algorithms in Java"> 
+  <meta property="og:title" content="Sorting Algorithms implementation in Java"> 
   <meta property="og:url" content="https://csetutorials.com/sorting-algorithms-in-java.html"> 
   <meta property="og:locale" content="en_US"> 
   <meta property="og:site_name" content="Cse Tutorials"> 
@@ -23,11 +23,11 @@
   <meta property="article:section" content="Java"> 
   <meta property="article:tag" content="Java"> 
   <meta property="article:tag" content="Algorithms"> 
-  <meta name="twitter:title" content="Sorting Algorithms in Java"> 
+  <meta name="twitter:title" content="Sorting Algorithms implementation in Java"> 
   <meta name="twitter:card" content="summary"> 
   <meta name="twitter:creator" content="@ashishdoneriya"> 
   <meta name="twitter:site" content="@ashishdoneriya"> 
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya","name":"Ashish Doneriya","sameAs":["https://www.facebook.com/ashishdoneriya","https://twitter.com/ashishdoneriya","https://www.linkedin.com/in/ashishdoneriya/"]},{"@type":"WebSite","@id":"https://csetutorials.com/#website","url":"https://csetutorials.com","name":"Cse Tutorials","description":"Tutorials about WebApps, Web Designing, Java \u0026 Ubuntu","publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://csetutorials.com/sorting-algorithms-in-java.html#webpage","url":"https://csetutorials.com/sorting-algorithms-in-java.html","isPartOf":{"@id":"https://csetutorials.com/#website"},"datePublished":"2021-03-07T03:38:31Z","dateModified":"2021-03-07T03:38:31Z","description":"Various sorting algorithms that I have implemented in Java","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://csetutorials.com/sorting-algorithms-in-java.html"]}]},{"@type":"Article","@id":"https://csetutorials.com/sorting-algorithms-in-java.html#article","isPartOf":{"@id":"https://csetutorials.com/sorting-algorithms-in-java.html#webpage"},"author":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"headline":"Sorting Algorithms in Java","datePublished":"2021-03-07T03:38:31Z","dateModified":"2021-03-07T03:38:31Z","mainEntityOfPage":{"@id":"https://csetutorials.com/sorting-algorithms-in-java.html#webpage"},"publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"keywords":"java,algorithms","articleSection":"java","inLanguage":"en-US"}]}</script> 
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya","name":"Ashish Doneriya","sameAs":["https://www.facebook.com/ashishdoneriya","https://twitter.com/ashishdoneriya","https://www.linkedin.com/in/ashishdoneriya/"]},{"@type":"WebSite","@id":"https://csetutorials.com/#website","url":"https://csetutorials.com","name":"Cse Tutorials","description":"Tutorials about WebApps, Web Designing, Java \u0026 Ubuntu","publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://csetutorials.com/sorting-algorithms-in-java.html#webpage","url":"https://csetutorials.com/sorting-algorithms-in-java.html","isPartOf":{"@id":"https://csetutorials.com/#website"},"datePublished":"2021-03-07T03:38:31Z","dateModified":"2021-03-07T03:38:31Z","description":"Various sorting algorithms that I have implemented in Java","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://csetutorials.com/sorting-algorithms-in-java.html"]}]},{"@type":"Article","@id":"https://csetutorials.com/sorting-algorithms-in-java.html#article","isPartOf":{"@id":"https://csetutorials.com/sorting-algorithms-in-java.html#webpage"},"author":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"headline":"Sorting Algorithms implementation in Java","datePublished":"2021-03-07T03:38:31Z","dateModified":"2021-03-07T03:38:31Z","mainEntityOfPage":{"@id":"https://csetutorials.com/sorting-algorithms-in-java.html#webpage"},"publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"keywords":"java,algorithms","articleSection":"java","inLanguage":"en-US"}]}</script> 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -96,7 +96,7 @@
      <div class="section-content"> 
       <article class="typology-post typology-single-post"> 
        <header class="entry-header clearfix"> 
-        <h1 class="entry-title entry-title-cover-empty h2">Sorting Algorithms in Java</h1> 
+        <h1 class="entry-title entry-title-cover-empty h2">Sorting Algorithms implementation in Java</h1> 
         <div class="entry-meta"> 
          <div class="meta-item meta-author" style="vertical-align: middle">
            By <span class="vcard author"><span class="fn"> <a href="/author/ashishdoneriya">Ashish Doneriya</a> </span></span> 
@@ -164,6 +164,49 @@
 		arr[i] = arr[j];
 		arr[j] = temp;
 	}
+}
+</code></pre> 
+        <h3>Selection Sort</h3> 
+        <pre><code class="language-java">public class SelectionSort {
+
+	public static void main(String[] args) {
+		int[] arr = new int[] { 4, 1, 4, 6, 21, 3, 7, 2, 5, 67, 52, 3, 23, 6, 2, 2 };
+		sort(arr);
+		print(arr);
+	}
+
+	public static void sort(int[] arr) {
+		for (int i = 0; i &lt; arr.length - 1; i++) {
+			int minNumIndex = getMinNumIndex(arr, i);
+			swap(arr, i, minNumIndex);
+		}
+	}
+
+	private static int getMinNumIndex(int[] arr, int startingIndex) {
+		int minNumIndex = startingIndex;
+		for (int i = minNumIndex + 1; i &lt; arr.length; i++) {
+			if (arr[minNumIndex] &gt; arr[i]) {
+				minNumIndex = i;
+			}
+		}
+		return minNumIndex;
+	}
+
+	private static void swap(int[] arr, int i, int j) {
+		if (i == j) {
+			return;
+		}
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+
+	private static void print(int[] arr) {
+		for (int num : arr) {
+			System.out.print(num + " ");
+		}
+	}
+
 }
 </code></pre>   
         <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
