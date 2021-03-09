@@ -38,7 +38,7 @@ mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-grizzly2 \
 
 This will create the below file structure
 
-```
+```bash
 └── jersey-sse-example
     ├── pom.xml
     └── src
