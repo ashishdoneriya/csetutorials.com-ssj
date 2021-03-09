@@ -12,6 +12,10 @@ tags:
   - algorithms
 ---
 
+## Algorithms - 
+1. [Quick Sort](#quick-sort)
+2. [Selection Sort](#selection-sort)
+
 ### Quick Sort
 
 In quick sort we choose first or last element in array as pivot element and categorize the elements based on whether they are smaller or greater than the pivot element.
@@ -76,11 +80,14 @@ public class QuickSort {
 
 ### Selection Sort
 
+In selection sort we find the minimum number in the array and put it at the starting of array.
+
 ```java
 public class SelectionSort {
 
 	public static void main(String[] args) {
-		int[] arr = new int[] { 4, 1, 4, 6, 21, 3, 7, 2, 5, 67, 52, 3, 23, 6, 2, 2 };
+		int[] arr = new int[] 
+			{ 4, 1, 4, 6, 21, 3, 7, 2, 5, 67, 52, 3, 23, 6, 2, 2 };
 		sort(arr);
 		print(arr);
 	}
