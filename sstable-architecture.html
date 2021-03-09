@@ -2,32 +2,31 @@
 <html lang="en-GB">
  <head> 
   <!-- Title --> 
-  <title>How to fetch and write influxdb data using java</title> 
-  <link rel="canonical" href="https://csetutorials.com/fetch-and-write-influxdb-data-using-java.html"> 
-  <meta name="description" content="Steps to write data into influxdb (influx time series database) and also fetch data from it very easily."> 
-  <meta property="og:description" content="Steps to write data into influxdb (influx time series database) and also fetch data from it very easily."> 
-  <meta name="twitter:description" content="Steps to write data into influxdb (influx time series database) and also fetch data from it very easily."> 
+  <title>SSTable Architecture Summary</title> 
+  <link rel="canonical" href="https://csetutorials.com/sstable-architecture.html"> 
+  <meta name="description" content="Overview of Sorted String Table Architecture"> 
+  <meta property="og:description" content="Overview of Sorted String Table Architecture"> 
+  <meta name="twitter:description" content="Overview of Sorted String Table Architecture"> 
   <meta name="author" content="Ashish Doneriya"> 
   <meta name="robots" content="index, follow"> 
   <meta property="og:type" content="article"> 
-  <meta property="og:title" content="How to fetch and write influxdb data using java"> 
-  <meta property="og:url" content="https://csetutorials.com/fetch-and-write-influxdb-data-using-java.html"> 
+  <meta property="og:title" content="SSTable Architecture Summary"> 
+  <meta property="og:url" content="https://csetutorials.com/sstable-architecture.html"> 
   <meta property="og:locale" content="en_US"> 
   <meta property="og:site_name" content="Cse Tutorials"> 
-  <meta property="og:updated_time" content="2016-05-26T10:06:02Z"> 
+  <meta property="og:updated_time" content="2021-03-09T18:38:31Z"> 
   <meta property="article:author" content="https://www.facebook.com/ashishdoneriya"> 
-  <meta property="article:modified_time" content="2016-05-26T10:06:02Z"> 
-  <meta property="article:published_time" content="2016-05-26T10:06:02Z"> 
+  <meta property="article:modified_time" content="2021-03-09T18:38:31Z"> 
+  <meta property="article:published_time" content="2021-03-09T18:38:31Z"> 
   <meta property="article:publisher" content="https://www.facebook.com/ashishdoneriya"> 
-  <meta property="article:section" content="Database"> 
-  <meta property="article:section" content="Java"> 
-  <meta property="article:tag" content="Influxdb"> 
-  <meta property="article:tag" content="Java"> 
-  <meta name="twitter:title" content="How to fetch and write influxdb data using java"> 
+  <meta property="article:section" content="System Design"> 
+  <meta property="article:tag" content="Sstable"> 
+  <meta property="article:tag" content="Memtable"> 
+  <meta name="twitter:title" content="SSTable Architecture Summary"> 
   <meta name="twitter:card" content="summary"> 
   <meta name="twitter:creator" content="@ashishdoneriya"> 
   <meta name="twitter:site" content="@ashishdoneriya"> 
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya","name":"Ashish Doneriya","sameAs":["https://www.facebook.com/ashishdoneriya","https://twitter.com/ashishdoneriya","https://www.linkedin.com/in/ashishdoneriya/"]},{"@type":"WebSite","@id":"https://csetutorials.com/#website","url":"https://csetutorials.com","name":"Cse Tutorials","description":"Tutorials about WebApps, Web Designing, Java \u0026 Ubuntu","publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://csetutorials.com/fetch-and-write-influxdb-data-using-java.html#webpage","url":"https://csetutorials.com/fetch-and-write-influxdb-data-using-java.html","isPartOf":{"@id":"https://csetutorials.com/#website"},"datePublished":"2016-05-26T10:06:02Z","dateModified":"2016-05-26T10:06:02Z","description":"Steps to write data into influxdb (influx time series database) and also fetch data from it very easily.","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://csetutorials.com/fetch-and-write-influxdb-data-using-java.html"]}]},{"@type":"Article","@id":"https://csetutorials.com/fetch-and-write-influxdb-data-using-java.html#article","isPartOf":{"@id":"https://csetutorials.com/fetch-and-write-influxdb-data-using-java.html#webpage"},"author":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"headline":"How to fetch and write influxdb data using java","datePublished":"2016-05-26T10:06:02Z","dateModified":"2016-05-26T10:06:02Z","mainEntityOfPage":{"@id":"https://csetutorials.com/fetch-and-write-influxdb-data-using-java.html#webpage"},"publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"keywords":"influxdb,java","articleSection":"database,java","inLanguage":"en-US"}]}</script> 
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya","name":"Ashish Doneriya","sameAs":["https://www.facebook.com/ashishdoneriya","https://twitter.com/ashishdoneriya","https://www.linkedin.com/in/ashishdoneriya/"]},{"@type":"WebSite","@id":"https://csetutorials.com/#website","url":"https://csetutorials.com","name":"Cse Tutorials","description":"Tutorials about WebApps, Web Designing, Java \u0026 Ubuntu","publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://csetutorials.com/sstable-architecture.html#webpage","url":"https://csetutorials.com/sstable-architecture.html","isPartOf":{"@id":"https://csetutorials.com/#website"},"datePublished":"2021-03-09T18:38:31Z","dateModified":"2021-03-09T18:38:31Z","description":"Overview of Sorted String Table Architecture","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://csetutorials.com/sstable-architecture.html"]}]},{"@type":"Article","@id":"https://csetutorials.com/sstable-architecture.html#article","isPartOf":{"@id":"https://csetutorials.com/sstable-architecture.html#webpage"},"author":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"headline":"SSTable Architecture Summary","datePublished":"2021-03-09T18:38:31Z","dateModified":"2021-03-09T18:38:31Z","mainEntityOfPage":{"@id":"https://csetutorials.com/sstable-architecture.html#webpage"},"publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"keywords":"sstable,memtable","articleSection":"system-design","inLanguage":"en-US"}]}</script> 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -97,178 +96,48 @@
      <div class="section-content"> 
       <article class="typology-post typology-single-post"> 
        <header class="entry-header clearfix"> 
-        <h1 class="entry-title entry-title-cover-empty h2">How to fetch and write influxdb data using java</h1> 
+        <h1 class="entry-title entry-title-cover-empty h2">SSTable Architecture Summary</h1> 
         <div class="entry-meta"> 
          <div class="meta-item meta-author" style="vertical-align: middle">
            By <span class="vcard author"><span class="fn"> <a href="/author/ashishdoneriya">Ashish Doneriya</a> </span></span> 
          </div> 
-         <div class="meta-item meta-date" style="vertical-align: middle"> <span class="updated">Last Updated on May 26, 2016 </span> 
+         <div class="meta-item meta-date" style="vertical-align: middle"> <span class="updated">Last Updated on Mar 09, 2021 </span> 
          </div> 
         </div> 
         <div class="post-letter">
-          H 
+          S 
         </div> 
        </header> 
        <div class="entry-content clearfix">    
-        <p><a href="/influxdb-tutorial.html">Influx</a> time series database is a platform for storing, collecting, visualizing and managing time-series data.</p> 
-        <p>There is already official java api in maven and github. But I have created an api for influxdb in <a href="https://github.com/ashishdoneriya/influxdb-java" target="_blank" rel="noopener nofollow">Github</a>. From that we could fetch and write to database very easily. To use that api <a href="https://github.com/ashishdoneriya/influxdb-java/releases/download/3.0.1/influxdb-3.0.1.jar" target="_blank" rel="noopener nofollow">download jar</a>. You can also add dependency in your project using <a href="https://jitpack.io/#ashishdoneriya/influxdb-java/3.0.1" target="_blank" rel="noopener nofollow">JitPack</a>.</p> 
-        <p>In Influxdb we call tables as measurements and columns as fields. So let's start.</p> 
-        <p>Steps for writing data.</p> 
+        <h2 id="key-points">Key Points</h2> 
         <ol> 
-         <li>First create configuration.</li> 
+         <li>SSTable or Sorted String Table is used to store key values.</li> 
+         <li>In SSTables, key-value pairs are written in sorted order in disk.</li> 
+         <li>For faster access to value of a key, indexes are maintained for SSTable. Lets call it SSIndex.</li> 
+         <li>We keep copy of SSIndex in RAM for faster access.</li> 
+         <li>There is a special property of SSTable that is they are immutable. It means we cannot append or delete data to SSTable so as to maintain sorting order and read speed.</li> 
+         <li>If we cannot modify the sstable then we have to overwrite the sstable if we want to modify the data. But if we do that then the data write speed would be very-very slow.</li> 
+         <li>To counter this problem we maitain a table known as MemTable in RAM (as we know that writing data in RAM is very fast).</li> 
+         <li>If we have to write data then we would write data in MemTable.</li> 
+         <li>If we have to read data then first we would check memtable for that record. If record is not available then we would search into sstable.</li> 
+         <li>If we have to delete data then we mark the record as deleted using a flag or something like that in memtable. This is because lets say if you completely delete the record from memtable and if a search query comes up for that record then in this case it would check both memtable and sstable. But if we mark that record as deleted in memtable then the user won't have to search sstable also.</li> 
+         <li>Periodically we flush the memtable to disk.</li> 
         </ol> 
-        <pre><code class="language-java">Configuration configuration = new Configuration("localhost", "8086", "root", "root", "mydb");
-</code></pre> 
-        <p>The parameters above are for host, port, user and password respectively.</p> 
+        <p><strong>Why we maintain sorting order in SSTable ?</strong> As I told in the above points that we keep the index of sstable in ram. What if there are billions of record. In this case RAM won't be able to hold all the keys.</p> 
+        <p>To counter this problem what we would do is that we would not store all the keys in index. Lets say there are 10 keys from 1 to 10. In RAM index we will save 1, 5. So if the user requests to fetch value for key 8, then in index we check a key which is just less than 8 that is 5. Now from key 5 to the next key that is 10, we search our key (8).</p> 
+        <p><strong>Sources :</strong></p> 
         <ul> 
-         <li>Now to write data create Object of <code>DataWriter</code> class.</li> 
-        </ul> 
-        <pre><code class="language-java">DataWriter writer = new DataWriter(configuration);
-</code></pre> 
-        <p>We have to pass configuration.</p> 
-        <ul> 
-         <li>Now we set measurement name ( or you can say table name).</li> 
-        </ul> 
-        <pre><code class="language-java">writer.setMeasurement("sampleMeasurement1");
-</code></pre> 
-        <ul> 
-         <li>Set time unit ie what time format do you want to use.</li> 
-        </ul> 
-        <pre><code class="language-java">writer.setTimeUnit(TimeUnit.SECONDS);
-</code></pre> 
-        <p>Supported formats in influxdb are <code>HOURS</code>, <code>MINUTES</code>, <code>SECONDS</code>, <code>MILLISECONDS</code>, <code>MICROSECONDS</code> and <code>NANOSECONDS</code>.</p> 
-        <ul> 
-         <li>Now set time</li> 
-        </ul> 
-        <pre><code class="language-java">writer.setTime(System.currentTimeMillis() / 1000);
-</code></pre> 
-        <p><strong>Note :</strong> In here we defined time in seconds because in step we set the time in seconds.</p> 
-        <ul> 
-         <li>Add fields (or you can say columns).</li> 
-        </ul> 
-        <pre><code class="language-java">
-writer.addField("field1", 12212);		// Integer value
-writer.addField("field2", 22.44);		// Double value
-writer.addField("field3", "thisIsString");	// String value
-writer.addField("field4", false);		// boolean value
-
-</code></pre> 
-        <p>In influxdb we don't need to define table (measurements) or columns (fields) and its datatype. Influxdb will create that automatically as we insert data. We just need to define database.</p> 
-        <ul> 
-         <li>Add Tags</li> 
-        </ul> 
-        <pre><code class="language-java">writer.addTag("hostname", "server001");
-writer.addTag("disk_type", "SSD");
-
-</code></pre> 
-        <ul> 
-         <li>To write the above data into database use</li> 
-        </ul> 
-        <pre><code class="language-java">writer.writeData();
-</code></pre> 
-        <p>It will then insert the data into influxdb.</p> 
-        <ul> 
-         <li>We can use the same writer to add more data into fields.</li> 
-        </ul> 
-        <pre><code class="language-java">writer.addField("field1", 112);
-writer.addField("field1", 21.44);
-writer.addField("field1", "thisIsString1");
-writer.addField("field1", true);
-// Influxdb saves one point at one time. Therefore we have to add another point at another time.
-writer.setTime(System.currentTimeMillis() / 1000 + 1);
-writer.addTag("disk_type", "HDD");
-writer.writeData();
-</code></pre> 
-        <p><strong>Note : 1.</strong> Make sure put the same type of data into particular column.ie. in step 6. datatype of column1 and column2 are integer and decimal type. Next time whenever we put data in these columns datatype should also be integer and decimal type afterthat.<br> <strong>2.</strong> Influxdb saves one point at one time. To add another point at same time we can use tags otherwise it will override the previous point.</p> 
-        <p>Steps to read data from Influxdb.</p> 
-        <ol> 
-         <li>Create configuration.</li> 
-        </ol> 
-        <pre><code class="language-java">Configuration configuration = new Configuration("localhost", "8086", "root", "root", "mydb");
-</code></pre> 
-        <ol start="2"> 
-         <li>Create object of <code>Query</code> class.</li> 
-        </ol> 
-        <pre><code class="language-java">Query query = new Query();
-</code></pre> 
-        <ol start="3"> 
-         <li>To set the measuremen name.</li> 
-        </ol> 
-        <pre><code class="language-java">query.setMeasurement("sampleMeasurement1");
-</code></pre> 
-        <p>If we want to set multiple measurements then.</p> 
-        <pre><code class="language-java">List&amp;lt;String&gt; list = new ArrayList&amp;lt;String&gt;();
-list.add("sampleMeasurement1");
-list.add("sampleMeasurement2");
-query.setMeasurements(list);
-</code></pre> 
-        <ol> 
-         <li>To set fields whose values we want to fetch.</li> 
-        </ol> 
-        <pre><code class="language-java">query.addField("field1");
-query.addField("field2");
-</code></pre> 
-        <p>It will fetch all fields by default, if not specified as above. (like select * from).</p> 
-        <ul> 
-         <li>If you want to set time limit like fetch data of last 1 hour.</li> 
-        </ul> 
-        <pre><code class="language-java">query.setDuration("1h");
-</code></pre> 
-        <p>or fetch data for last 120 seconds.</p> 
-        <pre><code class="language-java">query.setDuration("120s");
-</code></pre> 
-        <p>Supported format are <code>d</code>, <code>h</code>, <code>m</code>, <code>s</code>.</p> 
-        <ul> 
-         <li>d = days</li> 
-         <li>h = hours</li> 
-         <li>m = minutes</li> 
-         <li>s = seconds</li> 
-        </ul> 
-        <p>If you want to put the data range then use.</p> 
-        <pre><code class="language-java">query.setRange(new Date(2012, 12, 31), new Date())
-</code></pre> 
-        <ul> 
-         <li>If you want to set aggregate function then</li> 
-        </ul> 
-        <pre><code class="language-java">query.setAggregateFunction(AggregateFunction.MEAN);
-</code></pre> 
-        <p>Supported functions in influxdb are <code>COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEAN</code>, <code>MODE</code>, <code>MEDIAN</code>, <code>DISTINCT</code>, <code>SUM</code>, <code>STDDEV</code>, <code>FIRST</code>, <code>LAST</code>, <code>DIFFERENCE</code> and <code>NOFUNCTION</code>.</p> 
-        <ul> 
-         <li>To set group by time like for 1 minute.</li> 
-        </ul> 
-        <pre><code class="language-java"> query.setGroupByTime("1m");
-</code></pre> 
-        <ul> 
-         <li>To limit the number of rows.</li> 
-        </ul> 
-        <pre><code class="language-java">query.setLimit(1000);
-</code></pre> 
-        <ul> 
-         <li>When we use 'group by' in query, then influxdb will return NULL for a time if their is no value found in that range (ie. 1m as defined above). So if you want to replace that NULL value with something like number then use</li> 
-        </ul> 
-        <pre><code class="language-java">query.fillNullValues("0");
-</code></pre> 
-        <p>It will replace all null values with 0.</p> 
-        <ul> 
-         <li>Now create object of <code>DataReader</code> class and fetch the result.</li> 
-        </ul> 
-        <pre><code class="language-java">DataReader dataReader = new DataReader(query, configuration);
-ResultSet resultSet = dataReader.getResult();
-System.out.println(resultSet);
-</code></pre> 
-        <p>The resultSet contains the result.</p>   
+         <li><a href="https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/" target="_blank" rel="noopener nofollow">https://www.igvita.com/2012/02/06/sstable-and-log-structured-storage-leveldb/</a></li> 
+         <li><a href="https://dev.to/codingblocks/designing-data-intensive-applications-sstables-and-lsm-trees" target="_blank" rel="noopener nofollow">https://dev.to/codingblocks/designing-data-intensive-applications-sstables-and-lsm-trees</a></li> 
+        </ul>   
         <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
 										padding: 0 5px 5px;
 										text-decoration: none;
 										border-bottom: 4px solid yellow;
-									" href="/topics/database">Database</a> </span> <span> <span> - </span> <a style="
-										padding: 0 5px 5px;
-										text-decoration: none;
-										border-bottom: 4px solid yellow;
-									" href="/topics/java">Java</a> </span> 
+									" href="/topics/system-design">System Design</a> </span> 
         </div> 
        </div> 
-       <div class="clearfix entry-actions"> <span>Originally Published On </span><span> : </span><span>May 26, 2016</span> 
+       <div class="clearfix entry-actions"> <span>Originally Published On </span><span> : </span><span>Mar 09, 2021</span> 
        </div> 
       </article> 
      </div> 
