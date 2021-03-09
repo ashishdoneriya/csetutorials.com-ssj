@@ -26,7 +26,7 @@ So lets start ::
 </dependency>
 ```
 
-Otherwise <a rel="nofollow" href="http://central.maven.org/maven2/org/tuckey/urlrewritefilter/4.0.4/urlrewritefilter-4.0.4.jar" target="_blank">download</a> the jar file directly from maven repository and add in your webapp.
+Otherwise [download](http://central.maven.org/maven2/org/tuckey/urlrewritefilter/4.0.4/urlrewritefilter-4.0.4.jar) the jar file directly from maven repository and add in your webapp.
 
 **2.** Now add this code in your WEB-INF/web.xml
 

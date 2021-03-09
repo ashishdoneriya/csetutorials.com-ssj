@@ -16,10 +16,10 @@ In this post I'm going to show you how you could integrate Angular with Maven au
 
 ## First of all here is the summary of the steps for integration
 
-  1. Setup nodejs and npm
-  2. Run command `npm install` in angular directory to install dependencies and compile typescript files.
-  3. Run command `npm run build` in angular directory to build Angular project.
-  4. Finally copied the contents from `your-angular-directory/dist/` in root of .war file (before finally making .war file).
+1. Setup nodejs and npm
+2. Run command `npm install` in angular directory to install dependencies and compile typescript files.
+3. Run command `npm run build` in angular directory to build Angular project.
+4. Finally copied the contents from `your-angular-directory/dist/` in root of .war file (before finally making .war file).
 
 ## Explaination
 
@@ -33,7 +33,7 @@ But if you are ready to run commands npm install and npm run build manually then
 
 So lets start. This is my project structure for maven project.
 
-```
+```bash
 .
 ├── angular
 │   ├── angular-cli-build.js
@@ -72,7 +72,7 @@ So lets start. This is my project structure for maven project.
 
 And Just for your knowledge this is the content of the .war file that I found when I was analyzing it.
 
-```
+```bash
 .
 ├── app
 ├── cat.txt
@@ -91,7 +91,6 @@ And Just for your knowledge this is the content of the .war file that I found wh
 ## Fully automatic way
 
 I am writing the code first that you have to add in pom.xml. I will explain after that.
-
 ```xml
 <build>
   <plugins>
@@ -181,8 +180,8 @@ I am writing the code first that you have to add in pom.xml. I will explain afte
 
 
 In the above build code, we used these two new plugins frontend-maven-plugin and maven-resources-plugin.  
-1. **frontend-maven-plugin** – It will install nodejs and build the angular project.  
-2. **maven-resources-plugin** – It will copy the contents of ‘dist' directory to root of .war file.
+1. **frontend-maven-plugin** - It will install nodejs and build the angular project.  
+2. **maven-resources-plugin** - It will copy the contents of ‘dist' directory to root of .war file.
 
 ### How we used frontend-maven-plugin?
 
@@ -194,10 +193,9 @@ In the above build code, we used these two new plugins frontend-maven-plugin and
 ```
 
 
-In the above code we are telling frontend-maven-plugin that our angular code is in /angular directory and the directory in which we want it to install nodejs is /temp.
+In the above code we are telling frontend-maven-plugin that our angular code is in `/angular` directory and the directory in which we want it to install nodejs is `/temp`.
 
 ```xml
-
 <execution>
   <id>install node and npm</id>
   <goals>
@@ -214,7 +212,6 @@ In the above code we are telling frontend-maven-plugin that our angular code is 
 In the above code we are specifying node and npm version to install it on our system automatically.
 
 ```xml
-
 <execution>
   <id>npm install</id>
   <goals>
@@ -227,10 +224,9 @@ In the above code we are specifying node and npm version to install it on our sy
 ```
 
 
-It will execute command `npm install` inside the `workingDirectory` (ie. /angular/)
+It will execute command `npm install` inside the `workingDirectory` (ie. `/angular/`)
 
 ```xml
-
 <execution>
   <id>npm build</id>
   <goals>
@@ -243,12 +239,11 @@ It will execute command `npm install` inside the `workingDirectory` (ie. /angula
 ```
 
 
-It will execute command `npm run build` inside the `workingDirectory` (ie. /angular/)
+It will execute command `npm run build` inside the `workingDirectory` (ie. `/angular/`)
 
 ### How we used maven-resources-plugin?
 
 ```xml
-
 <execution>
   <id>default-copy-resources</id>
   <phase>process-resources</phase>
@@ -268,23 +263,22 @@ It will execute command `npm run build` inside the `workingDirectory` (ie. /angu
 ```
 
 
-It will copy the content of /angular/dist/ directory to output directory (${project.basedir}/angular/dist).
+It will copy the content of `/angular/dist/` directory to output directory (`${project.basedir}/angular/dist`).
 
 Now you can execute command `mvn clean install` and your .war will be ready in a few minutes. But I suggest you to read the full article first.
 
 **NOTE :**  
-1. Add index.html in your welcome files list in web.xml.  
-ie. Paste the below code in web.xml
+1. Add index.html in your welcome files list in `web.xml`.  
+ie. Paste the below code in `web.xml`
 
 ```xml
-
 <welcome-file-list>
   <welcome-file>index.html</welcome-file>
 </welcome-file-list>
 ```
 
 
-2. Add **“build”: “ng build”** script in your package.json
+2. Add `"build": "ng build"` script in your `package.json`
 
 ```
 {

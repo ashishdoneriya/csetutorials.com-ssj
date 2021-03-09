@@ -35,7 +35,7 @@ public class Node implements Serializable {
   private String filename;
 
   // In case the node is a directory, here are its child nodes
-  private List&lt;Node&gt; list;
+  private List<Node> list;
 
   // In case the node is a file, this byte array is its content
   private byte[] bytes;
@@ -102,7 +102,7 @@ public class Node implements Serializable {
 
   private void addToList(Node node) {
     if (list == null) {
-      list = new ArrayList&lt;Node&gt;();
+      list = new ArrayList<Node>();
     }
     list.add(node);
   }

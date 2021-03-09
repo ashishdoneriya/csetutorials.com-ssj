@@ -34,7 +34,7 @@ Open application called `Disks` (drive partition software).
 Select your hard disk.  
 [<img loading="lazy" src="/wp-content/uploads/2016/08/selecting-hard-disk-from-disks-app-ubuntu.png" alt="Selecting hard disk from disks app in Ubuntu" width="800" height="722" class="aligncenter size-full wp-image-457" srcset="/wp-content/uploads/2016/08/selecting-hard-disk-from-disks-app-ubuntu.png 800w, /wp-content/uploads/2016/08/selecting-hard-disk-from-disks-app-ubuntu-500x451.png 500w, /wp-content/uploads/2016/08/selecting-hard-disk-from-disks-app-ubuntu-400x361.png 400w" sizes="(max-width: 800px) 100vw, 800px" />](/wp-content/uploads/2016/08/selecting-hard-disk-from-disks-app-ubuntu.png)
 
-Select your ntfs partitions (Volumes) and one by one and note down the device name of all. Lets suppose your C Drive partition is 96 GB. Then select the label that is labeled as (File System Partition &#8230; 96 GB NTFS). When you click on it, it will display some information related to your partition (volume). Note down the device name in front of label &#8216;Device' (like `/dev/sda2`). This is path of your C Drive that Ubuntu has specified. Note down the path.  
+Select your ntfs partitions (Volumes) and one by one and note down the device name of all. Lets suppose your C Drive partition is 96 GB. Then select the label that is labeled as (File System Partition … 96 GB NTFS). When you click on it, it will display some information related to your partition (volume). Note down the device name in front of label ‘Device' (like `/dev/sda2`). This is path of your C Drive that Ubuntu has specified. Note down the path.  
 [<img loading="lazy" src="/wp-content/uploads/2016/08/selecting-c-drive-disks-app-ubuntu.png" alt="Selecting C Drive in Disks App Ubuntu" width="800" height="722" class="aligncenter size-full wp-image-459" srcset="/wp-content/uploads/2016/08/selecting-c-drive-disks-app-ubuntu.png 800w, /wp-content/uploads/2016/08/selecting-c-drive-disks-app-ubuntu-500x451.png 500w, /wp-content/uploads/2016/08/selecting-c-drive-disks-app-ubuntu-400x361.png 400w" sizes="(max-width: 800px) 100vw, 800px" />](/wp-content/uploads/2016/08/selecting-c-drive-disks-app-ubuntu.png)
 
 Similarly find the path for the other drive (D Drive).  
@@ -52,15 +52,13 @@ Now open the file `/etc/rc.local` in a text editor with root permission. My favo
 
 ```bash
 sudo gedit /etc/rc.local
-
 ```
 
-In the file `/etc/rc.local` paste the following lines before &#8216;exit 0'
+In the file `/etc/rc.local` paste the following lines before ‘exit 0'
 
 ```bash
 sudo mount /dev/sda2 /c_drive
 sudo mount /dev/sda3 /d_drive
-
 ```
 
 Basically commands written inside `/etc/rc.local` file will be executed at startup. We can execute sudo commands from here at startup.
@@ -70,7 +68,6 @@ NOTE : `/dev/sda2` and `/dev/sda3` are the paths of c drive and d drive in my sy
 So our final `/etc/rc.local` will look something like this
 
 ```bash
-
 #!/bin/sh -e
 #
 # rc.local

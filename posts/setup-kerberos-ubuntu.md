@@ -42,7 +42,7 @@ It will ask you to enter a password for database creation and after that, it wil
 
 Open `/etc/krb5kdc/kadm5.acl` file with your favourite text editor and uncomment the last line so that the file would look like.
 
-```
+```bash
 # This file Is the access control list for krb5 administration.
 # When this file is edited run /etc/init.d/krb5-admin-server restart to activate
 # One common way to set up Kerberos administration is to allow any principal
@@ -62,13 +62,13 @@ sudo kadmin.local
 
 and then run the command `addprinc` inside `kadmin.local`
 
-```
+```bash
 addprinc your_principal_name
 ```
 
 eg.
 
-```
+```bash
 addprinc ashishdoneriya
 ```
 
@@ -76,7 +76,7 @@ addprinc ashishdoneriya
 
 Add Kerberos server machine entry in your client machine /etc/hosts file. Let's say the hostname of the machine in which you have just installed Kerberos server is 'host1' and IP is '192.168.1.10' then add this line to /etc/hosts 
 
-```
+```bash
 192.168.1.10    host1
 ```
 
@@ -101,7 +101,7 @@ kinit -p your_principal_name@MYREALM
 
 eg. 
 
-```
+```bash
 kinit -p ashishdoneriya@MYREALM
 ```
 
@@ -114,5 +114,5 @@ sudo apt-get remove --purge krb5-admin-server krb5-config krb5-kdc krb5-locales
 **Update :** Once I had to setup kerberos client on my machine and the kdc is MIT kdc. Then I setup client on my machine using above process. After that I was facing problems in java during authentication and authorization using kerberos. After a lot of debugging, I found that in my system, encryption types in file `/etc/krb5.conf` is different than kerberos server's `/etc/krb5.conf`. So I replaced my system's `/etc/krb5.conf` with server's and then my java code worked fine.
 
 Sources:  
-<a href="https://help.ubuntu.com/community/Kerberos" target="_blank" rel="nofollow">https://help.ubuntu.com/community/Kerberos</a>  
-<a href="https://help.ubuntu.com/lts/serverguide/kerberos.html" target="_blank" rel="nofollow">https://help.ubuntu.com/lts/serverguide/kerberos.html</a>
+[https://help.ubuntu.com/community/Kerberos](https://help.ubuntu.com/community/Kerberos)
+[https://help.ubuntu.com/lts/serverguide/kerberos.html](https://help.ubuntu.com/lts/serverguide/kerberos.html)

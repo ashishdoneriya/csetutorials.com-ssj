@@ -162,32 +162,33 @@ The final pom.xml would look like
 3. Add the below rest call to com.csetutorials.MyResource class
 
 ```java
-	@GET
-	@Path("sse-api")
-	@Produces(MediaType.SERVER_SENT_EVENTS)
-	public void getServerSentEvents(final @Context SseEventSink eventSink, final @Context Sse sse) {
-		new Thread() {
-			public void run() {
-				for (int i = 0; i < 10; i++) {
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-
-						e.printStackTrace();
-					}
-					final OutboundSseEvent event = sse.newEventBuilder().name("message-to-client")
-							.data(String.class, "Hello world " + i + "!").build();
-					// Before sending result check if the client has closed the connection, if
-					// connection is closed then there is no need to send the data further
-					if (eventSink.isClosed()) {
-						return;
-					}
-					eventSink.send(event);
+@GET
+@Path("sse-api")
+@Produces(MediaType.SERVER_SENT_EVENTS)
+public void getServerSentEvents(final @Context SseEventSink eventSink, final @Context Sse sse) {
+	new Thread() {
+		public void run() {
+			for (int i = 0; i < 10; i++) {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
 				}
-				eventSink.close();
+				final OutboundSseEvent event = sse.newEventBuilder()
+                            .name("message-to-client")
+						    .data(String.class, "Hello world " + i + "!")
+                            .build();
+				// Before sending result check if the client has closed the connection, if
+				// connection is closed then there is no need to send the data further
+				if (eventSink.isClosed()) {
+					return;
+				}
+				eventSink.send(event);
 			}
-		}.start();
-	}
+			eventSink.close();
+		}
+	}.start();
+}
 ```
 
 
@@ -284,13 +285,13 @@ Hit enter to stop it...
 
 Now open your browser and hit the url –
 
-```
+```bash
 http://localhost:8080/myapp/myresource/
 ```
 
 The response would be like
 
-```
+```bash
 event: message-to-client
 data: Hello world 0!
 

@@ -17,7 +17,6 @@ Most of the times resizing images on Ubuntu is very difficult. I think some user
 
 ```bash
 sudo apt-get install kolourpaint4
-
 ```
 
 2. Now open your image using Kolour Paint.  

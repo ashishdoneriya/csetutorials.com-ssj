@@ -48,7 +48,7 @@ writer.setTimeUnit(TimeUnit.SECONDS);
 ```
 
 
-Supported formats in influxdb are HOURS, MINUTES, SECONDS, MILLISECONDS, MICROSECONDS and NANOSECONDS.
+Supported formats in influxdb are `HOURS`, `MINUTES`, `SECONDS`, `MILLISECONDS`, `MICROSECONDS` and `NANOSECONDS`.
 
 * Now set time 
 ```java
@@ -157,7 +157,7 @@ query.setDuration("120s");
 ```
 
 
-Supported format are d, h, m, s.
+Supported format are `d`, `h`, `m`, `s`.
 
 * d = days
 * h = hours
@@ -177,7 +177,7 @@ query.setAggregateFunction(AggregateFunction.MEAN);
 ```
 
 
-Supported functions in influxdb are COUNT, MIN, MAX, MEAN, MODE, MEDIAN, DISTINCT, SUM, STDDEV, FIRST, LAST, DIFFERENCE and NOFUNCTION.
+Supported functions in influxdb are `COUNT`, `MIN`, `MAX`, `MEAN`, `MODE`, `MEDIAN`, `DISTINCT`, `SUM`, `STDDEV`, `FIRST`, `LAST`, `DIFFERENCE` and `NOFUNCTION`.
 
 * To set group by time like for 1 minute. 
 ```java

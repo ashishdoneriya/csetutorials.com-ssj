@@ -43,13 +43,13 @@ YGuard is an Ant Task. It means it can be run through ant. If you are using mave
 ```
 Now lets start.
 
-First <a target="_blank" href="https://www.yworks.com/downloads#yGuard"  rel="noopener noreferrer">download</a> the yguard jar file from its website and put it in your project directory. If its a maven project then I suggest you to put it with pom.xml file.
+First [download](https://www.yworks.com/downloads#yGuard) the yguard jar file from its website and put it in your project directory. If its a maven project then I suggest you to put it with pom.xml file.
 
-Create a file “build.xml” in your project directory. In maven project, put it with pom.xml.
+Create a file `build.xml` in your project directory. In maven project, put it with pom.xml.
 
 ### Obfuscate a war file
 
-There is an excellent <a href="http://codeaweso.me/2009/02/obfuscating-a-webapp-war-file-with-yguard-and-ant/" target="_blank" rel="noopener noreferrer">ant script</a> written by Mike Christianson. What he did in that script is  
+There is an excellent [ant script](http://codeaweso.me/2009/02/obfuscating-a-webapp-war-file-with-yguard-and-ant/) written by Mike Christianson. What he did in that script is  
 1. Created two directories unwar.dir and obfuscation.dir  
 2. Extract the war file in unwar.dir  
 3. Created a jar of webapp classes (/WEB-INF/classes) called webapp.jar and put it in obfuscation.dir  

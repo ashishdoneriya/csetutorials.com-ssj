@@ -44,7 +44,7 @@ gcc test.c -o test
 
 ```
 
-Here gcc is the tool using which you will compile your C program. `test.c` is the file name of your code (&#8216;.c' is the extention of a C program). `-o` argument is passed to tell the compiler that while making the executable file of my program <test.c</code>, name it as `test`. You can also use another name other that `test` like `myExecutedFile` or something. Now run your code by executing the command below.
+Here gcc is the tool using which you will compile your C program. `test.c` is the file name of your code (‘.c' is the extention of a C program). `-o` argument is passed to tell the compiler that while making the executable file of my program `test.c`, name it as `test`. You can also use another name other that `test` like `myExecutedFile` or something. Now run your code by executing the command below.
 
 ```bash
 ./test
@@ -67,7 +67,7 @@ g++ test.cc -o test
 ```
 
 
-Here g++ is the tool using which you will compile your C++ program. `test.cc` is the file name of your code (&#8216;.cc' and .cpp are the extentions of a C++ program). `-o` argument is passed to tell the compiler that while making the executable file of my program <test.cc</code>, name it as `test`. Now run your code by executing the command below.
+Here g++ is the tool using which you will compile your C++ program. `test.cc` is the file name of your code (‘.cc' and .cpp are the extentions of a C++ program). `-o` argument is passed to tell the compiler that while making the executable file of my program `test.cc`, name it as `test`. Now run your code by executing the command below.
 
 ```bash
 ./test
