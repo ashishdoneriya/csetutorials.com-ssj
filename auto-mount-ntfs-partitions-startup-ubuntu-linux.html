@@ -128,18 +128,15 @@ sudo chmod +x /etc/rc.local
 </code></pre> 
         <p>Now open the file <code>/etc/rc.local</code> in a text editor with root permission. My favourite is gedit.</p> 
         <pre><code class="language-bash">sudo gedit /etc/rc.local
-
 </code></pre> 
         <p>In the file <code>/etc/rc.local</code> paste the following lines before ‘exit 0'</p> 
         <pre><code class="language-bash">sudo mount /dev/sda2 /c_drive
 sudo mount /dev/sda3 /d_drive
-
 </code></pre> 
         <p>Basically commands written inside <code>/etc/rc.local</code> file will be executed at startup. We can execute sudo commands from here at startup.</p> 
         <p>NOTE : <code>/dev/sda2</code> and <code>/dev/sda3</code> are the paths of c drive and d drive in my system. You have to put the paths (that you noted / found in previous steps through <code>disks</code> app ) of c drive and d drive of your own system</p> 
         <p>So our final <code>/etc/rc.local</code> will look something like this</p> 
-        <pre><code class="language-bash">
-#!/bin/sh -e
+        <pre><code class="language-bash">#!/bin/sh -e
 #
 # rc.local
 #

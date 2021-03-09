@@ -140,9 +140,9 @@ public class Sudoku {
 
   public int[][] getResult(int[][] board) {
     int row, column;
-    Set&amp;lt;Integer&gt; possibleValuesList;
-    for (row = 0; row &amp;lt; 9; row++) {
-      for (column = 0; column &amp;lt; 9; column++) {
+    Set&lt;Integer&gt; possibleValuesList;
+    for (row = 0; row &lt; 9; row++) {
+      for (column = 0; column &lt; 9; column++) {
         if (board[row][column] != 0) {
           continue;
         }
@@ -187,7 +187,7 @@ public class Sudoku {
   public int[][] getCopy(int row, int column, int num,
       int[][] board) {
     int[][] board_copy = new int[board.length][];
-    for (int i = 0; i &amp;lt; board.length; i++) {
+    for (int i = 0; i &lt; board.length; i++) {
       board_copy[i] = board[i].clone();
     }
     board_copy[row][column] = num;
@@ -196,18 +196,18 @@ public class Sudoku {
 
   // Returns the list of values that can be filled
   // at [row, column]
-  public Set&amp;lt;Integer&gt; getPossibleValues(int row,
+  public Set&lt;Integer&gt; getPossibleValues(int row,
       int column, int[][] board) {
     int i, j;
-    Set&amp;lt;Integer&gt; canNotBeAdded = new TreeSet&amp;lt;Integer&gt;();
+    Set&lt;Integer&gt; canNotBeAdded = new TreeSet&lt;Integer&gt;();
 
     // Get already filled horizontal elements
-    for (i = 0; i &amp;lt; 9; i++) {
+    for (i = 0; i &lt; 9; i++) {
       canNotBeAdded.add(board[row][i]);
     }
 
     // Get already filled vertical elements
-    for (i = 0; i &amp;lt; 9; i++) {
+    for (i = 0; i &lt; 9; i++) {
       canNotBeAdded.add(board[i][column]);
     }
 
@@ -215,14 +215,14 @@ public class Sudoku {
     // as the point/number [row, column]
     int boxRowStart = row - row % 3,
         boxColumnStart = column - column % 3;
-    for (i = boxRowStart; i &amp;lt; boxRowStart + 3; i++) {
-      for (j = boxColumnStart; j &amp;lt; boxColumnStart + 3; j++) {
+    for (i = boxRowStart; i &lt; boxRowStart + 3; i++) {
+      for (j = boxColumnStart; j &lt; boxColumnStart + 3; j++) {
         canNotBeAdded.add(board[i][j]);
       }
     }
 
-    Set&amp;lt;Integer&gt; canBeAdded = new TreeSet&amp;lt;Integer&gt;();
-    for (i = 1; i &amp;lt;= 9; i++) {
+    Set&lt;Integer&gt; canBeAdded = new TreeSet&lt;Integer&gt;();
+    for (i = 1; i &lt;= 9; i++) {
       canBeAdded.add(i);
     }
     canBeAdded.removeAll(canNotBeAdded);
@@ -233,8 +233,8 @@ public class Sudoku {
   private void printSudoku(int[][] board) {
     System.out.println("Printing Result");
     int row, column;
-    for (row = 0; row &amp;lt; 9; row++) {
-      for (column = 0; column &amp;lt; 9; column++) {
+    for (row = 0; row &lt; 9; row++) {
+      for (column = 0; column &lt; 9; column++) {
         System.out.print(board[row][column] + " ");
       }
       System.out.println();
@@ -246,8 +246,8 @@ public class Sudoku {
     int[][] board = new int[9][9];
     Scanner kb = new Scanner(System.in);
     int row, column;
-    for (row = 0; row &amp;lt; 9; row++) {
-      for (column = 0; column &amp;lt; 9; column++) {
+    for (row = 0; row &lt; 9; row++) {
+      for (column = 0; column &lt; 9; column++) {
         board[row][column] = kb.nextInt();
       }
     }

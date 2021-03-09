@@ -123,7 +123,7 @@
         <p>If you want full automation ie. you want maven to setup nodejs and run commands npm install and npm run build for you then build time increases a lot.</p> 
         <p>But if you are ready to run commands npm install and npm run build manually then running command mvn clean install would be very fast. This is semi automatic way. I will show you both ways.</p> 
         <p>So lets start. This is my project structure for maven project.</p> 
-        <pre><code>.
+        <pre><code class="language-bash">.
 ├── angular
 │   ├── angular-cli-build.js
 │   ├── angular-cli.json
@@ -158,7 +158,7 @@
 └── temp
 </code></pre> 
         <p>And Just for your knowledge this is the content of the .war file that I found when I was analyzing it.</p> 
-        <pre><code>.
+        <pre><code class="language-bash">.
 ├── app
 ├── cat.txt
 ├── favicon.ico
@@ -260,8 +260,8 @@
 </code></pre> 
         <p>In the above build code, we used these two new plugins frontend-maven-plugin and maven-resources-plugin.</p> 
         <ol> 
-         <li><strong>frontend-maven-plugin</strong> – It will install nodejs and build the angular project.</li> 
-         <li><strong>maven-resources-plugin</strong> – It will copy the contents of ‘dist' directory to root of .war file.</li> 
+         <li><strong>frontend-maven-plugin</strong> - It will install nodejs and build the angular project.</li> 
+         <li><strong>maven-resources-plugin</strong> - It will copy the contents of ‘dist' directory to root of .war file.</li> 
         </ol> 
         <h3>How we used frontend-maven-plugin?</h3> 
         <pre><code class="language-xml">&lt;configuration&gt;
@@ -269,9 +269,8 @@
   &lt;installDirectory&gt;temp&lt;/installDirectory&gt;
 &lt;/configuration&gt;
 </code></pre> 
-        <p>In the above code we are telling frontend-maven-plugin that our angular code is in /angular directory and the directory in which we want it to install nodejs is /temp.</p> 
-        <pre><code class="language-xml">
-&lt;execution&gt;
+        <p>In the above code we are telling frontend-maven-plugin that our angular code is in <code>/angular</code> directory and the directory in which we want it to install nodejs is <code>/temp</code>.</p> 
+        <pre><code class="language-xml">&lt;execution&gt;
   &lt;id&gt;install node and npm&lt;/id&gt;
   &lt;goals&gt;
     &lt;goal&gt;install-node-and-npm&lt;/goal&gt;
@@ -283,8 +282,7 @@
 &lt;/execution&gt;
 </code></pre> 
         <p>In the above code we are specifying node and npm version to install it on our system automatically.</p> 
-        <pre><code class="language-xml">
-&lt;execution&gt;
+        <pre><code class="language-xml">&lt;execution&gt;
   &lt;id&gt;npm install&lt;/id&gt;
   &lt;goals&gt;
     &lt;goal&gt;npm&lt;/goal&gt;
@@ -294,9 +292,8 @@
   &lt;/configuration&gt;
 &lt;/execution&gt;
 </code></pre> 
-        <p>It will execute command <code>npm install</code> inside the <code>workingDirectory</code> (ie. /angular/)</p> 
-        <pre><code class="language-xml">
-&lt;execution&gt;
+        <p>It will execute command <code>npm install</code> inside the <code>workingDirectory</code> (ie. <code>/angular/</code>)</p> 
+        <pre><code class="language-xml">&lt;execution&gt;
   &lt;id&gt;npm build&lt;/id&gt;
   &lt;goals&gt;
     &lt;goal&gt;npm&lt;/goal&gt;
@@ -306,10 +303,9 @@
   &lt;/configuration&gt;
 &lt;/execution&gt;
 </code></pre> 
-        <p>It will execute command <code>npm run build</code> inside the <code>workingDirectory</code> (ie. /angular/)</p> 
+        <p>It will execute command <code>npm run build</code> inside the <code>workingDirectory</code> (ie. <code>/angular/</code>)</p> 
         <h3>How we used maven-resources-plugin?</h3> 
-        <pre><code class="language-xml">
-&lt;execution&gt;
+        <pre><code class="language-xml">&lt;execution&gt;
   &lt;id&gt;default-copy-resources&lt;/id&gt;
   &lt;phase&gt;process-resources&lt;/phase&gt;
   &lt;goals&gt;
@@ -326,19 +322,18 @@
   &lt;/configuration&gt;
 &lt;/execution&gt;
 </code></pre> 
-        <p>It will copy the content of /angular/dist/ directory to output directory (${project.basedir}/angular/dist).</p> 
+        <p>It will copy the content of <code>/angular/dist/</code> directory to output directory (<code>${project.basedir}/angular/dist</code>).</p> 
         <p>Now you can execute command <code>mvn clean install</code> and your .war will be ready in a few minutes. But I suggest you to read the full article first.</p> 
         <p><strong>NOTE :</strong></p> 
         <ol> 
-         <li>Add index.html in your welcome files list in web.xml.<br> ie. Paste the below code in web.xml</li> 
+         <li>Add index.html in your welcome files list in <code>web.xml</code>.<br> ie. Paste the below code in <code>web.xml</code></li> 
         </ol> 
-        <pre><code class="language-xml">
-&lt;welcome-file-list&gt;
+        <pre><code class="language-xml">&lt;welcome-file-list&gt;
   &lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
 &lt;/welcome-file-list&gt;
 </code></pre> 
         <ol start="2"> 
-         <li>Add <strong>“build”: “ng build”</strong> script in your package.json</li> 
+         <li>Add <code>"build": "ng build"</code> script in your <code>package.json</code></li> 
         </ol> 
         <pre><code>{
   "name": "angular",

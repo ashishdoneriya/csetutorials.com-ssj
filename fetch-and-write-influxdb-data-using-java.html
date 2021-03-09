@@ -136,7 +136,7 @@
         </ul> 
         <pre><code class="language-java">writer.setTimeUnit(TimeUnit.SECONDS);
 </code></pre> 
-        <p>Supported formats in influxdb are HOURS, MINUTES, SECONDS, MILLISECONDS, MICROSECONDS and NANOSECONDS.</p> 
+        <p>Supported formats in influxdb are <code>HOURS</code>, <code>MINUTES</code>, <code>SECONDS</code>, <code>MILLISECONDS</code>, <code>MICROSECONDS</code> and <code>NANOSECONDS</code>.</p> 
         <ul> 
          <li>Now set time</li> 
         </ul> 
@@ -217,7 +217,7 @@ query.addField("field2");
         <p>or fetch data for last 120 seconds.</p> 
         <pre><code class="language-java">query.setDuration("120s");
 </code></pre> 
-        <p>Supported format are d, h, m, s.</p> 
+        <p>Supported format are <code>d</code>, <code>h</code>, <code>m</code>, <code>s</code>.</p> 
         <ul> 
          <li>d = days</li> 
          <li>h = hours</li> 
@@ -232,7 +232,7 @@ query.addField("field2");
         </ul> 
         <pre><code class="language-java">query.setAggregateFunction(AggregateFunction.MEAN);
 </code></pre> 
-        <p>Supported functions in influxdb are COUNT, MIN, MAX, MEAN, MODE, MEDIAN, DISTINCT, SUM, STDDEV, FIRST, LAST, DIFFERENCE and NOFUNCTION.</p> 
+        <p>Supported functions in influxdb are <code>COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>MEAN</code>, <code>MODE</code>, <code>MEDIAN</code>, <code>DISTINCT</code>, <code>SUM</code>, <code>STDDEV</code>, <code>FIRST</code>, <code>LAST</code>, <code>DIFFERENCE</code> and <code>NOFUNCTION</code>.</p> 
         <ul> 
          <li>To set group by time like for 1 minute.</li> 
         </ul> 

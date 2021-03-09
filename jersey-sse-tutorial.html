@@ -242,32 +242,33 @@
         <ol start="3"> 
          <li>Add the below rest call to com.csetutorials.MyResource class</li> 
         </ol> 
-        <pre><code class="language-java">	@GET
-	@Path("sse-api")
-	@Produces(MediaType.SERVER_SENT_EVENTS)
-	public void getServerSentEvents(final @Context SseEventSink eventSink, final @Context Sse sse) {
-		new Thread() {
-			public void run() {
-				for (int i = 0; i &lt; 10; i++) {
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-
-						e.printStackTrace();
-					}
-					final OutboundSseEvent event = sse.newEventBuilder().name("message-to-client")
-							.data(String.class, "Hello world " + i + "!").build();
-					// Before sending result check if the client has closed the connection, if
-					// connection is closed then there is no need to send the data further
-					if (eventSink.isClosed()) {
-						return;
-					}
-					eventSink.send(event);
+        <pre><code class="language-java">@GET
+@Path("sse-api")
+@Produces(MediaType.SERVER_SENT_EVENTS)
+public void getServerSentEvents(final @Context SseEventSink eventSink, final @Context Sse sse) {
+	new Thread() {
+		public void run() {
+			for (int i = 0; i &lt; 10; i++) {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
 				}
-				eventSink.close();
+				final OutboundSseEvent event = sse.newEventBuilder()
+                            .name("message-to-client")
+						    .data(String.class, "Hello world " + i + "!")
+                            .build();
+				// Before sending result check if the client has closed the connection, if
+				// connection is closed then there is no need to send the data further
+				if (eventSink.isClosed()) {
+					return;
+				}
+				eventSink.send(event);
 			}
-		}.start();
-	}
+			eventSink.close();
+		}
+	}.start();
+}
 </code></pre> 
         <p>In my case the final MyResource class looks like</p> 
         <pre><code class="language-java">package com.csetutorials;
@@ -349,10 +350,10 @@ Jersey app started with WADL available at http://localhost:8080/myapp/applicatio
 Hit enter to stop it...
 </code></pre> 
         <p>Now open your browser and hit the url –</p> 
-        <pre><code>http://localhost:8080/myapp/myresource/
+        <pre><code class="language-bash">http://localhost:8080/myapp/myresource/
 </code></pre> 
         <p>The response would be like</p> 
-        <pre><code>event: message-to-client
+        <pre><code class="language-bash">event: message-to-client
 data: Hello world 0!
 
 event: message-to-client
