@@ -55,3 +55,5 @@ If you want to allow comments or customer support then uncheck them. I uncheck c
 11. Click on **Purple Box** and uncheck all options.
 
 Thats it. Here is the video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pgmI7eDZVe4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
