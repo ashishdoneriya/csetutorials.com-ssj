@@ -81,13 +81,13 @@ This algo is memory efficient. But it only works for not-so-strict look back win
 
 ## Problem Scenarios
 
-### Problem Detail : Max 500 requests in last 1 hour
+### Problem 1 : Max 500 requests in last 1 hour
 
 We can solve this problem in two ways.
 1. Sliding window log algorithm.
 2. (Partial) Sliding window counter algorithm.
 
-**Way 1 - Sliding window log algorithm**
+**Approach 1 - Sliding window log algorithm**
 
 Example : [https://github.com/peterkhayes/rolling-rate-limiter](https://github.com/peterkhayes/rolling-rate-limiter)
 
@@ -102,18 +102,19 @@ Here are the steps -
 
 Advantages of this approach -
 1. Strict max upperbound on requests rate.
+2. Can handle sudden spike in traffic at the edges of the windows.
 
 Drawbacks of this approach -
 1. We have to store timestamps of all the requests (memory consuming).
 2. Dropped requests are also counted in this approach and it will affect the user for the next 1 hour.
 
-**Way 2 - (Partial) Sliding window counter algorithm**
+**Approach 2 - (Partial) Sliding window counter algorithm**
 
 In this process, instead of directly storing the timestamp in the sorted set, we would round off the timestamp in minutes and we'll store no. of requests processed in that minute as value in the sorted set.
 
-Eg. Lets say the request arrives at 11:03:46 PM where 11 is the hour, 3 is the minute and 46 is the seconds. So instead of putting time stamp of 11:03:46 PM, we'll store timestamp of 11:03:00 PM ie. we will take floor value.
+Eg. Lets say the request arrives at 11:03:46:123 PM where 11 is the hour, 3 is the minute, 46 is the seconds and 123 is the milliseconds. So instead of putting time stamp of 11:03:46:123 PM, we'll store timestamp of 11:03:00:000 PM ie. we will take floor value.
 
-In previous approach ( Way 1), in sorted sets we were storing key and value both as timestamp, but in this approach the key will be floor of timestamp and value will be the count (requests processed in that minute).
+In previous approach ( Approach 1), in sorted sets we were storing key and value both as timestamp, but in this approach the key will be floor of timestamp and value will be the count (requests processed in that minute).
 
 1. Add a TTL (expiry time) to the set to autoclean memory.
 2. Execute the steps 3 and 4 atomically.
@@ -123,7 +124,7 @@ In previous approach ( Way 1), in sorted sets we were storing key and value both
 6. Now sum up all the values (counters) in the set. During sum check if the counter value is more than the max limit per hour (500 in this case), if yes then add 500 instead of that number.
 7. Check if the total sum of counters is less than 500, if yes then allow the request to proceed further otherwise drop the request.
 
-### Problem Detail : Max 10 requests per minute and there should be a gap of 2 second between each request.
+### Problem 2 : Max 10 requests per minute and there should be a gap of 2 second between each request.
 
 **Approach 1**
 
@@ -135,7 +136,15 @@ In previous approach ( Way 1), in sorted sets we were storing key and value both
 4. Fetch all elements of the set.
 5. Add the current timestamp to the set.
 6. Count all the elements in the set when all operations are completed. If it exceeds the limit, we would drop the request.
-7. Fetch the latest timestamp with the current timestamp. If they are too close ( < 2 seconds) then we would drop the request.
+7. Fetch the latest timestamp with the current timestamp. If they are too close ( less than 2 seconds) then we would drop the request.
+
+Advantages of this approach -
+1. Strict max upperbound on requests rate.
+2. Can handle sudden spike in traffic at the edges of the windows.
+
+Drawbacks of this approach -
+1. We have to store timestamps of all the requests (memory consuming).
+2. Dropped requests are also counted in this approach and it will affect the user for the next 1 hour.
 
 **Approach 2**
 
@@ -146,6 +155,16 @@ In previous approach ( Way 1), in sorted sets we were storing key and value both
 5. Add the current timestamp to the set.
 7. If the set is empty then go to step 8. If set is not empty then drop request.
 8. Execute below steps atomically (9 and 10).
-9. In redis get value of key floorFuncMinutes(current request timestamp) ( eg. 11:03:46 to 11:03:00).
+9. In redis get value of key floorFuncMinutes(current request timestamp) ( eg. 11:03:46:123 to 11:03:00:000).
 10. Increment the value of key floorFuncMinutes(current request timestamp) and set TTL of 1 minute.
 11. If the value is less than max limit ( in this case 10 requests per minute ie. 10) then allow the request to proceed further otherwise drop the request.
+
+### Problem 3 : Max 10 requests per minute.
+
+We can solve this problem much like problem 2. 
+
+Approach 1 : Follow steps from 1 to 6 and skip step 7. Advantages and draw back are the same.
+
+Approach 2 : If we follow approach 2 then there could be sudden spike in traffic at the starting and ending of the windows (minutes). In this case we could use (Partial) Sliding window counter algorithm that is counting based on floor of every second ie. 11:03:46:123 to 11:03:46:000. But I think it would be very (time consuming). Therefore you could use directly sliding window alogrithm. ie (3 + 5 * 0.7% = 6.5 = 6)
+
+
