@@ -1,15 +1,15 @@
 ---
-title: Rate Limiter Design And Techniques
+title: Rate Limiter Design Techniques with Scenarios and Solutions
 created: 2021-03-14T21:14:21+05:30
 author: ashishdoneriya
-description: Points regarding rate limiter designing techniques.
+description: Key Points regarding rate limiter designing techniques. Some common problems and various ways to solve them
 permalink: /rate-limiter-design-techniques.html
 categories:
   - system-design
 tags:
   - redis
   - rate-limiter
-updated: 2021-03-14T21:14:21+05:30
+updated: 2021-03-17T00:47:00+05:30
 ---
 
 Rate Limiting is a very vast topic. It depends on what type of rate limiter you want, what are your requirements. First lets assume there is a lot of traffic coming every second or minute. So we will do all the calculations according to the rate limiter.
@@ -79,33 +79,73 @@ Since the rate limiter allows a maxium of 7 requests per minutes, the current re
 This algo is memory efficient. But it only works for not-so-strict look back window. The problem is not so bad as it seems. According to an experiment by cloudflare only 0.003% of requests are wrongly allowed or rate limited among 400 million requests.
 
 
-### Sliding window log algorithm implementations
+## Problem Scenarios
 
-#### Problem Detail : Max 500 requests in last 1 hour
+### Problem Detail : Max 500 requests in last 1 hour
+
+We can solve this problem in two ways.
+1. Sliding window log algorithm.
+2. (Partial) Sliding window counter algorithm.
+
+**Way 1 - Sliding window log algorithm**
+
 Example : [https://github.com/peterkhayes/rolling-rate-limiter](https://github.com/peterkhayes/rolling-rate-limiter)
-1. We'll use redis for cache.
-2. **In redis there is a feature using which we can execute a set of operations atomically so as to prevent race condition. We get the output of the commands after all the commands get executed.**
-3. We'll used sorted set in redis to store timestamps.
-4. Now we will execute the steps from 5 to 7 atomically (as far as I understood we canot add an `if condition` in these steps)
-5. Delete all timestamps before the interval.
-6. Add the current timestamp.
-7. Get the total elements currently in the set.
-8. If the total elements is less than the applied rate then the request can proceed further otherwise it will be dropped.
 
-#### Problem Detail : Max 10 requests per minute and there should be a gap of 2 second between each request.
+ We'll use redis for cache. In **redis** there is a feature using which we can **execute a set of operations atomically so as to prevent race condition**. We get the output of the commands after all the commands get executed. We'll used sorted set in redis to store timestamps. In this approach, in the sorted set we will store key as timestamp and value also as timestamp. We can perform atomic operations in redis using `MULTI` command.
+
+Here are the steps - 
+1. Execute the steps from 2 to 4 atomically (as far as I understood we canot add an `if condition` in these steps when executing atomically)
+2. Delete all timestamps before the interval (There is a function zremrangebyscore using which we can remove those key-values pairs in a sorted set whose values are specified in the function).
+3. Get the total elements currently in the set.
+4. Add the current timestamp.
+5. If the total elements is less than the applied rate then the request can proceed further otherwise it will be dropped.
+
+Advantages of this approach -
+1. Strict max upperbound on requests rate.
+
+Drawbacks of this approach -
+1. We have to store timestamps of all the requests (memory consuming).
+2. Dropped requests are also counted in this approach and it will affect the user for the next 1 hour.
+
+**Way 2 - (Partial) Sliding window counter algorithm**
+
+In this process, instead of directly storing the timestamp in the sorted set, we would round off the timestamp in minutes and we'll store no. of requests processed in that minute as value in the sorted set.
+
+Eg. Lets say the request arrives at 11:03:46 PM where 11 is the hour, 3 is the minute and 46 is the seconds. So instead of putting time stamp of 11:03:46 PM, we'll store timestamp of 11:03:00 PM ie. we will take floor value.
+
+In previous approach ( Way 1), in sorted sets we were storing key and value both as timestamp, but in this approach the key will be floor of timestamp and value will be the count (requests processed in that minute).
+
+1. Add a TTL (expiry time) to the set to autoclean memory.
+2. Execute the steps 3 and 4 atomically.
+3. Fetch the sorted set related to user.
+4. Increment the value of floor(timestamp) in sorted set (Redis will autocreate the key)
+5. In the sorted set that we received, first remove all keys (timestamps) which are older than 1 hour from both redis and the fetched set.
+6. Now sum up all the values (counters) in the set. During sum check if the counter value is more than the max limit per hour (500 in this case), if yes then add 500 instead of that number.
+7. Check if the total sum of counters is less than 500, if yes then allow the request to proceed further otherwise drop the request.
+
+### Problem Detail : Max 10 requests per minute and there should be a gap of 2 second between each request.
+
+**Approach 1**
 
 [https://engineering.classdojo.com/blog/2015/02/06/rolling-rate-limiter/](https://engineering.classdojo.com/blog/2015/02/06/rolling-rate-limiter/)
 
 1. Each user has a sorted set associated with them.
-2. Executed the below steps from 3 to 5 atomically (we will be able to read the output only after execution of all the steps.)
+2. Execute the below steps from 3 to 5 atomically (we will be able to read the output only after execution of all the steps.)
 3. When a request arrives, drop all elements of the set which occured before a minute ago.
 4. Fetch all elements of the set.
 5. Add the current timestamp to the set.
 6. Count all the elements in the set when all operations are completed. If it exceeds the limit, we would drop the request.
 7. Fetch the latest timestamp with the current timestamp. If they are too close ( < 2 seconds) then we would drop the request.
 
-We can perform atomic operations in redis using `MULTI` command.
+**Approach 2**
 
-There is a drawback in this approach. We have to save the timestamps of the dropped requests also. Lets say there are 100 requests from client within a second then only 1 request would be allowed and the rest 99 requests would be dropped. But ever after two seconds these dropped requests' timestamps won't be removed from the sorted set. So all requests will be dropped untill the completion of 10 minutes.
-Suppose what would happen if the duration would be of 1 hour instead of 10 minutes, then the user won't be able to access the apis for whole 1 hour. But it has its own advantage. We can penalize that type of users who try to spam.
-
+1. Each user has a sorted set associated with them.
+2. Execute the below steps from 3 to 5 atomically (we will be able to read the output only after execution of all the steps.)
+3. When a request arrives, drop all elements of the set which occured before 2 seconds ago.
+4. Get the total size of set.
+5. Add the current timestamp to the set.
+7. If the set is empty then go to step 8. If set is not empty then drop request.
+8. Execute below steps atomically (9 and 10).
+9. In redis get value of key floorFuncMinutes(current request timestamp) ( eg. 11:03:46 to 11:03:00).
+10. Increment the value of key floorFuncMinutes(current request timestamp) and set TTL of 1 minute.
+11. If the value is less than max limit ( in this case 10 requests per minute ie. 10) then allow the request to proceed further otherwise drop the request.
