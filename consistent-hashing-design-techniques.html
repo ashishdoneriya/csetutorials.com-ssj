@@ -1,6 +1,31 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
+  <!-- Title --> 
+  <title>Consistent Hashing Design and Techniques</title> 
+  <link rel="canonical" href="https://csetutorials.com/consistent-hashing-design-techniques.html"> 
+  <meta name="description" content="Key Points regarding implementation of Consistent Hashing"> 
+  <meta property="og:description" content="Key Points regarding implementation of Consistent Hashing"> 
+  <meta name="twitter:description" content="Key Points regarding implementation of Consistent Hashing"> 
+  <meta name="author" content="Ashish Doneriya"> 
+  <meta name="robots" content="index, follow"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Consistent Hashing Design and Techniques"> 
+  <meta property="og:url" content="https://csetutorials.com/consistent-hashing-design-techniques.html"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:site_name" content="Cse Tutorials"> 
+  <meta property="og:updated_time" content="2021-03-20T18:50:00Z"> 
+  <meta property="article:author" content="https://www.facebook.com/ashishdoneriya"> 
+  <meta property="article:modified_time" content="2021-03-20T18:50:00Z"> 
+  <meta property="article:published_time" content="2021-03-20T18:50:00Z"> 
+  <meta property="article:publisher" content="https://www.facebook.com/ashishdoneriya"> 
+  <meta property="article:section" content="System Design"> 
+  <meta property="article:tag" content="Consistent-Hashing"> 
+  <meta name="twitter:title" content="Consistent Hashing Design and Techniques"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:creator" content="@ashishdoneriya"> 
+  <meta name="twitter:site" content="@ashishdoneriya"> 
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya","name":"Ashish Doneriya","sameAs":["https://www.facebook.com/ashishdoneriya","https://twitter.com/ashishdoneriya","https://www.linkedin.com/in/ashishdoneriya/"]},{"@type":"WebSite","@id":"https://csetutorials.com/#website","url":"https://csetutorials.com","name":"Cse Tutorials","description":"Tutorials about WebApps, Web Designing, Java \u0026 Ubuntu","publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://csetutorials.com/consistent-hashing-design-techniques.html#webpage","url":"https://csetutorials.com/consistent-hashing-design-techniques.html","isPartOf":{"@id":"https://csetutorials.com/#website"},"datePublished":"2021-03-20T18:50:00Z","dateModified":"2021-03-20T18:50:00Z","description":"Key Points regarding implementation of Consistent Hashing","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://csetutorials.com/consistent-hashing-design-techniques.html"]}]},{"@type":"Article","@id":"https://csetutorials.com/consistent-hashing-design-techniques.html#article","isPartOf":{"@id":"https://csetutorials.com/consistent-hashing-design-techniques.html#webpage"},"author":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"headline":"Consistent Hashing Design and Techniques","datePublished":"2021-03-20T18:50:00Z","dateModified":"2021-03-20T18:50:00Z","mainEntityOfPage":{"@id":"https://csetutorials.com/consistent-hashing-design-techniques.html#webpage"},"publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"keywords":"consistent-hashing","articleSection":"system-design","inLanguage":"en-US"}]}</script> 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -67,24 +92,65 @@
    <div class="typology-cover typology-cover-empty"></div> 
    <div class="typology-fake-bg"> 
     <div class="typology-section"> 
-     <div class="section-content home"> 
-      <header class="entry-header clearfix"> 
-       <p class="entry-title entry-title-cover-empty h2"> System Design </p> 
-       <div class="post-letter">
-        S
+     <div class="section-content"> 
+      <article class="typology-post typology-single-post"> 
+       <header class="entry-header clearfix"> 
+        <h1 class="entry-title entry-title-cover-empty h2">Consistent Hashing Design and Techniques</h1> 
+        <div class="entry-meta"> 
+         <div class="meta-item meta-author" style="vertical-align: middle">
+           By <span class="vcard author"><span class="fn"> <a href="/author/ashishdoneriya">Ashish Doneriya</a> </span></span> 
+         </div> 
+         <div class="meta-item meta-date" style="vertical-align: middle"> <span class="updated">Last Updated on Mar 20, 2021 </span> 
+         </div> 
+        </div> 
+        <div class="post-letter">
+          C 
+        </div> 
+       </header> 
+       <div class="entry-content clearfix"> 
+        <div style="margin-top:10px;margin-bottom:20px"> 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+         <!-- Display Ad --> 
+         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3068137040930830" data-ad-slot="1668882656" data-ad-format="auto" data-full-width-responsive="true"></ins> 
+         <script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+						</script> 
+        </div>    
+        <p>Consistent Hashing is one of the very important concept in the field of system designing. Consistent hashing is used mainly in load balancers, key-value store etc.</p> 
+        <p>Lets suppose You have to create a Load Balancer for your WebApp. I presume you know what is a load balancer.</p> 
+        <ul> 
+         <li> <p>One way is to distribute the load one by one on each server as the request comes. The problem in this approach is that if the server was storing some information in its cache or session then the cache or the session would become irrelevant if the same reqeust for that client goes to another server.</p> </li> 
+         <li> <p>The another way is to assign reqeusts to the servers based on the below function <code>server_number = hash_function(request_key) % total_server</code></p> </li> 
+         <li> <p>It has a drawback. If a new server is added or removed then there would a flood of cache misses.</p> </li> 
+         <li> <p>The solution for the above problem is <strong>Consistent Hashing</strong>.</p> </li> 
+         <li> <p>In consistent hashing only k/n keys will be affected if a node is added or removed. Here <code>k</code> is number of keys and <code>n</code> is number of slots (you can say number of machines as for now).</p> </li> 
+         <li> <p>Chooses any hash function, lets say we choose <code>SHA-1</code>. In this case there are 2^160 hash spaces available.</p> </li> 
+         <li> <p>Join the first slot and the last slot and it forms a ring. Using that hash function we map servers based on their IP Addresses (or machine names) onto the ring.</p> </li> 
+         <li> <p>We use the same hash function to map request keys to the slots.</p> </li> 
+         <li> <p>When we have to find the server related to a particular key, then first we find the hash of that key. After that we move forward in the ring untill we found the hash of a server in that ring. That server will be the server for that key.</p> </li> 
+         <li> <p>There are two drawbacks of this appoach. The first one is in case when a server is dropped then the whole load comes to its next server. The second drawback is it doesnot guarantee same loading in all servers.</p> </li> 
+         <li> <p>To counter these two problem there is a technique called <strong>Virtual Nodes</strong>.</p> </li> 
+         <li> <p>A virtual node is actually a real node. Each server is represented by multiple virtual nodes on the ring. Lets say there are 10 servers and each server has 10 virtual nodes. So in this case in the hash ring, 100 nodes are distributes. Therefore it then removes the problem of load partiality.</p> </li> 
+         <li> <p>To find the server related to a particular key, we will calculate hash of that key and from that hash we'll move forward in clockwise untill a virtual node comes up in that ring.</p> </li> 
+        </ul>   
+        <div style="margin-top:10px;margin-bottom:20px"> 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+         <!-- Display Ad --> 
+         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3068137040930830" data-ad-slot="7956133725" data-ad-format="auto" data-full-width-responsive="true"></ins> 
+         <script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+						</script> 
+        </div> 
+        <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
+										padding: 0 5px 5px;
+										text-decoration: none;
+										border-bottom: 4px solid yellow;
+									" href="/topics/system-design">System Design</a> </span> 
+        </div> 
        </div> 
-      </header> 
-      <ul class="wp-block-rss is-grid columns-2 columns-2" style="list-style: none"> 
-       <li class="wp-block-rss__item"> 
-        <div class="wp-block-rss__item-title" style="line-height: 1.4"> <a class="h5" style="color: rgba(0, 0, 0, 0.8)" href="/consistent-hashing-design-techniques.html">Consistent Hashing Design and Techniques</a> 
-        </div> <span class="wp-block-rss__item-author" style="margin-top: 8px"> <span>In </span> <span> <a href="/topics/system-design">System Design</a> </span> <span> - Mar 20, 2021</span> </span> </li> 
-       <li class="wp-block-rss__item"> 
-        <div class="wp-block-rss__item-title" style="line-height: 1.4"> <a class="h5" style="color: rgba(0, 0, 0, 0.8)" href="/rate-limiter-design-techniques.html">Rate Limiter Design Techniques with Scenarios and Solutions</a> 
-        </div> <span class="wp-block-rss__item-author" style="margin-top: 8px"> <span>In </span> <span> <a href="/topics/system-design">System Design</a> </span> <span> - Mar 14, 2021</span> </span> </li> 
-       <li class="wp-block-rss__item"> 
-        <div class="wp-block-rss__item-title" style="line-height: 1.4"> <a class="h5" style="color: rgba(0, 0, 0, 0.8)" href="/sstable-architecture.html">SSTable Architecture Summary</a> 
-        </div> <span class="wp-block-rss__item-author" style="margin-top: 8px"> <span>In </span> <span> <a href="/topics/system-design">System Design</a> </span> <span> - Mar 09, 2021</span> </span> </li> 
-      </ul> 
+       <div class="clearfix entry-actions"> <span>Originally Published On </span><span> : </span><span>Mar 20, 2021</span> 
+       </div> 
+      </article> 
      </div> 
     </div> 
     <footer class="typology-footer"> 
