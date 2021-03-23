@@ -1,7 +1,7 @@
 ---
 title: How to Design a Key Value Database
-created: 2021-03-24T01:25:00+05:30
-updated: 2021-03-24T01:25:00+05:30
+created: 2021-03-24T02:30:00+05:30
+updated: 2021-03-24T02:30:00+05:30
 author: ashishdoneriya
 description: Essential points to consider while designing key-value storage or database.
 permalink: /key-value-storage-design-techniques.html
@@ -73,10 +73,10 @@ There are two things that we could do in case of temporary failure. First is blo
 In case of permanent failure, the replicated node would continue to serve the keys.
 
 ## Questions ?
-1. **Question :** Since there could be very large number of requests for a node or key, so how could a single node handle such large amount of traffic?
+1. **Question :** Since there could be very large number of requests for a node or key, so how could a single node handle such large amount of traffic?  
 **Answer :** We will (actually the node will) distribute the traffic in the replicated nodes.
 
-2. **Question :** When we ask the node to store a particular key-value, so when does node replicate data to the other nodes, just immediately after storage request or some time later?
+2. **Question :** When we ask the node to store a particular key-value, so when does node replicate data to the other nodes, just immediately after storage request or some time later?  
 **Answer :** It depends on our requirement. If There is a very famous concept called [CAP Theorem](https://ashishdoneriya.github.io/cap-theorem.html). In the previous answer I've mentioned that you could distribute the traffic in the replicated nodes.
 
 Lets say your requirement is the data that we receive from the replicated nodes for a key, always must be the latest data. In this case when the write request comes to the node then first the node saves data to itself, then it will replicate the data and at last will send the response to the request. During the time of replication all the request (read and write) would be blocked for that key.
@@ -101,10 +101,8 @@ Usually N = 3, W = 2, R = 2.
 
 The above technique is called Sloppy Quorum.
 
-3. **Question :** During data write, lets say two different requests are writing data at the same time for same keys, what   would you do?
+3. **Question :** During data write, lets say two different requests are writing data at the same time for same keys, what   would you do?  
+**Answer :** We will use [Vector Clock](https://en.wikipedia.org/wiki/Vector_clock) techiques to resolve the conflicts.
 
-   **Answer :** We will use [Vector Clock](https://en.wikipedia.org/wiki/Vector_clock) techiques to resolve the conflicts.
-
-4. **Question :** A client won't directly send data to the correct node related to a key because the client won't know the hashing algorithm or the hash ring. So how exactly the client would write or read data (key-value)?
-
-   **Answer :**  First the client will send the request to any node. Then this node would forward the request to the node which would be close the client node. Then this node would act as a Coordinator node and would handle the request (ie. finding the appropriate node related to key using hash ring and sending the request)
+4. **Question :** A client won't directly send data to the correct node related to a key because the client won't know the hashing algorithm or the hash ring. So how exactly the client would write or read data (key-value)?  
+**Answer :**  First the client will send the request to any node. Then this node would forward the request to the node which would be close the client node. Then this node would act as a Coordinator node and would handle the request (ie. finding the appropriate node related to key using hash ring and sending the request)
