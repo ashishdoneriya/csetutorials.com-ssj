@@ -4,7 +4,7 @@ created: 2021-03-24T02:30:00+05:30
 updated: 2021-03-24T02:30:00+05:30
 author: ashishdoneriya
 description: Essential points to consider while designing key-value storage or database.
-permalink: /key-value-storage-design-techniques.html
+permalink: /key-value-storage-design-architecture.html
 categories:
   - system-design
 tags:
