@@ -1,6 +1,32 @@
 <!doctype html>
 <html lang="en-GB">
  <head> 
+  <!-- Title --> 
+  <title>Key Points regarding Unique ID generator in distributed systems</title> 
+  <link rel="canonical" href="https://csetutorials.com/unique-id-generator-system-design.html"> 
+  <meta name="description" content="Unique ID geneator system design key points to remember"> 
+  <meta property="og:description" content="Unique ID geneator system design key points to remember"> 
+  <meta name="twitter:description" content="Unique ID geneator system design key points to remember"> 
+  <meta name="author" content="Ashish Doneriya"> 
+  <meta name="robots" content="index, follow"> 
+  <meta property="og:type" content="article"> 
+  <meta property="og:title" content="Key Points regarding Unique ID generator in distributed systems"> 
+  <meta property="og:url" content="https://csetutorials.com/unique-id-generator-system-design.html"> 
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:site_name" content="Cse Tutorials"> 
+  <meta property="og:updated_time" content="2021-03-24T21:00:00Z"> 
+  <meta property="article:author" content="https://www.facebook.com/ashishdoneriya"> 
+  <meta property="article:modified_time" content="2021-03-24T21:00:00Z"> 
+  <meta property="article:published_time" content="2021-03-24T21:00:00Z"> 
+  <meta property="article:publisher" content="https://www.facebook.com/ashishdoneriya"> 
+  <meta property="article:section" content="System Design"> 
+  <meta property="article:tag" content="Snowflake"> 
+  <meta property="article:tag" content="Uuid"> 
+  <meta name="twitter:title" content="Key Points regarding Unique ID generator in distributed systems"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:creator" content="@ashishdoneriya"> 
+  <meta name="twitter:site" content="@ashishdoneriya"> 
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Person","Organization"],"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya","name":"Ashish Doneriya","sameAs":["https://www.facebook.com/ashishdoneriya","https://twitter.com/ashishdoneriya","https://www.linkedin.com/in/ashishdoneriya/"]},{"@type":"WebSite","@id":"https://csetutorials.com/#website","url":"https://csetutorials.com","name":"Cse Tutorials","description":"Tutorials about WebApps, Web Designing, Java \u0026 Ubuntu","publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://csetutorials.com/unique-id-generator-system-design.html#webpage","url":"https://csetutorials.com/unique-id-generator-system-design.html","isPartOf":{"@id":"https://csetutorials.com/#website"},"datePublished":"2021-03-24T21:00:00Z","dateModified":"2021-03-24T21:00:00Z","description":"Unique ID geneator system design key points to remember","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://csetutorials.com/unique-id-generator-system-design.html"]}]},{"@type":"Article","@id":"https://csetutorials.com/unique-id-generator-system-design.html#article","isPartOf":{"@id":"https://csetutorials.com/unique-id-generator-system-design.html#webpage"},"author":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"headline":"Key Points regarding Unique ID generator in distributed systems","datePublished":"2021-03-24T21:00:00Z","dateModified":"2021-03-24T21:00:00Z","mainEntityOfPage":{"@id":"https://csetutorials.com/unique-id-generator-system-design.html#webpage"},"publisher":{"@id":"https://csetutorials.com/#/schema/person/ashishdoneriya"},"keywords":"snowflake,uuid","articleSection":"system-design","inLanguage":"en-US"}]}</script> 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -67,30 +93,90 @@
    <div class="typology-cover typology-cover-empty"></div> 
    <div class="typology-fake-bg"> 
     <div class="typology-section"> 
-     <div class="section-content home"> 
-      <header class="entry-header clearfix"> 
-       <p class="entry-title entry-title-cover-empty h2"> System Design </p> 
-       <div class="post-letter">
-        S
+     <div class="section-content"> 
+      <article class="typology-post typology-single-post"> 
+       <header class="entry-header clearfix"> 
+        <h1 class="entry-title entry-title-cover-empty h2">Key Points regarding Unique ID generator in distributed systems</h1> 
+        <div class="entry-meta"> 
+         <div class="meta-item meta-author" style="vertical-align: middle">
+           By <span class="vcard author"><span class="fn"> <a href="/author/ashishdoneriya">Ashish Doneriya</a> </span></span> 
+         </div> 
+         <div class="meta-item meta-date" style="vertical-align: middle"> <span class="updated">Last Updated on Mar 24, 2021 </span> 
+         </div> 
+        </div> 
+        <div class="post-letter">
+          K 
+        </div> 
+       </header> 
+       <div class="entry-content clearfix"> 
+        <div style="margin-top:10px;margin-bottom:20px"> 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+         <!-- Display Ad --> 
+         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3068137040930830" data-ad-slot="1668882656" data-ad-format="auto" data-full-width-responsive="true"></ins> 
+         <script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+						</script> 
+        </div>    
+        <h2 id="key-points">Key Points</h2> 
+        <ul> 
+         <li> <p>MySQL auto increment is not sufficient for distributed systems because it is not large enough &amp; would be very challenging generating unique ids across multiple databases with minimal delay;</p> </li> 
+         <li> <p>Our requirement is the ids should be unique, sortable, max 64 bit (8 bytes ie. could fit in long data type in Java).</p> </li> 
+        </ul> 
+        <p>There are three ways that could be possible -</p> 
+        <h3 id="uuid">UUID</h3> 
+        <ul> 
+         <li>UUID is 128 bit.</li> 
+         <li>It has very low probability of collusion.</li> 
+         <li>It could be generated without coordinated servers.</li> 
+         <li>It has drawback that is the ids could be non numeric.</li> 
+         <li>Since our requirement is 64 bits, therefore UUIDs won't be able to satisfy our requirements</li> 
+        </ul> 
+        <h3 id="ticket-server">Ticket Server</h3> 
+        <ul> 
+         <li><a href="https://code.flickr.net/2010/02/08/ticket-servers-distributed-unique-primary-keys-on-the-cheap/" target="_blank" rel="noopener nofollow">Flickr</a> developed this technique.</li> 
+         <li>There is a dedicated mysql server database which is used to generate keys.</li> 
+         <li>All the other servers hit mysql to get the unique keys.</li> 
+         <li>This approach has drawback. It has single point of failure. In case of that single mysql server machine goes down, the entire system would fail.</li> 
+         <li>The webservers would hit the below sql command to get the unique key.</li> 
+        </ul> 
+        <pre><code class="language-sql">REPLACE INTO Tickets64 (stub) VALUES ('a');SELECT id from Tickets64;
+</code></pre> 
+        <p>The table creating syntax is -</p> 
+        <pre><code class="language-sql">CREATE TABLE `Tickets64` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `stub` char(1) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `stub` (`stub`)
+) ENGINE=InnoDB
+</code></pre> 
+        <h3 id="twitter-snowflake">Twitter Snowflake</h3> 
+        <p>Twitter snowflake IDs are 64-bit. In this approach the ID is divided into multiple parts -</p> 
+        <ul> 
+         <li>1 bit - <strong>reserved</strong></li> 
+         <li>41 bit - <strong>for storing timestamp</strong> epoch. Instead of storing milliseconds since 1 January 1970, we will start from 4 Nov 2010 01:42:54 UTC (1288834974657) that is twitter snowflake default epoch.</li> 
+         <li>5 bit - <strong>data center id</strong>. Maximum 2^5 = 32 datacenters.</li> 
+         <li>5 bit - <strong>machine id</strong>. Maximum 2^5=32 machines per datacenter. This means not every webserver could generate its own key individualy. There has to be a dedicated id generator (distributed key generator).</li> 
+         <li>12 bits - <strong>sequence number</strong>. For every request the number gets increased. After every millisecond the number resets to 0.</li> 
+        </ul> 
+        <p>This id generator would work for around 70 years.</p>   
+        <div style="margin-top:10px;margin-bottom:20px"> 
+         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+         <!-- Display Ad --> 
+         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3068137040930830" data-ad-slot="7956133725" data-ad-format="auto" data-full-width-responsive="true"></ins> 
+         <script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+						</script> 
+        </div> 
+        <div class="clearfix entry-actions"> <span>Published in: </span> <span> <a style="
+										padding: 0 5px 5px;
+										text-decoration: none;
+										border-bottom: 4px solid yellow;
+									" href="/topics/system-design">System Design</a> </span> 
+        </div> 
        </div> 
-      </header> 
-      <ul class="wp-block-rss is-grid columns-2 columns-2" style="list-style: none"> 
-       <li class="wp-block-rss__item"> 
-        <div class="wp-block-rss__item-title" style="line-height: 1.4"> <a class="h5" style="color: rgba(0, 0, 0, 0.8)" href="/unique-id-generator-system-design.html">Key Points regarding Unique ID generator in distributed systems</a> 
-        </div> <span class="wp-block-rss__item-author" style="margin-top: 8px"> <span>In </span> <span> <a href="/topics/system-design">System Design</a> </span> <span> - Mar 24, 2021</span> </span> </li> 
-       <li class="wp-block-rss__item"> 
-        <div class="wp-block-rss__item-title" style="line-height: 1.4"> <a class="h5" style="color: rgba(0, 0, 0, 0.8)" href="/key-value-storage-design-architecture.html">How to Design a Key Value Database</a> 
-        </div> <span class="wp-block-rss__item-author" style="margin-top: 8px"> <span>In </span> <span> <a href="/topics/system-design">System Design</a> </span> <span> - Mar 23, 2021</span> </span> </li> 
-       <li class="wp-block-rss__item"> 
-        <div class="wp-block-rss__item-title" style="line-height: 1.4"> <a class="h5" style="color: rgba(0, 0, 0, 0.8)" href="/consistent-hashing-design-techniques.html">Consistent Hashing Design and Techniques</a> 
-        </div> <span class="wp-block-rss__item-author" style="margin-top: 8px"> <span>In </span> <span> <a href="/topics/system-design">System Design</a> </span> <span> - Mar 20, 2021</span> </span> </li> 
-       <li class="wp-block-rss__item"> 
-        <div class="wp-block-rss__item-title" style="line-height: 1.4"> <a class="h5" style="color: rgba(0, 0, 0, 0.8)" href="/rate-limiter-design-techniques.html">Rate Limiter Design Techniques with Scenarios and Solutions</a> 
-        </div> <span class="wp-block-rss__item-author" style="margin-top: 8px"> <span>In </span> <span> <a href="/topics/system-design">System Design</a> </span> <span> - Mar 14, 2021</span> </span> </li> 
-       <li class="wp-block-rss__item"> 
-        <div class="wp-block-rss__item-title" style="line-height: 1.4"> <a class="h5" style="color: rgba(0, 0, 0, 0.8)" href="/sstable-architecture.html">SSTable Architecture Summary</a> 
-        </div> <span class="wp-block-rss__item-author" style="margin-top: 8px"> <span>In </span> <span> <a href="/topics/system-design">System Design</a> </span> <span> - Mar 09, 2021</span> </span> </li> 
-      </ul> 
+       <div class="clearfix entry-actions"> <span>Originally Published On </span><span> : </span><span>Mar 24, 2021</span> 
+       </div> 
+      </article> 
      </div> 
     </div> 
     <footer class="typology-footer"> 

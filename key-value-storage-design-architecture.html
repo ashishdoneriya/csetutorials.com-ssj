@@ -179,7 +179,7 @@
         <p>Usually N = 3, W = 2, R = 2.</p> 
         <p>The above technique is called Sloppy Quorum.</p> 
         <ol start="3"> 
-         <li> <p><strong>Question :</strong> During data write, lets say two different requests are writing data at the same time for same keys, what would you do?<br> <strong>Answer :</strong> We will use <a href="https://en.wikipedia.org/wiki/Vector_clock" target="_blank" rel="noopener nofollow">Vector Clock</a> techiques to resolve the conflicts.</p> </li> 
+         <li> <p><strong>Question :</strong> During data write, lets say two different requests are writing data at the same time for same keys, what would you do?<br> <strong>Answer :</strong> We will use <a href="https://en.wikipedia.org/wiki/Vector_clock" target="_blank" rel="noopener nofollow">Vector Clock</a> techique to resolve the conflicts.</p> </li> 
          <li> <p><strong>Question :</strong> A client won't directly send data to the correct node related to a key because the client won't know the hashing algorithm or the hash ring. So how exactly the client would write or read data (key-value)?<br> <strong>Answer :</strong> First the client will send the request to any node. Then this node would forward the request to the node which would be close the client node. Then this node would act as a Coordinator node and would handle the request (ie. finding the appropriate node related to key using hash ring and sending the request)</p> </li> 
         </ol>   
         <div style="margin-top:10px;margin-bottom:20px"> 
