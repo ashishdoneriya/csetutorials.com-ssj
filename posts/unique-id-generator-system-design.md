@@ -1,5 +1,5 @@
 ---
-title: Key Points regarding Unique ID generator in distributed systems
+title: Unique ID generator in distributed systems key points
 created: 2021-03-25T02:30:00+05:30
 updated: 2021-03-25T02:30:00+05:30
 author: ashishdoneriya
