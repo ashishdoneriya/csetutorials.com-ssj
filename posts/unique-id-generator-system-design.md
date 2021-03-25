@@ -73,5 +73,5 @@ This id generator would work for around 70 years (if we include that starting 1 
 * We would assign a set of key range for each data center ( hard coded ).
 * Lets suppose there are 200 data centers ( 50 data centers at present, 150 reserved for future).
 * So 2^ 40 / 200 = 46116 trillion keys for each data center.
-* Since each time a worker take a range of 1 million keys. So it would take around 46 billion request to exhaust all the request which is I think would be sufficient.
+* Since each time a worker take a range of 1 million keys. So it would take around 46 billion requests to exhaust the datacenter keys range which is I think would be sufficient.
 * You can change numbers ( ie. no. of data centers, key range etc.) according to your requirements.
