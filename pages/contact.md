@@ -6,7 +6,7 @@ permalink: /contact
 updated: 2021-02-27T02:42:00+05:30
 ---
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSei0rz9JBzkN8HKusoWbbypJUul54zDt1vxJTRto3mqAx6jvA/viewform?embedded=true" width="640" height="685" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSei0rz9JBzkN8HKusoWbbypJUul54zDt1vxJTRto3mqAx6jvA/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 <!--
 <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
 <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
