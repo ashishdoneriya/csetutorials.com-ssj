@@ -5,16 +5,16 @@ author: ashishdoneriya
 permalink: /contact
 updated: 2021-02-27T02:42:00+05:30
 ---
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSei0rz9JBzkN8HKusoWbbypJUul54zDt1vxJTRto3mqAx6jvA/viewform?embedded=true" width="640" height="685" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<!--
 <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
 <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
 <form action="https://send.pageclip.co/v08dTRXd2vUOHm8i19BJxAPAy70O1TRG" class="pageclip-form" method="post">
-  <!-- Replace these inputs with your own. Make sure they have a "name" attribute! -->
   <input type="text" name="name" placeholder="Your Name" value="" />
   <input type="email" name="email" placeholder="Your Email" value="" />
   <input type="text" name="message" placeholder="Your Message" value="" />
-
-  <!-- This button will have a loading spinner. Keep the inner span for best results. -->
   <button type="submit" class="pageclip-form__submit">
     <span>Send</span>
   </button>
-</form>
+</form>-->
